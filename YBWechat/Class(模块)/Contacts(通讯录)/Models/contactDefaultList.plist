@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>userPortrait</key>
+		<string>local:add_friend</string>
+		<key>userName</key>
+		<string>新的朋友</string>
+	</dict>
+	<dict>
+		<key>userPortrait</key>
+		<string>local:groupChat</string>
+		<key>userName</key>
+		<string>群聊</string>
+	</dict>
+	<dict>
+		<key>userPortrait</key>
+		<string>local:contactTag</string>
+		<key>userName</key>
+		<string>标签</string>
+	</dict>
+	<dict>
+		<key>userPortrait</key>
+		<string>local:offical</string>
+		<key>userName</key>
+		<string>公众号</string>
+	</dict>
+</array>
+</plist>

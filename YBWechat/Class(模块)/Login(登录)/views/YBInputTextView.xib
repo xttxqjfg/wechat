@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="17D47" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YBInputTextView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dld-dN-SHg">
+                    <rect key="frame" x="20" y="27" width="70" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="PUC-Ha-J6b"/>
+                        <constraint firstAttribute="width" constant="70" id="REi-0S-faB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6H0-np-snx">
+                    <rect key="frame" x="100" y="35" width="255" height="19"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVw-Lg-GQg">
+                    <rect key="frame" x="20" y="87" width="335" height="1"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="41y-bj-W1C"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Dld-dN-SHg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7hs-zF-zy7"/>
+                <constraint firstAttribute="trailing" secondItem="aVw-Lg-GQg" secondAttribute="trailing" constant="20" id="HpO-1n-b3K"/>
+                <constraint firstItem="6H0-np-snx" firstAttribute="leading" secondItem="Dld-dN-SHg" secondAttribute="trailing" constant="10" id="KXK-8B-zjI"/>
+                <constraint firstItem="6H0-np-snx" firstAttribute="centerY" secondItem="Dld-dN-SHg" secondAttribute="centerY" id="aZq-SS-3IJ"/>
+                <constraint firstAttribute="bottom" secondItem="aVw-Lg-GQg" secondAttribute="bottom" constant="1" id="c9Q-fs-yEh"/>
+                <constraint firstItem="aVw-Lg-GQg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="quS-02-dDx"/>
+                <constraint firstAttribute="trailing" secondItem="6H0-np-snx" secondAttribute="trailing" constant="20" id="u53-3B-XxH"/>
+                <constraint firstItem="Dld-dN-SHg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="wNe-MO-TUS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="leftLabel" destination="Dld-dN-SHg" id="uhf-AW-R1y"/>
+                <outlet property="rightTextField" destination="6H0-np-snx" id="sPo-fA-SyE"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="-236.5"/>
+        </view>
+    </objects>
+</document>
