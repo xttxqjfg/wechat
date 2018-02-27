@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>朋友圈</string>
+			<key>image</key>
+			<string>discover_moments</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>扫一扫</string>
+			<key>image</key>
+			<string>discover_qrscan</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>摇一摇</string>
+			<key>image</key>
+			<string>discover_shark</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>购物</string>
+			<key>image</key>
+			<string>discover_shop</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>游戏</string>
+			<key>image</key>
+			<string>discover_game</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>小程序</string>
+			<key>image</key>
+			<string>discover_small_program</string>
+		</dict>
+	</array>
+</array>
+</plist>
