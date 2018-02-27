@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yb.wechat.dao.UserDao" >
+  <resultMap id="BaseResultMap" type="com.yb.wechat.pojo.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_portrait" property="userPortrait" jdbcType="VARCHAR" />
+    <result column="user_sex" property="userSex" jdbcType="VARCHAR" />
+    <result column="user_location" property="userLocation" jdbcType="VARCHAR" />
+    <result column="user_signature" property="userSignature" jdbcType="VARCHAR" />
+    <result column="user_token" property="userToken" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, user_name, user_portrait, user_sex, user_location, user_signature, user_token
+  </sql>
+  <sql id="Min_Column_List" >
+    id, user_id, user_name, user_portrait
+  </sql>
+  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from view_user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select 
+    <include refid="Min_Column_List" />
+    from db_user
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from db_user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.yb.wechat.pojo.User" >
+    insert into db_user (id, user_id, user_name, 
+      user_portrait, user_sex, user_location, 
+      user_signature)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{userPortrait,jdbcType=VARCHAR}, #{userSex,jdbcType=VARCHAR}, #{userLocation,jdbcType=VARCHAR}, 
+      #{userSignature,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.yb.wechat.pojo.User" >
+    update db_user
+    set user_id = #{userId,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      user_portrait = #{userPortrait,jdbcType=VARCHAR},
+      user_sex = #{userSex,jdbcType=VARCHAR},
+      user_location = #{userLocation,jdbcType=VARCHAR},
+      user_signature = #{userSignature,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
