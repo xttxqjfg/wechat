@@ -27,6 +27,9 @@
     [self.window makeKeyAndVisible];
     [self setupNavigationBar];
     
+    //3D Touch
+    [self addTouch:application];
+    
     // 创建配置目录
     [NSFileManager createDir:DIR_PATH_FOR_CONFIG];
     
@@ -76,6 +79,7 @@
     else
     {
         YBLoginVC *loginVC = [[YBLoginVC alloc]init];
+        loginVC.navBarBgAlpha = @"1.0";
         UINavigationController *rootNav = [[UINavigationController alloc]initWithRootViewController:loginVC];
         self.window.rootViewController = rootNav;
     }
@@ -262,15 +266,15 @@
      */
     
     //我的二维码
-    UIApplicationShortcutIcon *myqrIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@""];
+    UIApplicationShortcutIcon *myqrIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@"touch_myqr"];
     UIApplicationShortcutItem *myqrItem = [[UIApplicationShortcutItem alloc] initWithType:@"myqr" localizedTitle:@"我的二维码" localizedSubtitle:@"" icon:myqrIcon userInfo:nil];
     
     //扫一扫
-    UIApplicationShortcutIcon *scanIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@""];
+    UIApplicationShortcutIcon *scanIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@"touch_scan"];
     UIApplicationShortcutItem *scanItem = [[UIApplicationShortcutItem alloc] initWithType:@"scan" localizedTitle:@"扫一扫" localizedSubtitle:@"" icon:scanIcon userInfo:nil];
     
     //收付款
-    UIApplicationShortcutIcon *payIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@""];
+    UIApplicationShortcutIcon *payIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@"touch_pay"];
     UIApplicationShortcutItem *payItem = [[UIApplicationShortcutItem alloc] initWithType:@"pay" localizedTitle:@"收付款" localizedSubtitle:@"" icon:payIcon userInfo:nil];
     
     /** 将items 添加到app图标 */
@@ -279,13 +283,13 @@
 
 -(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
 {
-    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
-    if([shortcutItem.type isEqualToString:@"scan"]){
-        UIViewController *vc = [[UIViewController alloc] init];
-        vc.title = @"第一个";
-        vc.view.backgroundColor = [UIColor redColor];
-        [nav pushViewController:vc animated:YES];
-    }
+//    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+//    if([shortcutItem.type isEqualToString:@"scan"]){
+//        UIViewController *vc = [[UIViewController alloc] init];
+//        vc.title = @"第一个";
+//        vc.view.backgroundColor = [UIColor redColor];
+//        [nav pushViewController:vc animated:YES];
+//    }
 }
 
 #pragma mark 融云红包回调

@@ -51,6 +51,7 @@
     for (NSDictionary *dic in rootVCItemsArray) {
         UIViewController *vc = [NSClassFromString(dic[kClassNameKey]) new];
         vc.title = dic[kTitleKey];
+        vc.navBarBgAlpha = @"1.0";
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         UITabBarItem *item = nav.tabBarItem;
         item.title = dic[kTitleKey];

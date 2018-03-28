@@ -34,5 +34,9 @@
     #import "YBGroupInfo.h"
     #import "RCDBManager.h"
     #import "YYModel.h"
+    //透明导航栏相关
+    #import "UINavigationController+YB.h"
+    #import <objc/runtime.h>
+    #import "UIViewController+YB.h"
 
 #endif

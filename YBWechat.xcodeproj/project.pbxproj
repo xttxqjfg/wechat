@@ -33,6 +33,8 @@
 		1A4D401B2031396E002627A5 /* YBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D401A2031396E002627A5 /* YBSearchView.m */; };
 		1A4D401D2031397B002627A5 /* YBSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4D401C2031397B002627A5 /* YBSearchView.xib */; };
 		1A6CAD522044EC9500752671 /* YBDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CAD512044EC9500752671 /* YBDropDownMenu.m */; };
+		1A891A462046435600E02DBB /* UINavigationController+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A891A452046435600E02DBB /* UINavigationController+YB.m */; };
+		1A891A492046447C00E02DBB /* UIViewController+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A891A482046447C00E02DBB /* UIViewController+YB.m */; };
 		1A9D6FA32021ADD000251BD2 /* NSFileManager+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA22021ADD000251BD2 /* NSFileManager+YB.m */; };
 		1A9D6FA62021B36800251BD2 /* YBButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA52021B36800251BD2 /* YBButtonView.m */; };
 		1A9D6FA82021B37000251BD2 /* YBButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA72021B37000251BD2 /* YBButtonView.xib */; };
@@ -107,6 +109,10 @@
 		1A4D401C2031397B002627A5 /* YBSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBSearchView.xib; sourceTree = "<group>"; };
 		1A6CAD502044EC9500752671 /* YBDropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBDropDownMenu.h; sourceTree = "<group>"; };
 		1A6CAD512044EC9500752671 /* YBDropDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBDropDownMenu.m; sourceTree = "<group>"; };
+		1A891A442046435600E02DBB /* UINavigationController+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+YB.h"; sourceTree = "<group>"; };
+		1A891A452046435600E02DBB /* UINavigationController+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+YB.m"; sourceTree = "<group>"; };
+		1A891A472046447C00E02DBB /* UIViewController+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YB.h"; sourceTree = "<group>"; };
+		1A891A482046447C00E02DBB /* UIViewController+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YB.m"; sourceTree = "<group>"; };
 		1A9D6FA12021ADD000251BD2 /* NSFileManager+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+YB.h"; sourceTree = "<group>"; };
 		1A9D6FA22021ADD000251BD2 /* NSFileManager+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+YB.m"; sourceTree = "<group>"; };
 		1A9D6FA42021B36800251BD2 /* YBButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBButtonView.h; sourceTree = "<group>"; };
@@ -240,6 +246,10 @@
 				1ABA2AFF2029B087009E4E98 /* YBUtils.m */,
 				1AD67477202AC62400A5BD9D /* RSATool.h */,
 				1AD67478202AC62400A5BD9D /* RSATool.m */,
+				1A891A442046435600E02DBB /* UINavigationController+YB.h */,
+				1A891A452046435600E02DBB /* UINavigationController+YB.m */,
+				1A891A472046447C00E02DBB /* UIViewController+YB.h */,
+				1A891A482046447C00E02DBB /* UIViewController+YB.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -535,8 +545,8 @@
 				TargetAttributes = {
 					1A3E630B2018301D00E683CA = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 4FZEH78SM7;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = C874CYA6U4;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -668,6 +678,7 @@
 				1A9D6FA62021B36800251BD2 /* YBButtonView.m in Sources */,
 				1A3E63112018301D00E683CA /* main.m in Sources */,
 				1A45B2DA2044EF4C00F5A48F /* YBDropDownMenuCell.m in Sources */,
+				1A891A462046435600E02DBB /* UINavigationController+YB.m in Sources */,
 				1AE52204201855EB00AD174F /* YBMineVC.m in Sources */,
 				1AE5220820186F5200AD174F /* YBSettingTableViewCell.m in Sources */,
 				1A0E4C632021A67E00745904 /* YBInputTextView.m in Sources */,
@@ -685,6 +696,7 @@
 				1AF8B6E6202D88C2003C34C2 /* YBContactsModel.m in Sources */,
 				1A0E4C5620219F7500745904 /* YBUserCache.m in Sources */,
 				1AF8B6D4202D6ED3003C34C2 /* pinyin.c in Sources */,
+				1A891A492046447C00E02DBB /* UIViewController+YB.m in Sources */,
 				1A0E4C5E2021A50A00745904 /* YBRegisterView.m in Sources */,
 				1A1A36C920197ADD000B93EE /* YBMineHeadTableViewCell.m in Sources */,
 				1A4D401820312A43002627A5 /* ContactDateModel.m in Sources */,
@@ -814,16 +826,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 4FZEH78SM7;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = C874CYA6U4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YBWechat/PrefixHeader.pch";
 				INFOPLIST_FILE = YBWechat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ios.test.YBWechat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yb.YBWechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "751548dc-317a-4a25-9f59-a8b4965b4fb7";
-				PROVISIONING_PROFILE_SPECIFIER = mau_ios_test;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -834,16 +848,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 4FZEH78SM7;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = C874CYA6U4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YBWechat/PrefixHeader.pch";
 				INFOPLIST_FILE = YBWechat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ios.test.YBWechat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yb.YBWechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "751548dc-317a-4a25-9f59-a8b4965b4fb7";
-				PROVISIONING_PROFILE_SPECIFIER = mau_ios_test;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

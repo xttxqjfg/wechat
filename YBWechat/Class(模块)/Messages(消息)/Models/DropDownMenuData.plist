@@ -24,7 +24,7 @@
 		<key>title</key>
 		<string>收付款</string>
 		<key>image</key>
-		<string>barbtn_camera</string>
+		<string>add_pay</string>
 	</dict>
 </array>
 </plist>
