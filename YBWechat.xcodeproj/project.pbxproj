@@ -29,7 +29,6 @@
 		1A45B2DA2044EF4C00F5A48F /* YBDropDownMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A45B2D82044EF4C00F5A48F /* YBDropDownMenuCell.m */; };
 		1A45B2DB2044EF4C00F5A48F /* YBDropDownMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A45B2D92044EF4C00F5A48F /* YBDropDownMenuCell.xib */; };
 		1A45B2DD2044F51800F5A48F /* DropDownMenuData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A45B2DC2044F51800F5A48F /* DropDownMenuData.plist */; };
-		1A4D401820312A43002627A5 /* ContactDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D401720312A43002627A5 /* ContactDateModel.m */; };
 		1A4D401B2031396E002627A5 /* YBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D401A2031396E002627A5 /* YBSearchView.m */; };
 		1A4D401D2031397B002627A5 /* YBSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4D401C2031397B002627A5 /* YBSearchView.xib */; };
 		1A6CAD522044EC9500752671 /* YBDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CAD512044EC9500752671 /* YBDropDownMenu.m */; };
@@ -102,8 +101,6 @@
 		1A45B2D82044EF4C00F5A48F /* YBDropDownMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBDropDownMenuCell.m; sourceTree = "<group>"; };
 		1A45B2D92044EF4C00F5A48F /* YBDropDownMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBDropDownMenuCell.xib; sourceTree = "<group>"; };
 		1A45B2DC2044F51800F5A48F /* DropDownMenuData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DropDownMenuData.plist; sourceTree = "<group>"; };
-		1A4D401620312A43002627A5 /* ContactDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDateModel.h; sourceTree = "<group>"; };
-		1A4D401720312A43002627A5 /* ContactDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDateModel.m; sourceTree = "<group>"; };
 		1A4D40192031396E002627A5 /* YBSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSearchView.h; sourceTree = "<group>"; };
 		1A4D401A2031396E002627A5 /* YBSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSearchView.m; sourceTree = "<group>"; };
 		1A4D401C2031397B002627A5 /* YBSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBSearchView.xib; sourceTree = "<group>"; };
@@ -365,8 +362,6 @@
 				1AF8B6E4202D88C2003C34C2 /* YBContactsModel.h */,
 				1AF8B6E5202D88C2003C34C2 /* YBContactsModel.m */,
 				1AF8B6EC202D8EDF003C34C2 /* contactDefaultList.plist */,
-				1A4D401620312A43002627A5 /* ContactDateModel.h */,
-				1A4D401720312A43002627A5 /* ContactDateModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -699,7 +694,6 @@
 				1A891A492046447C00E02DBB /* UIViewController+YB.m in Sources */,
 				1A0E4C5E2021A50A00745904 /* YBRegisterView.m in Sources */,
 				1A1A36C920197ADD000B93EE /* YBMineHeadTableViewCell.m in Sources */,
-				1A4D401820312A43002627A5 /* ContactDateModel.m in Sources */,
 				1A0E4C5220219E8B00745904 /* YBRegisterVC.m in Sources */,
 				1A1A36CD2019B4AF000B93EE /* YBAddFriendsVC.m in Sources */,
 				1AF8B6E3202D77BC003C34C2 /* DefaultPortraitView.m in Sources */,

@@ -11,7 +11,6 @@
 #import "YBAddFriendsVC.h"
 #import "YBContactCell.h"
 #import "YBContactsModel.h"
-#import "ContactDateModel.h"
 
 #import "YBSearchView.h"
 
@@ -19,7 +18,13 @@
 
 @property (nonatomic,strong) UITableView *contactTable;
 
-@property (nonatomic,strong) NSMutableArray *contactDataList;
+@property (nonatomic,strong) NSMutableArray *topDefaultData;
+
+@property (nonatomic,strong) NSMutableDictionary *userListInfo;
+
+@property (nonatomic,strong) NSMutableArray *groupKeys;
+
+@property (nonatomic,assign) NSInteger userCount;
 
 @property (nonatomic,strong) YBSearchView *searchView;
 
@@ -45,21 +50,37 @@
 {
     YBWeakSelf(self);
     
-    [YBUtils showActivityInView:weakself.view];
+    [weakself sortAndUpdate:[[RCDBManager shareInstance] getAllUserInfo]];
     
     [YBContactsModel userListRequest:@{@"userid":Golble_User_Id} Block:^(NSArray *result, NSString *message) {
-        [YBUtils hideActivityInView:weakself.view];
+        
         if (message) {
             [YBUtils showMessageInView:@"请求出错" inView:weakself.view];
         }
         else
         {
             if ([result count] > 0) {
-                [weakself.contactDataList addObject:result];
-                [weakself.contactTable reloadData];
+                [[RCDBManager shareInstance] insertAllUserToDB:[result mutableCopy]];
+                [weakself sortAndUpdate:[[RCDBManager shareInstance] getAllUserInfo]];
             }
         }
     }];
+}
+
+-(void)sortAndUpdate:(NSArray *)friendList
+{
+    self.userCount = friendList.count;
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSDictionary *sortResult = [YBUtils sortedArrayWithPinYinDic:friendList];
+        
+        self.userListInfo = [sortResult objectForKey:@"infoDic"];
+        self.groupKeys = [sortResult objectForKey:@"allKeys"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.contactTable reloadData];
+        });
+    });
 }
 
 #pragma mark private method
@@ -85,12 +106,19 @@
 #pragma mark --UITableViewDelegate,UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.contactDataList.count;
+    return self.groupKeys.count + 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.contactDataList objectAtIndex:section] count];
+    if (0 == section) {
+        return self.topDefaultData.count;
+    }
+    else
+    {
+        NSString *letter = [self.groupKeys objectAtIndex:section - 1];
+        return [self.userListInfo[letter] count];
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,7 +127,15 @@
     if (!cell) {
         cell = [[YBContactCell alloc]initWithFrame:CGRectZero];
     }
-    cell.dataModel = [[self.contactDataList objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    if (0 == indexPath.section) {
+        cell.dataModel = [self.topDefaultData objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        NSString *letter = [self.groupKeys objectAtIndex:indexPath.section - 1];
+        NSArray *sectionUserInfoList = self.userListInfo[letter];
+        cell.dataModel = sectionUserInfoList[indexPath.row];
+    }
     return cell;
 }
 
@@ -126,13 +162,13 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-//    if (self.contactDataList.count == section) {
-//        return 45 * YB_WIDTH_PRO;
-//    }
-//    else
-//    {
+    if (self.userListInfo.count == section) {
+        return 45 * YB_WIDTH_PRO;
+    }
+    else
+    {
         return 0.1;
-//    }
+    }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -142,8 +178,46 @@
     }
     else
     {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+        view.frame = CGRectMake(0, 0, self.view.frame.size.width, 20);
+        view.backgroundColor = [UIColor clearColor];
+        
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectZero];
+        title.frame = CGRectMake(13, 3, 15, 15);
+        title.font = [UIFont systemFontOfSize:15.f];
+        title.textColor = [UIColor grayColor];
+        [view addSubview:title];
+        title.text = self.groupKeys[section - 1];
+        
+        return view;
+    }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (self.userListInfo.count == section) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+        view.frame = CGRectMake(0, 10, self.view.frame.size.width, 30);
+        view.backgroundColor = [UIColor whiteColor];
+        
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectZero];
+        title.frame = view.frame;
+        title.font = [UIFont systemFontOfSize:18.f];
+        title.textAlignment = NSTextAlignmentCenter;
+        title.textColor = [UIColor grayColor];
+        [view addSubview:title];
+        title.text = [NSString stringWithFormat:@"%ld位联系人",self.userCount];
+        
+        return view;
+    }
+    else
+    {
         return [[UIView alloc]initWithFrame:CGRectZero];
     }
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return self.groupKeys;
 }
 
 #pragma mark --get
@@ -154,6 +228,11 @@
         _contactTable.dataSource = self;
         _contactTable.delegate = self;
         _contactTable.tableFooterView = [UIView new];
+        _contactTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        //设置右侧索引
+        _contactTable.sectionIndexBackgroundColor = [UIColor clearColor];
+        _contactTable.sectionIndexColor = [UIColor blackColor];
         _contactTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _contactTable;
@@ -168,19 +247,37 @@
     return _searchView;
 }
 
--(NSMutableArray *)contactDataList
+-(NSMutableArray *)topDefaultData
 {
-    if (!_contactDataList) {
+    if (!_topDefaultData) {
         
-        _contactDataList = [[NSMutableArray alloc]init];
+        _topDefaultData = [[NSMutableArray alloc]init];
         NSArray *defaultArr = [[NSArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"contactDefaultList.plist" ofType:nil]];
-        NSMutableArray *tempArr = [[NSMutableArray alloc]init];
         for (NSDictionary *dic in defaultArr) {
-            [tempArr addObject:[ContactDateModel yy_modelWithDictionary:dic]];
+            YBUserInfo *userInfo = [[YBUserInfo alloc]init];
+            userInfo.userId = [dic objectForKey:@"userId"] ? [NSString stringWithFormat:@"%@",[dic objectForKey:@"userId"]] : @"";
+            userInfo.name = [dic objectForKey:@"userName"] ? [NSString stringWithFormat:@"%@",[dic objectForKey:@"userName"]] : @"";
+            userInfo.portraitUri = [dic objectForKey:@"userPortrait"] ? [NSString stringWithFormat:@"%@",[dic objectForKey:@"userPortrait"]] : @"";
+            [_topDefaultData addObject:userInfo];
         }
-        [_contactDataList addObject:tempArr];
     }
-    return _contactDataList;
+    return _topDefaultData;
+}
+
+-(NSMutableDictionary *)userListInfo
+{
+    if (!_userListInfo) {
+        _userListInfo = [[NSMutableDictionary alloc]init];
+    }
+    return _userListInfo;
+}
+
+-(NSMutableArray *)groupKeys
+{
+    if (!_groupKeys) {
+        _groupKeys = [[NSMutableArray alloc]init];
+    }
+    return _groupKeys;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -25,32 +25,42 @@
     return self;
 }
 
--(void)setDataModel:(ContactDateModel *)dataModel
+-(void)setDataModel:(YBUserInfo *)dataModel
 {
     _dataModel = dataModel;
     
-    self.rightLabel.text = [dataModel.userName length] > 0 ? dataModel.userName : @"";
+    self.rightLabel.text = [dataModel.name length] > 0 ? dataModel.name : @"";
     
-    if([dataModel.userPortrait length] > 0 && [dataModel.userPortrait hasPrefix:@"http"])
+    if([dataModel.portraitUri length] > 0 && [dataModel.portraitUri hasPrefix:@"http"])
     {
-        [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:dataModel.userPortrait] placeholderImage:[UIImage imageNamed:@"default_user_image"]];
+        [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:dataModel.portraitUri] placeholderImage:[UIImage imageNamed:@"default_user_image"]];
     }
-    else if([dataModel.userPortrait length] > 0 && [dataModel.userPortrait hasPrefix:@"local:"])
+    else if([dataModel.portraitUri length] > 0 && [dataModel.portraitUri hasPrefix:@"local:"])
     {
-        self.leftImageView.image = [UIImage imageNamed:[dataModel.userPortrait substringFromIndex:6]];
+        self.leftImageView.image = [UIImage imageNamed:[dataModel.portraitUri substringFromIndex:6]];
     }
     else
     {
-        if(0 == [dataModel.userName length])
+        if(0 == [dataModel.name length])
         {
             self.leftImageView.image = [UIImage imageNamed:@"default_user_image"];
         }
         else
         {
-            NSString *localUrl = [YBUtils defaultUserPortrait:[[RCUserInfo alloc] initWithUserId:dataModel.userId name:dataModel.userName portrait:@""]];
+            NSString *localUrl = [YBUtils defaultUserPortrait:[[RCUserInfo alloc] initWithUserId:dataModel.userId name:dataModel.name portrait:@""]];
             [self.leftImageView sd_setImageWithURL:[NSURL fileURLWithPath:localUrl] placeholderImage:[UIImage imageNamed:@"default_user_image"]];
         }
     }
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    CGRect frame = self.contentView.frame;
+    frame.size.width = YB_SCREEN_WIDTH;
+
+    self.contentView.frame = frame;
 }
 
 @end

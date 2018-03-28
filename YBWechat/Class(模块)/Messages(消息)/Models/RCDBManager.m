@@ -126,7 +126,7 @@ static NSString * const groupMemberTableName = @"GROUPMEMBERTABLE";
 //从表中获取所有用户信息
 -(NSArray *) getAllUserInfo
 {
-    NSMutableArray *allUsers = [NSMutableArray new];
+    NSMutableArray *allUsers = [[NSMutableArray alloc]init];
     FMDatabaseQueue *queue = [RCDBHelper getDatabaseQueue];
     [queue inDatabase:^(FMDatabase *db) {
         FMResultSet *rs = [db executeQuery:@"SELECT * FROM USERTABLE"];
@@ -140,7 +140,7 @@ static NSString * const groupMemberTableName = @"GROUPMEMBERTABLE";
         }
         [rs close];
     }];
-    return allUsers;
+    return [allUsers copy];
 }
 
 //清空用户缓存数据

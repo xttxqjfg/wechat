@@ -103,4 +103,8 @@
  */
 + (NSString *)defaultUserPortrait:(RCUserInfo *)userInfo;
 
+//通讯录排序相关
++ (NSMutableDictionary *)sortedArrayWithPinYinDic:(NSArray *)userList;
++ (NSString *)hanZiToPinYinWithString:(NSString *)hanZi;
++ (NSString *)getFirstUpperLetter:(NSString *)hanzi;
 @end

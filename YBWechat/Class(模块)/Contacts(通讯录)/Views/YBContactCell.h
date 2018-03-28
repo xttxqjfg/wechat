@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ContactDateModel.h"
-
 @interface YBContactCell : UITableViewCell
 
-@property (nonatomic,strong) ContactDateModel *dataModel;
+@property (nonatomic,strong) YBUserInfo *dataModel;
 
 @end

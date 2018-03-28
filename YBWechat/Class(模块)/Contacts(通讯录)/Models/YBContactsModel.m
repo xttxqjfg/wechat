@@ -7,7 +7,6 @@
 //
 
 #import "YBContactsModel.h"
-#import "ContactDateModel.h"
 
 @implementation YBContactsModel
 
@@ -22,7 +21,13 @@
                 NSArray *userList = [[NSArray alloc]initWithArray:data[@"result"]];
                 NSMutableArray *userModelList = [[NSMutableArray alloc]init];
                 for (NSDictionary *dic in userList) {
-                    [userModelList addObject:[ContactDateModel yy_modelWithDictionary:dic]];
+                    @autoreleasepool {
+                        YBUserInfo *userInfo = [[YBUserInfo alloc]init];
+                        userInfo.userId = [dic objectForKey:@"userId"] ? [NSString stringWithFormat:@"%@",[dic objectForKey:@"userId"]] : @"";
+                        userInfo.name = [dic objectForKey:@"userName"] ? [NSString stringWithFormat:@"%@",[dic objectForKey:@"userName"]] : @"";
+                        userInfo.portraitUri = [dic objectForKey:@"userPortrait"] ? [NSString stringWithFormat:@"%@",[dic objectForKey:@"userPortrait"]] : @"";
+                        [userModelList addObject:userInfo];
+                    }
                 }
                 block(userModelList,nil);
             }
