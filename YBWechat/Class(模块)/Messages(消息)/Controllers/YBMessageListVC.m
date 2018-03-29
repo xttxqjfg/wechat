@@ -11,6 +11,8 @@
 #import "YBSearchView.h"
 #import "YBDropDownMenu.h"
 
+#import "YBSearchVC.h"
+
 @interface YBMessageListVC ()<YBSearchViewDelegate,YBDropDownMenuDelegate>
 
 @property (nonatomic,strong) YBSearchView *searchView;
@@ -69,12 +71,20 @@
 #pragma mark --YBSearchViewDelegate
 -(void)voiceBtnTapped
 {
-    
+    [self jumpToSearchVC:1];
 }
 
 -(void)searchViewTapped
 {
-    
+    [self jumpToSearchVC:0];
+}
+
+-(void)jumpToSearchVC:(NSInteger)type
+{
+    YBSearchVC *searchVC = [[YBSearchVC alloc]init];
+    [self presentViewController:searchVC animated:YES completion:^{
+        //
+    }];
 }
 
 #pragma mark --YBDropDownMenuDelegate
@@ -102,6 +112,10 @@
         _dropDownMenu.delegate = self;
     }
     return _dropDownMenu;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {

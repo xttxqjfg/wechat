@@ -79,7 +79,6 @@
     else
     {
         YBLoginVC *loginVC = [[YBLoginVC alloc]init];
-        loginVC.navBarBgAlpha = @"1.0";
         UINavigationController *rootNav = [[UINavigationController alloc]initWithRootViewController:loginVC];
         self.window.rootViewController = rootNav;
     }
@@ -89,8 +88,6 @@
 
 - (void)setupNavigationBar
 {
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
     UINavigationBar *bar = [UINavigationBar appearance];
     bar.barTintColor = YB_Global_NavBackColor;
     bar.tintColor = [UIColor whiteColor];
@@ -333,6 +330,5 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 
 @end

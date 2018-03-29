@@ -31,9 +31,11 @@
 		1A45B2DD2044F51800F5A48F /* DropDownMenuData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A45B2DC2044F51800F5A48F /* DropDownMenuData.plist */; };
 		1A4D401B2031396E002627A5 /* YBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D401A2031396E002627A5 /* YBSearchView.m */; };
 		1A4D401D2031397B002627A5 /* YBSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4D401C2031397B002627A5 /* YBSearchView.xib */; };
+		1A5D6F27206CD46000E15AF1 /* UITableViewIndex+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D6F26206CD46000E15AF1 /* UITableViewIndex+YB.m */; };
+		1A5D6F2E206CDD4400E15AF1 /* YBSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D6F2D206CDD4400E15AF1 /* YBSearchVC.m */; };
+		1A5D6F31206CDEAC00E15AF1 /* YBSearchToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D6F30206CDEAC00E15AF1 /* YBSearchToolView.m */; };
+		1A5D6F33206CDEB600E15AF1 /* YBSearchToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A5D6F32206CDEB600E15AF1 /* YBSearchToolView.xib */; };
 		1A6CAD522044EC9500752671 /* YBDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CAD512044EC9500752671 /* YBDropDownMenu.m */; };
-		1A891A462046435600E02DBB /* UINavigationController+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A891A452046435600E02DBB /* UINavigationController+YB.m */; };
-		1A891A492046447C00E02DBB /* UIViewController+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A891A482046447C00E02DBB /* UIViewController+YB.m */; };
 		1A9D6FA32021ADD000251BD2 /* NSFileManager+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA22021ADD000251BD2 /* NSFileManager+YB.m */; };
 		1A9D6FA62021B36800251BD2 /* YBButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA52021B36800251BD2 /* YBButtonView.m */; };
 		1A9D6FA82021B37000251BD2 /* YBButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA72021B37000251BD2 /* YBButtonView.xib */; };
@@ -104,12 +106,15 @@
 		1A4D40192031396E002627A5 /* YBSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSearchView.h; sourceTree = "<group>"; };
 		1A4D401A2031396E002627A5 /* YBSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSearchView.m; sourceTree = "<group>"; };
 		1A4D401C2031397B002627A5 /* YBSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBSearchView.xib; sourceTree = "<group>"; };
+		1A5D6F25206CD46000E15AF1 /* UITableViewIndex+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewIndex+YB.h"; sourceTree = "<group>"; };
+		1A5D6F26206CD46000E15AF1 /* UITableViewIndex+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewIndex+YB.m"; sourceTree = "<group>"; };
+		1A5D6F2C206CDD4400E15AF1 /* YBSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSearchVC.h; sourceTree = "<group>"; };
+		1A5D6F2D206CDD4400E15AF1 /* YBSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSearchVC.m; sourceTree = "<group>"; };
+		1A5D6F2F206CDEAC00E15AF1 /* YBSearchToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSearchToolView.h; sourceTree = "<group>"; };
+		1A5D6F30206CDEAC00E15AF1 /* YBSearchToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSearchToolView.m; sourceTree = "<group>"; };
+		1A5D6F32206CDEB600E15AF1 /* YBSearchToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBSearchToolView.xib; sourceTree = "<group>"; };
 		1A6CAD502044EC9500752671 /* YBDropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBDropDownMenu.h; sourceTree = "<group>"; };
 		1A6CAD512044EC9500752671 /* YBDropDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBDropDownMenu.m; sourceTree = "<group>"; };
-		1A891A442046435600E02DBB /* UINavigationController+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+YB.h"; sourceTree = "<group>"; };
-		1A891A452046435600E02DBB /* UINavigationController+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+YB.m"; sourceTree = "<group>"; };
-		1A891A472046447C00E02DBB /* UIViewController+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YB.h"; sourceTree = "<group>"; };
-		1A891A482046447C00E02DBB /* UIViewController+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YB.m"; sourceTree = "<group>"; };
 		1A9D6FA12021ADD000251BD2 /* NSFileManager+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+YB.h"; sourceTree = "<group>"; };
 		1A9D6FA22021ADD000251BD2 /* NSFileManager+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+YB.m"; sourceTree = "<group>"; };
 		1A9D6FA42021B36800251BD2 /* YBButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBButtonView.h; sourceTree = "<group>"; };
@@ -243,10 +248,8 @@
 				1ABA2AFF2029B087009E4E98 /* YBUtils.m */,
 				1AD67477202AC62400A5BD9D /* RSATool.h */,
 				1AD67478202AC62400A5BD9D /* RSATool.m */,
-				1A891A442046435600E02DBB /* UINavigationController+YB.h */,
-				1A891A452046435600E02DBB /* UINavigationController+YB.m */,
-				1A891A472046447C00E02DBB /* UIViewController+YB.h */,
-				1A891A482046447C00E02DBB /* UIViewController+YB.m */,
+				1A5D6F25206CD46000E15AF1 /* UITableViewIndex+YB.h */,
+				1A5D6F26206CD46000E15AF1 /* UITableViewIndex+YB.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 		1A3E6326201835E000E683CA /* Class(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				1A5D6F28206CDD0600E15AF1 /* Search(搜索) */,
 				1A0E4C5320219F1D00745904 /* Common */,
 				1A0E4C4920219E5300745904 /* Login(登录) */,
 				1A3E632F201835E000E683CA /* Messages(消息) */,
@@ -488,6 +492,42 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1A5D6F28206CDD0600E15AF1 /* Search(搜索) */ = {
+			isa = PBXGroup;
+			children = (
+				1A5D6F2A206CDD0600E15AF1 /* Controllers */,
+				1A5D6F29206CDD0600E15AF1 /* Models */,
+				1A5D6F2B206CDD0600E15AF1 /* Views */,
+			);
+			path = "Search(搜索)";
+			sourceTree = "<group>";
+		};
+		1A5D6F29206CDD0600E15AF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A5D6F2A206CDD0600E15AF1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A5D6F2C206CDD4400E15AF1 /* YBSearchVC.h */,
+				1A5D6F2D206CDD4400E15AF1 /* YBSearchVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1A5D6F2B206CDD0600E15AF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A5D6F2F206CDEAC00E15AF1 /* YBSearchToolView.h */,
+				1A5D6F30206CDEAC00E15AF1 /* YBSearchToolView.m */,
+				1A5D6F32206CDEB600E15AF1 /* YBSearchToolView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5D3094BBC5B9EB764E7BCD3C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A3E631F2018301D00E683CA /* LaunchScreen.storyboard in Resources */,
+				1A5D6F33206CDEB600E15AF1 /* YBSearchToolView.xib in Resources */,
 				1A9D6FA82021B37000251BD2 /* YBButtonView.xib in Resources */,
 				1A0E4C652021A68500745904 /* YBInputTextView.xib in Resources */,
 				1A45B2DD2044F51800F5A48F /* DropDownMenuData.plist in Resources */,
@@ -673,7 +714,6 @@
 				1A9D6FA62021B36800251BD2 /* YBButtonView.m in Sources */,
 				1A3E63112018301D00E683CA /* main.m in Sources */,
 				1A45B2DA2044EF4C00F5A48F /* YBDropDownMenuCell.m in Sources */,
-				1A891A462046435600E02DBB /* UINavigationController+YB.m in Sources */,
 				1AE52204201855EB00AD174F /* YBMineVC.m in Sources */,
 				1AE5220820186F5200AD174F /* YBSettingTableViewCell.m in Sources */,
 				1A0E4C632021A67E00745904 /* YBInputTextView.m in Sources */,
@@ -686,12 +726,14 @@
 				1AD67479202AC62400A5BD9D /* RSATool.m in Sources */,
 				1A0E4C4F20219E6A00745904 /* YBLoginVC.m in Sources */,
 				1AF8B6E0202D73EE003C34C2 /* RCDataSource.m in Sources */,
+				1A5D6F31206CDEAC00E15AF1 /* YBSearchToolView.m in Sources */,
 				1AE521FE201855C500AD174F /* YBContactsVC.m in Sources */,
 				1A9D6FAF2021C2B700251BD2 /* YBLoginModel.m in Sources */,
 				1AF8B6E6202D88C2003C34C2 /* YBContactsModel.m in Sources */,
+				1A5D6F2E206CDD4400E15AF1 /* YBSearchVC.m in Sources */,
 				1A0E4C5620219F7500745904 /* YBUserCache.m in Sources */,
 				1AF8B6D4202D6ED3003C34C2 /* pinyin.c in Sources */,
-				1A891A492046447C00E02DBB /* UIViewController+YB.m in Sources */,
+				1A5D6F27206CD46000E15AF1 /* UITableViewIndex+YB.m in Sources */,
 				1A0E4C5E2021A50A00745904 /* YBRegisterView.m in Sources */,
 				1A1A36C920197ADD000B93EE /* YBMineHeadTableViewCell.m in Sources */,
 				1A0E4C5220219E8B00745904 /* YBRegisterVC.m in Sources */,

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+//透明导航栏相关
+#import "UIViewController+YB.h"
+
 @interface UINavigationController (YB) <UINavigationBarDelegate,UINavigationControllerDelegate>
 
 /**

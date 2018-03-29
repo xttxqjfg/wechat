@@ -13,6 +13,9 @@
 #import "YBContactsModel.h"
 
 #import "YBSearchView.h"
+#import "UITableViewIndex+YB.h"
+
+#import "YBSearchVC.h"
 
 @interface YBContactsVC ()<UITableViewDelegate,UITableViewDataSource,YBSearchViewDelegate>
 
@@ -95,12 +98,20 @@
 #pragma mark --YBSearchViewDelegate
 -(void)voiceBtnTapped
 {
-    
+    [self jumpToSearchVC:1];
 }
 
 -(void)searchViewTapped
 {
-    
+    [self jumpToSearchVC:0];
+}
+
+-(void)jumpToSearchVC:(NSInteger)type
+{
+    YBSearchVC *searchVC = [[YBSearchVC alloc]init];
+    [self presentViewController:searchVC animated:YES completion:^{
+        //
+    }];
 }
 
 #pragma mark --UITableViewDelegate,UITableViewDataSource
@@ -220,6 +231,10 @@
     return self.groupKeys;
 }
 
+-(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index{
+    return  index;
+}
+
 #pragma mark --get
 -(UITableView *)contactTable
 {
@@ -234,6 +249,8 @@
         _contactTable.sectionIndexBackgroundColor = [UIColor clearColor];
         _contactTable.sectionIndexColor = [UIColor blackColor];
         _contactTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        [_contactTable addIndexTip];
     }
     return _contactTable;
 }
@@ -278,6 +295,10 @@
         _groupKeys = [[NSMutableArray alloc]init];
     }
     return _groupKeys;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {

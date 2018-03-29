@@ -9,5 +9,6 @@ pod 'MJRefresh', '~> 3.1.12'
 #融云IM
 pod 'RongCloudIM', '2.8.7'
 pod 'YYModel', '~> 1.0.4'
+pod 'Aspects', '~> 1.4.1'
 
 end

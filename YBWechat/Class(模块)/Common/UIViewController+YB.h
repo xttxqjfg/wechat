@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+//透明导航栏相关
+#import "UINavigationController+YB.h"
+
 @interface UIViewController (YB)
 
 //vc的导航bar背景透明度
