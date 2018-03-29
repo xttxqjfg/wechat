@@ -89,6 +89,7 @@
 - (void)setupNavigationBar
 {
     UINavigationBar *bar = [UINavigationBar appearance];
+    bar.barStyle = UIBarStyleBlack;
     bar.barTintColor = YB_Global_NavBackColor;
     bar.tintColor = [UIColor whiteColor];
     bar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};

@@ -871,3 +871,11 @@ Servers_code(服务端源码)/target/wechat/WEB-INF/lib/spring-test-4.3.7.RELEAS
 Servers_code(服务端源码)/target/wechat/WEB-INF/lib/spring-tx-4.3.7.RELEASE.jar
 Servers_code(服务端源码)/target/wechat/WEB-INF/lib/spring-web-4.3.7.RELEASE.jar
 Servers_code(服务端源码)/target/wechat/WEB-INF/lib/spring-webmvc-4.3.7.RELEASE.jar
+Aspects.h
+Aspects.m
+LICENSE
+README.md
+Pods/Pods.xcodeproj/xcuserdata/yibo.xcuserdatad/xcschemes/Aspects.xcscheme
+Pods/Target Support Files/Aspects/Aspects-dummy.m
+Pods/Target Support Files/Aspects/Aspects-prefix.pch
+Pods/Target Support Files/Aspects/Aspects.xcconfig
