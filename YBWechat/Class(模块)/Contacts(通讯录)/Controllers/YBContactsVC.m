@@ -19,6 +19,8 @@
 
 #import "YBUserDetailVC.h"
 
+#import "YBPublicServiceListVC.h"
+
 @interface YBContactsVC ()<UITableViewDelegate,UITableViewDataSource,YBSearchViewDelegate>
 
 @property (nonatomic,strong) UITableView *contactTable;
@@ -162,7 +164,34 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (0 == indexPath.section) {
-        
+        switch (indexPath.row) {
+            case 0:
+            {
+                
+                break;
+            }
+            case 1:
+            {
+                
+                break;
+            }
+            case 2:
+            {
+                
+                break;
+            }
+            case 3:
+            {
+                YBPublicServiceListVC *publicServiceVC = [[YBPublicServiceListVC alloc] init];
+                publicServiceVC.title = @"公众号";
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:publicServiceVC animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
+                break;
+            }
+            default:
+                break;
+        }
     }
     else
     {

@@ -78,6 +78,13 @@
             info.userInfoDict = result;
             [info archiverAccount];
             
+            YBUserInfo *userInfo = [[YBUserInfo alloc]init];
+            userInfo.userId = [result objectForKey:@"userId"] ? [result objectForKey:@"userId"] : @"";
+            userInfo.name = [result objectForKey:@"userName"] ? [result objectForKey:@"userName"] : @"";
+            userInfo.portraitUri = [result objectForKey:@"userPortrait"] ? [result objectForKey:@"userPortrait"] : @"";
+            
+            [[RCDBManager shareInstance] insertUserToDB:userInfo];
+            
             if ([Golble_User_Token length] > 0) {
                 //初始化融云
                 [YBLoginModel initRongYun];
@@ -86,10 +93,7 @@
                     NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
                     
                     //与融云服务器建立连接之后，应该设置当前用户的用户信息，用于SDK显示和发送
-                    RCUserInfo *_currentUserInfo =
-                    [[RCUserInfo alloc] initWithUserId:Golble_User_Id
-                                                  name:Golble_User_Name
-                                              portrait:@""];
+                    RCUserInfo *_currentUserInfo = [[RCDBManager shareInstance] getUserByUserId:Golble_User_Id];
                     [RCIM sharedRCIM].currentUserInfo = _currentUserInfo;
                     
                     dispatch_async(dispatch_get_main_queue(), ^{

@@ -22,6 +22,7 @@
 		1A17C300206E0976009EFFF1 /* YBUserDetailAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17C2FE206E0976009EFFF1 /* YBUserDetailAlbumCell.m */; };
 		1A17C301206E0976009EFFF1 /* YBUserDetailAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A17C2FF206E0976009EFFF1 /* YBUserDetailAlbumCell.xib */; };
 		1A17C304206E1DDB009EFFF1 /* YBConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17C303206E1DDB009EFFF1 /* YBConversationVC.m */; };
+		1A17C307206E29CA009EFFF1 /* YBPublicServiceListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17C306206E29CA009EFFF1 /* YBPublicServiceListVC.m */; };
 		1A1A36C520197735000B93EE /* mineDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A36C420197735000B93EE /* mineDataList.plist */; };
 		1A1A36C920197ADD000B93EE /* YBMineHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A36C720197ADD000B93EE /* YBMineHeadTableViewCell.m */; };
 		1A1A36CA20197ADD000B93EE /* YBMineHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A36C820197ADD000B93EE /* YBMineHeadTableViewCell.xib */; };
@@ -105,6 +106,8 @@
 		1A17C2FF206E0976009EFFF1 /* YBUserDetailAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBUserDetailAlbumCell.xib; sourceTree = "<group>"; };
 		1A17C302206E1DDB009EFFF1 /* YBConversationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBConversationVC.h; sourceTree = "<group>"; };
 		1A17C303206E1DDB009EFFF1 /* YBConversationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBConversationVC.m; sourceTree = "<group>"; };
+		1A17C305206E29CA009EFFF1 /* YBPublicServiceListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPublicServiceListVC.h; sourceTree = "<group>"; };
+		1A17C306206E29CA009EFFF1 /* YBPublicServiceListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPublicServiceListVC.m; sourceTree = "<group>"; };
 		1A1A36C420197735000B93EE /* mineDataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mineDataList.plist; sourceTree = "<group>"; };
 		1A1A36C620197ADD000B93EE /* YBMineHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBMineHeadTableViewCell.h; sourceTree = "<group>"; };
 		1A1A36C720197ADD000B93EE /* YBMineHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBMineHeadTableViewCell.m; sourceTree = "<group>"; };
@@ -479,6 +482,8 @@
 				1AE521FA2018558C00AD174F /* YBMessageListVC.m */,
 				1A17C302206E1DDB009EFFF1 /* YBConversationVC.h */,
 				1A17C303206E1DDB009EFFF1 /* YBConversationVC.m */,
+				1A17C305206E29CA009EFFF1 /* YBPublicServiceListVC.h */,
+				1A17C306206E29CA009EFFF1 /* YBPublicServiceListVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -774,6 +779,7 @@
 				1A9D6FAB2021BBDD00251BD2 /* YBNetRequestManager.m in Sources */,
 				1A3E63392018361B00E683CA /* RootViewController.m in Sources */,
 				1A9D6FA62021B36800251BD2 /* YBButtonView.m in Sources */,
+				1A17C307206E29CA009EFFF1 /* YBPublicServiceListVC.m in Sources */,
 				1A3E63112018301D00E683CA /* main.m in Sources */,
 				1A45B2DA2044EF4C00F5A48F /* YBDropDownMenuCell.m in Sources */,
 				1AE52204201855EB00AD174F /* YBMineVC.m in Sources */,

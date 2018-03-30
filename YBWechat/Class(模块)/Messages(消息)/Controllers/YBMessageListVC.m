@@ -68,6 +68,21 @@
     }
 }
 
+//重写RCConversationListViewController的onSelectedTableRow事件
+- (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
+         conversationModel:(RCConversationModel *)model
+               atIndexPath:(NSIndexPath *)indexPath {
+    
+    YBConversationVC *chatVC = [[YBConversationVC alloc]init];
+    chatVC.conversationType = model.conversationType;
+    chatVC.targetId = model.targetId;
+    chatVC.title = model.conversationTitle;
+    
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:chatVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
+
 #pragma mark --YBSearchViewDelegate
 -(void)voiceBtnTapped
 {

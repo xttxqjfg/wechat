@@ -83,8 +83,8 @@
     //显示输入状态
     [RCIM sharedRCIM].enableTypingStatus = YES;
     //设置消息回执
-    [RCIM sharedRCIM].enabledReadReceiptConversationTypeList = @[@(ConversationType_PRIVATE),
-                                                                 @(ConversationType_GROUP)];
+//    [RCIM sharedRCIM].enabledReadReceiptConversationTypeList = @[@(ConversationType_PRIVATE),
+//                                                                 @(ConversationType_GROUP)];
     [RCIM sharedRCIM].enableSyncReadStatus = YES;
     //消息撤回
     [RCIM sharedRCIM].enableMessageRecall = YES;
