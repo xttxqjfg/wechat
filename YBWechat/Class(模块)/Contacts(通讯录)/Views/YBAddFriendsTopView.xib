@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="17D102" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YBAddFriendsTopView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zb-Ob-uOq">
+                    <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_friend_search" translatesAutoresizingMaskIntoConstraints="NO" id="K40-rW-TlP">
+                            <rect key="frame" x="10" y="10.5" width="35" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="4S8-Wv-Qud"/>
+                                <constraint firstAttribute="width" secondItem="K40-rW-TlP" secondAttribute="height" multiplier="1.2" id="ISm-Nn-2jW"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信号/手机号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xe-I3-Fvc">
+                            <rect key="frame" x="55" y="8" width="300" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="gxl-Qj-6tc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="4xe-I3-Fvc" firstAttribute="leading" secondItem="K40-rW-TlP" secondAttribute="trailing" constant="10" id="FNA-Ad-sNP"/>
+                        <constraint firstItem="4xe-I3-Fvc" firstAttribute="centerY" secondItem="K40-rW-TlP" secondAttribute="centerY" id="iDR-Q8-8Mv"/>
+                        <constraint firstItem="K40-rW-TlP" firstAttribute="centerY" secondItem="9Zb-Ob-uOq" secondAttribute="centerY" id="iJ4-fp-bFC"/>
+                        <constraint firstAttribute="height" constant="50" id="j8G-Gx-mgp"/>
+                        <constraint firstAttribute="trailing" secondItem="4xe-I3-Fvc" secondAttribute="trailing" constant="20" id="kaT-IM-xjQ"/>
+                        <constraint firstItem="K40-rW-TlP" firstAttribute="leading" secondItem="9Zb-Ob-uOq" secondAttribute="leading" constant="10" id="whd-Fv-AHT"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsW-MI-evp">
+                    <rect key="frame" x="0.0" y="65" width="250" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="7bA-gl-rbu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_friend_myqr" translatesAutoresizingMaskIntoConstraints="NO" id="adJ-Ed-nSw">
+                    <rect key="frame" x="260" y="64" width="23" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="adJ-Ed-nSw" secondAttribute="height" id="89b-P8-SOZ"/>
+                        <constraint firstAttribute="height" constant="23" id="UK1-PK-Jlm"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9Zb-Ob-uOq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BK9-sp-cJO"/>
+                <constraint firstItem="NsW-MI-evp" firstAttribute="top" secondItem="9Zb-Ob-uOq" secondAttribute="bottom" constant="5" id="BS9-g6-iyb"/>
+                <constraint firstItem="NsW-MI-evp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OrZ-uk-aah"/>
+                <constraint firstItem="9Zb-Ob-uOq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R5X-71-KQj"/>
+                <constraint firstItem="NsW-MI-evp" firstAttribute="width" secondItem="9Zb-Ob-uOq" secondAttribute="width" multiplier="2:3" id="RYJ-he-X04"/>
+                <constraint firstItem="adJ-Ed-nSw" firstAttribute="leading" secondItem="NsW-MI-evp" secondAttribute="trailing" constant="10" id="VFb-hE-ncQ"/>
+                <constraint firstAttribute="trailing" secondItem="9Zb-Ob-uOq" secondAttribute="trailing" id="hFu-fQ-3KJ"/>
+                <constraint firstItem="adJ-Ed-nSw" firstAttribute="centerY" secondItem="NsW-MI-evp" secondAttribute="centerY" id="sob-8a-Sm9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="myQRImageView" destination="adJ-Ed-nSw" id="GRb-ZY-ZRO"/>
+                <outlet property="searchActionView" destination="9Zb-Ob-uOq" id="Ze7-Lt-7yQ"/>
+                <outlet property="userInfoLabel" destination="NsW-MI-evp" id="RPN-Of-5TV"/>
+            </connections>
+            <point key="canvasLocation" x="28.5" y="-156"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_friend_myqr" width="20" height="20"/>
+        <image name="add_friend_search" width="36" height="30"/>
+    </resources>
+</document>

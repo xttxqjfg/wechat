@@ -9,10 +9,13 @@
 #import "YBSearchVC.h"
 
 #import "YBSearchToolView.h"
+#import "YBSearchEmptyView.h"
 
 @interface YBSearchVC ()<YBSearchToolViewDelegate>
 
 @property (nonatomic,strong) YBSearchToolView *searchView;
+
+@property (nonatomic,strong) YBSearchEmptyView *searchEmptyView;
 
 @end
 
@@ -25,6 +28,7 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     [self.view addSubview:self.searchView];
+    [self.view addSubview:self.searchEmptyView];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -46,6 +50,14 @@
         _searchView.delegate = self;
     }
     return _searchView;
+}
+
+-(YBSearchEmptyView *)searchEmptyView
+{
+    if (!_searchEmptyView) {
+        _searchEmptyView = [[YBSearchEmptyView alloc]initWithFrame:CGRectMake(0, 74, YB_SCREEN_WIDTH, YB_SCREEN_HEIGHT - 74)];
+    }
+    return _searchEmptyView;
 }
 
 - (void)didReceiveMemoryWarning {

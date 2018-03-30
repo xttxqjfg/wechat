@@ -34,6 +34,7 @@
 }
 
 - (IBAction)onCancleBtnClicked:(UIButton *)sender {
+    [self.searchContentTextField resignFirstResponder];
     if ([self.delegate respondsToSelector:@selector(searchCancleBtnClicked)]) {
         [self.delegate searchCancleBtnClicked];
     }
