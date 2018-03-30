@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>groupChat</string>
+		<string>add_friend_group</string>
 		<key>title</key>
 		<string>面对面建群</string>
 		<key>subtitle</key>

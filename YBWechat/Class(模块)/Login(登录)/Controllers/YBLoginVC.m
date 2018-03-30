@@ -50,7 +50,7 @@
 }
 
 #pragma mark YBButtonViewDelegate
--(void)btnViewClicked
+-(void)btnViewClickedWithTag:(NSInteger)tag
 {
 
     if (0 == [[self.userIdInput getInputTextStr] length] || 0 == [[self.userPswInput getInputTextStr] length]) {
@@ -175,7 +175,8 @@
 {
     if (!_loginBtn) {
         _loginBtn = [[YBButtonView alloc]initWithFrame:CGRectMake(30, CGRectGetMaxY(self.markLabel.frame) + 100, YB_SCREEN_WIDTH - 60, 50)];
-        _loginBtn.dataDic = @{@"title":@"登 录"};
+        _loginBtn.btnLabel.text = @"登 录";
+        _loginBtn.btnBackView.backgroundColor = YB_Tabbar_TintColorSel;
         _loginBtn.delegate = self;
     }
     return _loginBtn;

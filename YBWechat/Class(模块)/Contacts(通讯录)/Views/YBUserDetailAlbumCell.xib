@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="17D102" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YBUserDetailAlbumCell" rowHeight="77" id="KGk-i7-Jjw" customClass="YBUserDetailAlbumCell">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="76.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人相册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x21-sJ-sV2">
+                        <rect key="frame" x="10" y="26" width="80" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Hbe-vM-3uV"/>
+                            <constraint firstAttribute="height" constant="25" id="Vnp-LF-Vfv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VYU-Ju-kAU">
+                        <rect key="frame" x="100" y="15" width="46.5" height="46.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="VYU-Ju-kAU" secondAttribute="height" multiplier="1:1" id="DHh-mo-toD"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uby-Rv-UBZ">
+                        <rect key="frame" x="151.5" y="15" width="46.5" height="46.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="uby-Rv-UBZ" secondAttribute="height" multiplier="1:1" id="6JH-oq-ZAD"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rcn-TV-xed">
+                        <rect key="frame" x="203" y="15" width="46.5" height="46.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Rcn-TV-xed" secondAttribute="height" multiplier="1:1" id="2cJ-qG-x5m"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzI-OZ-ckJ">
+                        <rect key="frame" x="254.5" y="15" width="46.5" height="46.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="LzI-OZ-ckJ" secondAttribute="height" multiplier="1:1" id="r7j-Dx-k0l"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Rcn-TV-xed" firstAttribute="width" secondItem="Rcn-TV-xed" secondAttribute="height" multiplier="1:1" id="3yo-S9-feJ"/>
+                    <constraint firstItem="LzI-OZ-ckJ" firstAttribute="centerY" secondItem="VYU-Ju-kAU" secondAttribute="centerY" id="8Oy-EN-2nJ"/>
+                    <constraint firstItem="Rcn-TV-xed" firstAttribute="width" secondItem="Rcn-TV-xed" secondAttribute="height" multiplier="1:1" id="GpT-0H-qLQ"/>
+                    <constraint firstItem="uby-Rv-UBZ" firstAttribute="width" secondItem="uby-Rv-UBZ" secondAttribute="height" multiplier="1:1" id="HZq-H3-da4"/>
+                    <constraint firstItem="uby-Rv-UBZ" firstAttribute="centerY" secondItem="VYU-Ju-kAU" secondAttribute="centerY" id="JIi-Vf-B3f"/>
+                    <constraint firstItem="uby-Rv-UBZ" firstAttribute="leading" secondItem="VYU-Ju-kAU" secondAttribute="trailing" constant="5" id="Kpf-fB-dH5"/>
+                    <constraint firstItem="Rcn-TV-xed" firstAttribute="centerY" secondItem="VYU-Ju-kAU" secondAttribute="centerY" id="MQv-GE-bcP"/>
+                    <constraint firstItem="LzI-OZ-ckJ" firstAttribute="leading" secondItem="Rcn-TV-xed" secondAttribute="trailing" constant="5" id="Mtg-zI-Hg2"/>
+                    <constraint firstItem="LzI-OZ-ckJ" firstAttribute="width" secondItem="VYU-Ju-kAU" secondAttribute="width" id="NPY-YE-dDf"/>
+                    <constraint firstItem="VYU-Ju-kAU" firstAttribute="leading" secondItem="x21-sJ-sV2" secondAttribute="trailing" constant="10" id="OZK-bc-xSq"/>
+                    <constraint firstItem="LzI-OZ-ckJ" firstAttribute="width" secondItem="LzI-OZ-ckJ" secondAttribute="height" multiplier="1:1" id="Tcp-AU-p0a"/>
+                    <constraint firstItem="Rcn-TV-xed" firstAttribute="leading" secondItem="uby-Rv-UBZ" secondAttribute="trailing" constant="5" id="ams-6R-iSq"/>
+                    <constraint firstItem="x21-sJ-sV2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="e2G-ag-Far"/>
+                    <constraint firstItem="LzI-OZ-ckJ" firstAttribute="width" secondItem="LzI-OZ-ckJ" secondAttribute="height" multiplier="1:1" id="k3E-mS-fGi"/>
+                    <constraint firstAttribute="bottom" secondItem="VYU-Ju-kAU" secondAttribute="bottom" constant="15" id="kgh-HY-j2J"/>
+                    <constraint firstItem="uby-Rv-UBZ" firstAttribute="width" secondItem="VYU-Ju-kAU" secondAttribute="width" id="mfO-qR-jIf"/>
+                    <constraint firstItem="VYU-Ju-kAU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="msi-af-0py"/>
+                    <constraint firstItem="LzI-OZ-ckJ" firstAttribute="width" secondItem="LzI-OZ-ckJ" secondAttribute="height" multiplier="1:1" id="sTo-eu-xKK"/>
+                    <constraint firstItem="Rcn-TV-xed" firstAttribute="width" secondItem="VYU-Ju-kAU" secondAttribute="width" id="tYQ-dP-pPX"/>
+                    <constraint firstItem="x21-sJ-sV2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wG0-64-QSS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="firstImageView" destination="VYU-Ju-kAU" id="VEn-tG-eH0"/>
+                <outlet property="forthImageView" destination="LzI-OZ-ckJ" id="8lC-Ev-gEf"/>
+                <outlet property="leftLabel" destination="x21-sJ-sV2" id="wDb-33-rMk"/>
+                <outlet property="secondImageView" destination="uby-Rv-UBZ" id="f6C-FD-Yys"/>
+                <outlet property="thirdImageView" destination="Rcn-TV-xed" id="7og-z7-EkS"/>
+            </connections>
+            <point key="canvasLocation" x="60" y="68.5"/>
+        </tableViewCell>
+    </objects>
+</document>

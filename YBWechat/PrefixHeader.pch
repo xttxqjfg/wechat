@@ -22,6 +22,7 @@
     #import <UIImageView+WebCache.h>
     #import <MBProgressHUD/MBProgressHUD.h>
     #import <RongIMKit/RongIMKit.h>
+    #import <RongCallKit/RongCallKit.h>
     #import <WebKit/WebKit.h>
     #import <MJRefresh/MJRefresh.h>
     #import "YBUserCache.h"
@@ -34,6 +35,7 @@
     #import "YBGroupInfo.h"
     #import "RCDBManager.h"
     #import "YYModel.h"
+    #import "YBConversationVC.h"
 
     #import <objc/runtime.h>
 

@@ -10,8 +10,7 @@
 
 
 @interface YBButtonView()
-@property (weak, nonatomic) IBOutlet UIView *btnBackView;
-@property (weak, nonatomic) IBOutlet UILabel *btnLabel;
+
 @end
 
 @implementation YBButtonView
@@ -25,7 +24,6 @@
         
         self.btnBackView.layer.cornerRadius = 5.0;
         self.btnBackView.layer.masksToBounds = YES;
-        self.btnBackView.backgroundColor = [UIColor colorWithRed:39.0/255.0 green:152.0/255.0 blue:61.0/255.0 alpha:1.0];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(btnViewTapped)];
         [self addGestureRecognizer:tap];
@@ -35,16 +33,9 @@
 
 -(void)btnViewTapped
 {
-    if ([self.delegate respondsToSelector:@selector(btnViewClicked)]) {
-        [self.delegate btnViewClicked];
+    if ([self.delegate respondsToSelector:@selector(btnViewClickedWithTag:)]) {
+        [self.delegate btnViewClickedWithTag:self.tag];
     }
-}
-
--(void)setDataDic:(NSDictionary *)dataDic
-{
-    _dataDic = dataDic;
-    
-    self.btnLabel.text = [dataDic objectForKey:@"title"] ? [NSString stringWithFormat:@"%@",[dataDic objectForKey:@"title"]] : @"";
 }
 
 @end

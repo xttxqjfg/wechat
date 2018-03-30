@@ -67,13 +67,13 @@
     
     //设置会话列表头像和会话界面头像
 
-    [RCIM sharedRCIM].globalConversationPortraitSize = CGSizeMake(46 * YB_WIDTH_PRO, 46 * YB_WIDTH_PRO);
+    [RCIM sharedRCIM].globalConversationPortraitSize = CGSizeMake(40 * YB_WIDTH_PRO, 40 * YB_WIDTH_PRO);
     //会话列表的头像形状
-    [RCIM sharedRCIM].globalConversationAvatarStyle = RC_USER_AVATAR_CYCLE;
+    [RCIM sharedRCIM].globalConversationAvatarStyle = RC_USER_AVATAR_RECTANGLE;
     //聊天界面头像的大小
-    [RCIM sharedRCIM].globalMessagePortraitSize = CGSizeMake(40 * YB_WIDTH_PRO, 40 * YB_WIDTH_PRO);
+    [RCIM sharedRCIM].globalMessagePortraitSize = CGSizeMake(35 * YB_WIDTH_PRO, 35 * YB_WIDTH_PRO);
     //聊天界面的头像形状
-    [RCIM sharedRCIM].globalMessageAvatarStyle = RC_USER_AVATAR_CYCLE;
+    [RCIM sharedRCIM].globalMessageAvatarStyle = RC_USER_AVATAR_RECTANGLE;
     
     //开启用户信息和群组信息的持久化
     [RCIM sharedRCIM].enablePersistentUserInfoCache = NO;

@@ -10,14 +10,15 @@
 
 @protocol YBButtonViewDelegate <NSObject>
 
--(void)btnViewClicked;
+-(void)btnViewClickedWithTag:(NSInteger)tag;
 
 @end
 
 @interface YBButtonView : UIView
 
-@property (nonatomic,strong) NSDictionary *dataDic;
-
 @property (nonatomic,assign) id<YBButtonViewDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet UIView *btnBackView;
+@property (weak, nonatomic) IBOutlet UILabel *btnLabel;
 
 @end

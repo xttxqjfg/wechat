@@ -44,7 +44,7 @@
 }
 
 #pragma mark YBButtonViewDelegate
--(void)btnViewClicked
+-(void)btnViewClickedWithTag:(NSInteger)tag
 {
     
     if (![YBUtils validateStrByRegExp:[self.userIdInput getInputTextStr] regStr:REG_USERID]) {
@@ -167,7 +167,8 @@
 {
     if (!_registerBtn) {
         _registerBtn = [[YBButtonView alloc]initWithFrame:CGRectMake(30, CGRectGetMaxY(self.userPswInput.frame) + 100, YB_SCREEN_WIDTH - 60, 50)];
-        _registerBtn.dataDic = @{@"title":@"注 册"};
+        _registerBtn.btnLabel.text = @"注 册";
+        _registerBtn.btnBackView.backgroundColor = YB_Tabbar_TintColorSel;
         _registerBtn.delegate = self;
     }
     return _registerBtn;

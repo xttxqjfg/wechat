@@ -17,6 +17,8 @@
 
 #import "YBSearchVC.h"
 
+#import "YBUserDetailVC.h"
+
 @interface YBContactsVC ()<UITableViewDelegate,UITableViewDataSource,YBSearchViewDelegate>
 
 @property (nonatomic,strong) UITableView *contactTable;
@@ -158,6 +160,21 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (0 == indexPath.section) {
+        
+    }
+    else
+    {
+        NSString *letter = [self.groupKeys objectAtIndex:indexPath.section - 1];
+        NSArray *sectionUserInfoList = self.userListInfo[letter];
+        
+        YBUserDetailVC *detailVC = [[YBUserDetailVC alloc]init];
+        detailVC.userInfo = sectionUserInfoList[indexPath.row];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:detailVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
