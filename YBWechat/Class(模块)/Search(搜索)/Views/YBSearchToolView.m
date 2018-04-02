@@ -26,6 +26,7 @@
         self.searchBackgroundView.layer.masksToBounds = YES;
         
         self.searchContentTextField.tintColor = YB_Tabbar_TintColorSel;
+        [self.searchContentTextField becomeFirstResponder];
     }
     return self;
 }

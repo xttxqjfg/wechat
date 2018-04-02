@@ -50,6 +50,8 @@
 		1A5D6F31206CDEAC00E15AF1 /* YBSearchToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D6F30206CDEAC00E15AF1 /* YBSearchToolView.m */; };
 		1A5D6F33206CDEB600E15AF1 /* YBSearchToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A5D6F32206CDEB600E15AF1 /* YBSearchToolView.xib */; };
 		1A6CAD522044EC9500752671 /* YBDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CAD512044EC9500752671 /* YBDropDownMenu.m */; };
+		1A73549D2071C2130011443A /* YBMyQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A73549C2071C2130011443A /* YBMyQRView.m */; };
+		1A73549F2071C21F0011443A /* YBMyQRView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A73549E2071C21F0011443A /* YBMyQRView.xib */; };
 		1A9D6FA32021ADD000251BD2 /* NSFileManager+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA22021ADD000251BD2 /* NSFileManager+YB.m */; };
 		1A9D6FA62021B36800251BD2 /* YBButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA52021B36800251BD2 /* YBButtonView.m */; };
 		1A9D6FA82021B37000251BD2 /* YBButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA72021B37000251BD2 /* YBButtonView.xib */; };
@@ -151,6 +153,9 @@
 		1A5D6F32206CDEB600E15AF1 /* YBSearchToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBSearchToolView.xib; sourceTree = "<group>"; };
 		1A6CAD502044EC9500752671 /* YBDropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBDropDownMenu.h; sourceTree = "<group>"; };
 		1A6CAD512044EC9500752671 /* YBDropDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBDropDownMenu.m; sourceTree = "<group>"; };
+		1A73549B2071C2130011443A /* YBMyQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBMyQRView.h; sourceTree = "<group>"; };
+		1A73549C2071C2130011443A /* YBMyQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBMyQRView.m; sourceTree = "<group>"; };
+		1A73549E2071C21F0011443A /* YBMyQRView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBMyQRView.xib; sourceTree = "<group>"; };
 		1A9D6FA12021ADD000251BD2 /* NSFileManager+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+YB.h"; sourceTree = "<group>"; };
 		1A9D6FA22021ADD000251BD2 /* NSFileManager+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+YB.m"; sourceTree = "<group>"; };
 		1A9D6FA42021B36800251BD2 /* YBButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBButtonView.h; sourceTree = "<group>"; };
@@ -382,6 +387,9 @@
 				1A1A36C620197ADD000B93EE /* YBMineHeadTableViewCell.h */,
 				1A1A36C720197ADD000B93EE /* YBMineHeadTableViewCell.m */,
 				1A1A36C820197ADD000B93EE /* YBMineHeadTableViewCell.xib */,
+				1A73549B2071C2130011443A /* YBMyQRView.h */,
+				1A73549C2071C2130011443A /* YBMyQRView.m */,
+				1A73549E2071C21F0011443A /* YBMyQRView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -684,6 +692,7 @@
 				1A2DC90F206DCDDE003D02A2 /* YBSearchEmptyView.xib in Resources */,
 				1A17C301206E0976009EFFF1 /* YBUserDetailAlbumCell.xib in Resources */,
 				1ABA2B052029B0CD009E4E98 /* YBInfoLabel.xib in Resources */,
+				1A73549F2071C21F0011443A /* YBMyQRView.xib in Resources */,
 				1AE5220920186F5200AD174F /* YBSettingTableViewCell.xib in Resources */,
 				1A3E631C2018301D00E683CA /* Assets.xcassets in Resources */,
 				1A2DC91B206DD75C003D02A2 /* addFriendsData.plist in Resources */,
@@ -768,6 +777,7 @@
 				1A2DC90D206DCDD6003D02A2 /* YBSearchEmptyView.m in Sources */,
 				1A9D6FA32021ADD000251BD2 /* NSFileManager+YB.m in Sources */,
 				1A4D401B2031396E002627A5 /* YBSearchView.m in Sources */,
+				1A73549D2071C2130011443A /* YBMyQRView.m in Sources */,
 				1AF8B6D7202D6F57003C34C2 /* YBUserInfo.m in Sources */,
 				1A3E63142018301D00E683CA /* AppDelegate.m in Sources */,
 				1AF8B6D1202D6B8C003C34C2 /* RCDBHelper.m in Sources */,

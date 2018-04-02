@@ -10,7 +10,68 @@
 #import "DefaultPortraitView.h"
 #import "pinyin.h"
 
+#import <CoreImage/CoreImage.h>
+
 @implementation YBUtils
+
+//使用字符串创建二维码图片，配合excludeFuzzyImageFromCIImage方法使用
++(UIImage *) qrImageWithStr:(NSString *)str
+{
+    // 1. 创建一个二维码滤镜实例(CIFilter)
+    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    [filter setDefaults];
+    
+    // 2. 给滤镜添加数据
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    // 使用KVC的方式给filter赋值
+    [filter setValue:data forKeyPath:@"inputMessage"];
+    [filter setValue:@"Q" forKey:@"inputCorrectionLevel"];
+    
+    // 3. 生成二维码
+    CIImage *image = [filter outputImage];
+    
+    return [self excludeFuzzyImageFromCIImage:image size:300.0];
+}
+
+#pragma mark -- 对图像进行清晰处理，很关键！
++ (UIImage *)excludeFuzzyImageFromCIImage: (CIImage *)image size: (CGFloat)size
+
+{
+    
+    CGRect extent = CGRectIntegral(image.extent);
+    
+    //通过比例计算，让最终的图像大小合理（正方形是我们想要的）
+    CGFloat scale = MIN(size / CGRectGetWidth(extent), size / CGRectGetHeight(extent));
+    
+    size_t width = CGRectGetWidth(extent) * scale;
+    
+    size_t height = CGRectGetHeight(extent) * scale;
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+    
+    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaNone);
+    
+    CIContext * context = [CIContext contextWithOptions: nil];
+    
+    CGImageRef bitmapImage = [context createCGImage: image fromRect: extent];
+    
+    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
+    
+    CGContextScaleCTM(bitmapRef, scale, scale);
+    
+    CGContextDrawImage(bitmapRef, extent, bitmapImage);
+    
+    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
+    
+    //切记ARC模式下是不会对CoreFoundation框架的对象进行自动释放的，所以要我们手动释放
+    CGContextRelease(bitmapRef);
+    
+    CGImageRelease(bitmapImage);
+    
+    CGColorSpaceRelease(colorSpace);
+    
+    return [UIImage imageWithCGImage: scaledImage];
+}
 
 +(NSString *) urlEncode:(NSString *)str
 {
@@ -320,5 +381,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", match];
     return [predicate evaluateWithObject:text];
 }
+
+
 
 @end

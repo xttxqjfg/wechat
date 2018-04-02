@@ -11,6 +11,10 @@
 #import "YBAddFriensCell.h"
 #import "YBAddFriendsTopView.h"
 
+#import "YBSearchVC.h"
+
+#import "YBMyQRView.h"
+
 @interface YBAddFriendsVC ()<UITableViewDelegate,UITableViewDataSource,YBAddFriendsTopViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray *dataArr;
@@ -18,6 +22,8 @@
 @property (nonatomic,strong) UITableView *addFriendTable;
 
 @property (nonatomic,strong) YBAddFriendsTopView *addFriendsTopView;
+
+@property (nonatomic,strong) UIView *myQRView;
 
 @end
 
@@ -35,9 +41,36 @@
 }
 
 #pragma mark YBAddFriendsTopViewDelegate
+//1表示点击了搜索框，2表示点击了二维码
 -(void)topViewActionWithType:(NSInteger)type
 {
-    
+    switch (type) {
+        case 1:
+        {
+            YBSearchVC *searchVC = [[YBSearchVC alloc]init];
+            [self presentViewController:searchVC animated:YES completion:^{
+                //
+            }];
+            break;
+        }
+        case 2:
+        {
+            self.myQRView.userInteractionEnabled = YES;
+            self.myQRView.hidden = NO;
+            [self.view addSubview:self.myQRView];
+            
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+-(void)myQRViewTapped
+{
+    self.myQRView.userInteractionEnabled = YES;
+    self.myQRView.hidden = NO;
+    [self.myQRView removeFromSuperview];
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
@@ -100,6 +133,28 @@
         _addFriendsTopView.delegate = self;
     }
     return _addFriendsTopView;
+}
+
+-(UIView *)myQRView
+{
+    if (!_myQRView) {
+        _myQRView = [[UIView alloc]initWithFrame:self.view.bounds];
+        _myQRView.backgroundColor = [UIColor colorWithRed:143.0/255.0 green:142.0/255.0 blue:146.0/255.0 alpha:1.0];
+        _myQRView.hidden = YES;
+        _myQRView.userInteractionEnabled = NO;
+        
+        CGFloat qrViewW = YB_SCREEN_WIDTH - 40;
+        CGFloat qrViewH = qrViewW * 1.4;;
+        CGFloat qrViewY = (YB_SCREEN_HEIGHT - qrViewH) / 2;
+        
+        YBMyQRView *qrView = [[YBMyQRView alloc]initWithFrame:CGRectMake(20, qrViewY, qrViewW, qrViewH)];
+        [_myQRView addSubview:qrView];
+        qrView.userInfo = [YBUserCache unArchiverAccount].userInfoDict;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(myQRViewTapped)];
+        [_myQRView addGestureRecognizer:tap];
+    }
+    return _myQRView;
 }
 
 -(NSMutableArray *)dataArr

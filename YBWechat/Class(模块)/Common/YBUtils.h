@@ -10,6 +10,13 @@
 
 @interface YBUtils : NSObject
 
+/**
+ 将字符串生成二维码
+ 
+ @param str json字符串
+ @return return value description
+ */
++(UIImage *) qrImageWithStr:(NSString *)str;
 
 /**
  url地址进行编码，包括中文
