@@ -48,6 +48,8 @@
                                         @(ConversationType_APPSERVICE),
                                         @(ConversationType_SYSTEM)]];
     
+//    [self setCollectionConversationType:@[@(ConversationType_APPSERVICE)]];
+    
     //添加搜索框
     self.conversationListTableView.tableHeaderView = self.searchView;
     
@@ -72,15 +74,29 @@
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
          conversationModel:(RCConversationModel *)model
                atIndexPath:(NSIndexPath *)indexPath {
-    
-    YBConversationVC *chatVC = [[YBConversationVC alloc]init];
-    chatVC.conversationType = model.conversationType;
-    chatVC.targetId = model.targetId;
-    chatVC.title = model.conversationTitle;
-    
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:chatVC animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
+//    if (conversationModelType == RC_CONVERSATION_MODEL_TYPE_COLLECTION) {
+//        
+//        YBMessageListVC *collectionListVC =
+//        [[YBMessageListVC alloc] init];
+//        NSArray *array = [NSArray
+//                          arrayWithObject:[NSNumber numberWithInt:model.conversationType]];
+//        [collectionListVC setDisplayConversationTypes:array];
+//        [collectionListVC setCollectionConversationType:nil];
+//        collectionListVC.isEnteredToCollectionViewController = YES;
+//        self.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:collectionListVC animated:YES];
+//    }
+//    else
+//    {
+        YBConversationVC *chatVC = [[YBConversationVC alloc]init];
+        chatVC.conversationType = model.conversationType;
+        chatVC.targetId = model.targetId;
+        chatVC.title = model.conversationTitle;
+        
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:chatVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+//    }
 }
 
 #pragma mark --YBSearchViewDelegate
