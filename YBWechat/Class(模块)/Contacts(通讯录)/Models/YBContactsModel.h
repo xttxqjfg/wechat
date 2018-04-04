@@ -14,4 +14,6 @@
 
 + (void)userDetailRequest:(NSDictionary *)params Block:(void(^)(NSDictionary *result, NSString *message))block;
 
++ (void)pubSerMenuListRequest:(NSDictionary *)params Block:(void(^)(NSArray *result, NSString *message))block;
+
 @end

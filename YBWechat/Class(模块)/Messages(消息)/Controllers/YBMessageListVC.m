@@ -13,6 +13,8 @@
 
 #import "YBSearchVC.h"
 
+#import "YBPubSerConversationVC.h"
+
 @interface YBMessageListVC ()<YBSearchViewDelegate,YBDropDownMenuDelegate>
 
 @property (nonatomic,strong) YBSearchView *searchView;
@@ -74,20 +76,19 @@
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
          conversationModel:(RCConversationModel *)model
                atIndexPath:(NSIndexPath *)indexPath {
-//    if (conversationModelType == RC_CONVERSATION_MODEL_TYPE_COLLECTION) {
-//        
-//        YBMessageListVC *collectionListVC =
-//        [[YBMessageListVC alloc] init];
-//        NSArray *array = [NSArray
-//                          arrayWithObject:[NSNumber numberWithInt:model.conversationType]];
-//        [collectionListVC setDisplayConversationTypes:array];
-//        [collectionListVC setCollectionConversationType:nil];
-//        collectionListVC.isEnteredToCollectionViewController = YES;
-//        self.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:collectionListVC animated:YES];
-//    }
-//    else
-//    {
+    if (ConversationType_APPSERVICE == model.conversationType) {
+        
+        YBPubSerConversationVC *pubSerConversationVC = [[YBPubSerConversationVC alloc] init];
+        pubSerConversationVC.conversationType = model.conversationType;
+        pubSerConversationVC.targetId = model.targetId;
+        pubSerConversationVC.title = model.conversationTitle;
+        
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:pubSerConversationVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    }
+    else
+    {
         YBConversationVC *chatVC = [[YBConversationVC alloc]init];
         chatVC.conversationType = model.conversationType;
         chatVC.targetId = model.targetId;
@@ -96,7 +97,7 @@
         self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:chatVC animated:YES];
         self.hidesBottomBarWhenPushed = NO;
-//    }
+    }
 }
 
 #pragma mark --YBSearchViewDelegate

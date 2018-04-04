@@ -68,6 +68,7 @@
 		1AE5220820186F5200AD174F /* YBSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5220620186F5200AD174F /* YBSettingTableViewCell.m */; };
 		1AE5220920186F5200AD174F /* YBSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE5220720186F5200AD174F /* YBSettingTableViewCell.xib */; };
 		1AE5220B2018846C00AD174F /* discoverDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AE5220A2018846C00AD174F /* discoverDataList.plist */; };
+		1AF5A73F2074A69200A14940 /* YBPubSerConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A73E2074A69200A14940 /* YBPubSerConversationVC.m */; };
 		1AF8B6D1202D6B8C003C34C2 /* RCDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8B6D0202D6B8C003C34C2 /* RCDBHelper.m */; };
 		1AF8B6D4202D6ED3003C34C2 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8B6D2202D6ED3003C34C2 /* pinyin.c */; };
 		1AF8B6D7202D6F57003C34C2 /* YBUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8B6D6202D6F57003C34C2 /* YBUserInfo.m */; };
@@ -186,6 +187,8 @@
 		1AE5220620186F5200AD174F /* YBSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSettingTableViewCell.m; sourceTree = "<group>"; };
 		1AE5220720186F5200AD174F /* YBSettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBSettingTableViewCell.xib; sourceTree = "<group>"; };
 		1AE5220A2018846C00AD174F /* discoverDataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = discoverDataList.plist; sourceTree = "<group>"; };
+		1AF5A73D2074A69200A14940 /* YBPubSerConversationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPubSerConversationVC.h; sourceTree = "<group>"; };
+		1AF5A73E2074A69200A14940 /* YBPubSerConversationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPubSerConversationVC.m; sourceTree = "<group>"; };
 		1AF8B6CF202D6B8C003C34C2 /* RCDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDBHelper.h; sourceTree = "<group>"; };
 		1AF8B6D0202D6B8C003C34C2 /* RCDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDBHelper.m; sourceTree = "<group>"; };
 		1AF8B6D2202D6ED3003C34C2 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
@@ -492,6 +495,8 @@
 				1A17C303206E1DDB009EFFF1 /* YBConversationVC.m */,
 				1A17C305206E29CA009EFFF1 /* YBPublicServiceListVC.h */,
 				1A17C306206E29CA009EFFF1 /* YBPublicServiceListVC.m */,
+				1AF5A73D2074A69200A14940 /* YBPubSerConversationVC.h */,
+				1AF5A73E2074A69200A14940 /* YBPubSerConversationVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -809,6 +814,7 @@
 				1A5D6F31206CDEAC00E15AF1 /* YBSearchToolView.m in Sources */,
 				1AE521FE201855C500AD174F /* YBContactsVC.m in Sources */,
 				1A9D6FAF2021C2B700251BD2 /* YBLoginModel.m in Sources */,
+				1AF5A73F2074A69200A14940 /* YBPubSerConversationVC.m in Sources */,
 				1AF8B6E6202D88C2003C34C2 /* YBContactsModel.m in Sources */,
 				1A5D6F2E206CDD4400E15AF1 /* YBSearchVC.m in Sources */,
 				1A0E4C5620219F7500745904 /* YBUserCache.m in Sources */,

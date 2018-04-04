@@ -64,4 +64,26 @@
     }];
 }
 
++ (void)pubSerMenuListRequest:(NSDictionary *)params Block:(void(^)(NSArray *result, NSString *message))block
+{
+    [[YBNetRequestManager sharedManager] requestDataWithPath:SNet_PublicServer_Menu WithParameters:params WithRequstStyle:@"post" Progress:^(NSProgress * _Nonnull progress) {
+        //
+    } andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        
+        if ([data isKindOfClass:[NSDictionary class]]) {
+            if (![data objectForKey:@"msg"]) {
+                NSArray *menuList = [[NSArray alloc]initWithArray:data[@"result"]];
+                block(menuList,nil);
+            }
+            else {
+                NSString *message = data[@"msg"];
+                block(nil,message);
+            }
+        }
+        else {
+            block(nil,error.localizedDescription);
+        }
+    }];
+}
+
 @end

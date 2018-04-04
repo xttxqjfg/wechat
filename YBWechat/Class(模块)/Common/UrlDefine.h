@@ -10,10 +10,10 @@
 #define UrlDefine_h
 
 //本地测试地址
-//#define SNet_BaseURL @"http://192.168.8.100:8090"
+//#define SNet_BaseURL @"http://10.18.22.100:8090"
 
 //阿里云服务地址
-#define SNet_BaseURL @"http://wechat.xttxqjfg.cn:8900"
+#define SNet_BaseURL @"http://wechat.xttxqjfg.cn:8890"
 
 //用户登录
 #define SNet_User_Login @"/wechat/userLogin"
@@ -26,5 +26,8 @@
 
 //用户详情
 #define SNet_User_Detail @"/wechat/userDetail"
+
+//获取指定服务号的菜单
+#define SNet_PublicServer_Menu @"/wechat/pubSerMenu"
 
 #endif /* UrlDefine_h */
