@@ -69,6 +69,11 @@
 		1AE5220920186F5200AD174F /* YBSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE5220720186F5200AD174F /* YBSettingTableViewCell.xib */; };
 		1AE5220B2018846C00AD174F /* discoverDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AE5220A2018846C00AD174F /* discoverDataList.plist */; };
 		1AF5A73F2074A69200A14940 /* YBPubSerConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A73E2074A69200A14940 /* YBPubSerConversationVC.m */; };
+		1AF5A7422074C1C900A14940 /* YBMomentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A7412074C1C900A14940 /* YBMomentsVC.m */; };
+		1AF5A7482074C29700A14940 /* YBAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A7472074C29700A14940 /* YBAlbumVC.m */; };
+		1AF5A74B2074C46600A14940 /* YBActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A74A2074C46600A14940 /* YBActionSheetView.m */; };
+		1AF5A74F2074CB5200A14940 /* YBActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A74D2074CB5200A14940 /* YBActionSheetCell.m */; };
+		1AF5A7502074CB5200A14940 /* YBActionSheetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF5A74E2074CB5200A14940 /* YBActionSheetCell.xib */; };
 		1AF8B6D1202D6B8C003C34C2 /* RCDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8B6D0202D6B8C003C34C2 /* RCDBHelper.m */; };
 		1AF8B6D4202D6ED3003C34C2 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8B6D2202D6ED3003C34C2 /* pinyin.c */; };
 		1AF8B6D7202D6F57003C34C2 /* YBUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8B6D6202D6F57003C34C2 /* YBUserInfo.m */; };
@@ -189,6 +194,15 @@
 		1AE5220A2018846C00AD174F /* discoverDataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = discoverDataList.plist; sourceTree = "<group>"; };
 		1AF5A73D2074A69200A14940 /* YBPubSerConversationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPubSerConversationVC.h; sourceTree = "<group>"; };
 		1AF5A73E2074A69200A14940 /* YBPubSerConversationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPubSerConversationVC.m; sourceTree = "<group>"; };
+		1AF5A7402074C1C900A14940 /* YBMomentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBMomentsVC.h; sourceTree = "<group>"; };
+		1AF5A7412074C1C900A14940 /* YBMomentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBMomentsVC.m; sourceTree = "<group>"; };
+		1AF5A7462074C29700A14940 /* YBAlbumVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAlbumVC.h; sourceTree = "<group>"; };
+		1AF5A7472074C29700A14940 /* YBAlbumVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAlbumVC.m; sourceTree = "<group>"; };
+		1AF5A7492074C46600A14940 /* YBActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBActionSheetView.h; sourceTree = "<group>"; };
+		1AF5A74A2074C46600A14940 /* YBActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBActionSheetView.m; sourceTree = "<group>"; };
+		1AF5A74C2074CB5200A14940 /* YBActionSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBActionSheetCell.h; sourceTree = "<group>"; };
+		1AF5A74D2074CB5200A14940 /* YBActionSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBActionSheetCell.m; sourceTree = "<group>"; };
+		1AF5A74E2074CB5200A14940 /* YBActionSheetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBActionSheetCell.xib; sourceTree = "<group>"; };
 		1AF8B6CF202D6B8C003C34C2 /* RCDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDBHelper.h; sourceTree = "<group>"; };
 		1AF8B6D0202D6B8C003C34C2 /* RCDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDBHelper.m; sourceTree = "<group>"; };
 		1AF8B6D2202D6ED3003C34C2 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
@@ -378,6 +392,8 @@
 		1A3E6329201835E000E683CA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1AF5A7462074C29700A14940 /* YBAlbumVC.h */,
+				1AF5A7472074C29700A14940 /* YBAlbumVC.m */,
 				1AE52202201855EB00AD174F /* YBMineVC.h */,
 				1AE52203201855EB00AD174F /* YBMineVC.m */,
 			);
@@ -511,6 +527,11 @@
 				1A45B2D72044EF4C00F5A48F /* YBDropDownMenuCell.h */,
 				1A45B2D82044EF4C00F5A48F /* YBDropDownMenuCell.m */,
 				1A45B2D92044EF4C00F5A48F /* YBDropDownMenuCell.xib */,
+				1AF5A7492074C46600A14940 /* YBActionSheetView.h */,
+				1AF5A74A2074C46600A14940 /* YBActionSheetView.m */,
+				1AF5A74C2074CB5200A14940 /* YBActionSheetCell.h */,
+				1AF5A74D2074CB5200A14940 /* YBActionSheetCell.m */,
+				1AF5A74E2074CB5200A14940 /* YBActionSheetCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -538,6 +559,8 @@
 			children = (
 				1AE521FF201855DB00AD174F /* YBDiscoverVC.h */,
 				1AE52200201855DB00AD174F /* YBDiscoverVC.m */,
+				1AF5A7402074C1C900A14940 /* YBMomentsVC.h */,
+				1AF5A7412074C1C900A14940 /* YBMomentsVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -699,6 +722,7 @@
 				1ABA2B052029B0CD009E4E98 /* YBInfoLabel.xib in Resources */,
 				1A73549F2071C21F0011443A /* YBMyQRView.xib in Resources */,
 				1AE5220920186F5200AD174F /* YBSettingTableViewCell.xib in Resources */,
+				1AF5A7502074CB5200A14940 /* YBActionSheetCell.xib in Resources */,
 				1A3E631C2018301D00E683CA /* Assets.xcassets in Resources */,
 				1A2DC91B206DD75C003D02A2 /* addFriendsData.plist in Resources */,
 				1A3E631A2018301D00E683CA /* Main.storyboard in Resources */,
@@ -784,8 +808,10 @@
 				1A4D401B2031396E002627A5 /* YBSearchView.m in Sources */,
 				1A73549D2071C2130011443A /* YBMyQRView.m in Sources */,
 				1AF8B6D7202D6F57003C34C2 /* YBUserInfo.m in Sources */,
+				1AF5A74B2074C46600A14940 /* YBActionSheetView.m in Sources */,
 				1A3E63142018301D00E683CA /* AppDelegate.m in Sources */,
 				1AF8B6D1202D6B8C003C34C2 /* RCDBHelper.m in Sources */,
+				1AF5A74F2074CB5200A14940 /* YBActionSheetCell.m in Sources */,
 				1A0E4C592021A4E600745904 /* YBLoginView.m in Sources */,
 				1A17C2F2206E027E009EFFF1 /* YBUserDetailVC.m in Sources */,
 				1ABA2B032029B0C6009E4E98 /* YBInfoLabel.m in Sources */,
@@ -794,6 +820,7 @@
 				1A9D6FAB2021BBDD00251BD2 /* YBNetRequestManager.m in Sources */,
 				1A3E63392018361B00E683CA /* RootViewController.m in Sources */,
 				1A9D6FA62021B36800251BD2 /* YBButtonView.m in Sources */,
+				1AF5A7422074C1C900A14940 /* YBMomentsVC.m in Sources */,
 				1A17C307206E29CA009EFFF1 /* YBPublicServiceListVC.m in Sources */,
 				1A3E63112018301D00E683CA /* main.m in Sources */,
 				1A45B2DA2044EF4C00F5A48F /* YBDropDownMenuCell.m in Sources */,
@@ -811,6 +838,7 @@
 				1A17C2FB206E0949009EFFF1 /* YBUserDetailTopCell.m in Sources */,
 				1A0E4C4F20219E6A00745904 /* YBLoginVC.m in Sources */,
 				1AF8B6E0202D73EE003C34C2 /* RCDataSource.m in Sources */,
+				1AF5A7482074C29700A14940 /* YBAlbumVC.m in Sources */,
 				1A5D6F31206CDEAC00E15AF1 /* YBSearchToolView.m in Sources */,
 				1AE521FE201855C500AD174F /* YBContactsVC.m in Sources */,
 				1A9D6FAF2021C2B700251BD2 /* YBLoginModel.m in Sources */,

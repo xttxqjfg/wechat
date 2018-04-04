@@ -13,12 +13,16 @@
 
 #import "YBButtonView.h"
 
-@interface YBUserDetailVC ()<UITableViewDelegate,UITableViewDataSource,YBButtonViewDelegate>
+#import "YBActionSheetView.h"
+
+@interface YBUserDetailVC ()<UITableViewDelegate,UITableViewDataSource,YBButtonViewDelegate,YBActionSheetViewDelegate>
 
 @property (nonatomic,strong) UITableView *detailTable;
 
 @property (nonatomic,strong) YBButtonView *messageBtn;
 @property (nonatomic,strong) YBButtonView *mediaBtn;
+
+@property (nonatomic,strong) YBActionSheetView *actionSheetView;
 
 @end
 
@@ -65,13 +69,33 @@
             
         case 2000:
         {
-            [[RCCall sharedRCCall] startSingleCall:self.userInfo.userId mediaType:RCCallMediaAudio];
-            
+            [self.view addSubview:self.actionSheetView];
+            [self.actionSheetView showActionSheet];
             break;
         }
             
         default:
             break;
+    }
+}
+
+#pragma mark YBActionSheetViewDelegate
+-(void)selectedActionSheetViewAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (0 == indexPath.row) {
+        if ([[RCCall sharedRCCall] isVideoCallEnabled:ConversationType_PRIVATE]) {
+            [[RCCall sharedRCCall] startSingleCall:self.userInfo.userId mediaType:RCCallMediaVideo];
+        }
+    }
+    else if (1 == indexPath.row)
+    {
+        if ([[RCCall sharedRCCall] isAudioCallEnabled:ConversationType_PRIVATE]) {
+            [[RCCall sharedRCCall] startSingleCall:self.userInfo.userId mediaType:RCCallMediaAudio];
+        }
+    }
+    else
+    {
+        //
     }
 }
 
@@ -239,6 +263,16 @@
         _mediaBtn.delegate = self;
     }
     return _mediaBtn;
+}
+
+-(YBActionSheetView *)actionSheetView
+{
+    if (!_actionSheetView) {
+        _actionSheetView = [[YBActionSheetView alloc]initWithFrame:self.view.bounds];
+        _actionSheetView.delegate = self;
+        _actionSheetView.btnArr = @[@{@"image":@"call_video",@"title":@"视频通话"},@{@"image":@"call_voice",@"title":@"语音通话"}];
+    }
+    return _actionSheetView;
 }
 
 - (void)didReceiveMemoryWarning {

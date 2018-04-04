@@ -139,7 +139,7 @@
 {
     if (!_myQRView) {
         _myQRView = [[UIView alloc]initWithFrame:self.view.bounds];
-        _myQRView.backgroundColor = [UIColor colorWithRed:143.0/255.0 green:142.0/255.0 blue:146.0/255.0 alpha:1.0];
+        _myQRView.backgroundColor = [UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:0.5];
         _myQRView.hidden = YES;
         _myQRView.userInteractionEnabled = NO;
         
