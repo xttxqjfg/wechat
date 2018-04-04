@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -19,21 +20,20 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.yb.wechat.pojo.PublicServerMenu;
+import com.yb.wechat.service.impl.PublicServerMenuServiceImpl;
 
-import com.yb.wechat.service.impl.*;
-import com.yb.wechat.pojo.*;
-   
-@WebServlet("/userLogin")
-public class UserLogin extends HttpServlet {
-	
+@WebServlet("/pubSerMenu")
+public class PublicServerMenus extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
-    
-	private static UserServiceImpl userServiceImpl;
+	
+	private static PublicServerMenuServiceImpl menuServiceImpl;
 
 	/**
      * @see HttpServlet#HttpServlet()
      */
-    public UserLogin() {
+    public PublicServerMenus() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -58,7 +58,7 @@ public class UserLogin extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		Map<String,Object> resultObj = new HashMap<String, Object>();
 		
-		//读取json字符流
+		//读取json串
 		BufferedReader bufReader = new BufferedReader(new InputStreamReader((ServletInputStream)request.getInputStream()));
 		StringBuffer buffer = new StringBuffer();  
 		String line = "";  
@@ -66,39 +66,39 @@ public class UserLogin extends HttpServlet {
 		     buffer.append(line);  
 		}
 		
-		//转换为json对象
+		//解析json串
 		JSONObject paramsMap = JSON.parseObject(buffer.toString());
 		if(paramsMap != null)
 		{
-			if(!paramsMap.containsKey("userid"))
+			if(!(paramsMap.containsKey("userid") && paramsMap.containsKey("serverid")))
 			{
 				resultObj.put("code", "200");
-				resultObj.put("msg", "参数解析错误!");
+				resultObj.put("msg", "参数解析异常!");
 				out.write(JSON.toJSONString(resultObj));
 				return;
 			}
 			WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext()); 
-			userServiceImpl = (UserServiceImpl)context.getBean("userServiceImpl");
+			menuServiceImpl = (PublicServerMenuServiceImpl)context.getBean("publicServerMenuServiceImpl");
 			
-			User user = userServiceImpl.getUserById(paramsMap.get("userid").toString());
+			List<PublicServerMenu> menus = menuServiceImpl.getMenuList(paramsMap.get("serverid").toString());
 			
-			if(user != null)
+			if(menus != null)
 			{
 				resultObj.put("code", "200");
-				resultObj.put("result", user);
+				resultObj.put("result", menus);
 				out.write(JSON.toJSONString(resultObj));
 			}
 			else
 			{
 				resultObj.put("code", "200");
-				resultObj.put("msg", "用户不存在!");
+				resultObj.put("msg", "参数解析异常!");
 				out.write(JSON.toJSONString(resultObj));
 			}
 		}
 		else
 		{
 			resultObj.put("code", "200");
-			resultObj.put("msg", "参数解析错误!");
+			resultObj.put("msg", "参数解析异常!");
 			out.write(JSON.toJSONString(resultObj));
 		}
 	}

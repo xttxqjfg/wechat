@@ -1,6 +1,7 @@
 io/rong/util/HostType.class
 com/yb/wechat/controller/UserLogin.class
 io/rong/models/SMSVerifyCodeResult.class
+com/yb/wechat/controller/PublicServerMenus.class
 io/rong/methods/SMS.class
 io/rong/messages/InfoNtfMessage.class
 io/rong/models/GagGroupUser.class
@@ -23,6 +24,7 @@ io/rong/models/ListBlockChatroomUserResult.class
 io/rong/Example.class
 io/rong/messages/CmdNtfMessage.class
 io/rong/util/CodeUtil.class
+com/yb/wechat/pojo/PublicServerMenu.class
 io/rong/messages/CmdMsgMessage.class
 io/rong/models/UserTag.class
 io/rong/util/HttpUtil$1.class
@@ -44,9 +46,11 @@ io/rong/models/GroupInfo.class
 io/rong/messages/ImgTextMessage.class
 io/rong/models/ListWordfilterResult.class
 com/yb/wechat/service/UserService.class
+com/yb/wechat/service/impl/PublicServerMenuServiceImpl.class
 io/rong/RongCloud.class
 io/rong/messages/CustomTxtMessage.class
 io/rong/models/TagObj.class
+com/yb/wechat/dao/PublicServerMenuDao.class
 io/rong/messages/VoiceMessage.class
 io/rong/methods/Chatroom.class
 com/yb/wechat/service/impl/UserServiceImpl.class
@@ -62,6 +66,7 @@ io/rong/models/CodeSuccessResult.class
 io/rong/models/BlockChatRoomUser.class
 com/yb/wechat/dao/RCTokenDao.class
 io/rong/models/BlockUsers.class
+com/yb/wechat/service/PublicServerMenuService.class
 io/rong/messages/BaseMessage.class
 io/rong/models/TemplateMessage.class
 io/rong/models/CheckOnlineResult.class

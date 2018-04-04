@@ -5,6 +5,7 @@
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/TemplateMessage.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/service/impl/UserServiceImpl.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/util/CodeUtil.java
+/Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/pojo/PublicServerMenu.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/messages/ImgMessage.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/Notification.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/GagChatRoomUser.java
@@ -17,11 +18,13 @@
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/Example.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/methods/Wordfilter.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/GroupUser.java
+/Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/dao/PublicServerMenuDao.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/methods/Message.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/BlockChatRoomUser.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/GroupInfo.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/methods/Group.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/ListWordfilterResult.java
+/Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/service/impl/PublicServerMenuServiceImpl.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/ChatroomQueryResult.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/messages/LBSMessage.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/ChatRoomUser.java
@@ -40,6 +43,7 @@
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/methods/Chatroom.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/controller/UserList.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/util/HostType.java
+/Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/service/PublicServerMenuService.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/UserTag.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/SMSImageCodeResult.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/ListGagGroupUserResult.java
@@ -60,6 +64,7 @@
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/methods/SMS.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/dao/UserDao.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/messages/TxtMessage.java
+/Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/controller/PublicServerMenus.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/messages/CmdMsgMessage.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/io/rong/models/CheckOnlineResult.java
 /Users/yibo/javaWeb-workspace/wechat/src/main/java/com/yb/wechat/controller/UserRegister.java

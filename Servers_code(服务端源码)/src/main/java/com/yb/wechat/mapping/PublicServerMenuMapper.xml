@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yb.wechat.dao.PublicServerMenuDao" >
+  <resultMap id="BaseResultMap" type="com.yb.wechat.pojo.PublicServerMenu" >
+    <result column="menu_id" property="menuId" jdbcType="VARCHAR" />
+    <result column="menu_name" property="menuName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    menu_id, menu_name
+  </sql>
+  <select id="getMenuListByServerId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from db_pubicserver_menu
+    where server_id = #{serverId,jdbcType=VARCHAR}
+    ORDER BY menu_id ASC
+  </select>
+</mapper>
