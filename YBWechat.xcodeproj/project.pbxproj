@@ -57,6 +57,7 @@
 		1A9D6FA82021B37000251BD2 /* YBButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D6FA72021B37000251BD2 /* YBButtonView.xib */; };
 		1A9D6FAB2021BBDD00251BD2 /* YBNetRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FAA2021BBDD00251BD2 /* YBNetRequestManager.m */; };
 		1A9D6FAF2021C2B700251BD2 /* YBLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FAE2021C2B700251BD2 /* YBLoginModel.m */; };
+		1A9EEFBE2079118300ED746D /* YBMyQRVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9EEFBD2079118300ED746D /* YBMyQRVC.m */; };
 		1ABA2B002029B087009E4E98 /* YBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA2AFF2029B087009E4E98 /* YBUtils.m */; };
 		1ABA2B032029B0C6009E4E98 /* YBInfoLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA2B022029B0C6009E4E98 /* YBInfoLabel.m */; };
 		1ABA2B052029B0CD009E4E98 /* YBInfoLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA2B042029B0CD009E4E98 /* YBInfoLabel.xib */; };
@@ -172,6 +173,8 @@
 		1A9D6FAC2021BD1400251BD2 /* UrlDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UrlDefine.h; sourceTree = "<group>"; };
 		1A9D6FAD2021C2B700251BD2 /* YBLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBLoginModel.h; sourceTree = "<group>"; };
 		1A9D6FAE2021C2B700251BD2 /* YBLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBLoginModel.m; sourceTree = "<group>"; };
+		1A9EEFBC2079118300ED746D /* YBMyQRVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBMyQRVC.h; sourceTree = "<group>"; };
+		1A9EEFBD2079118300ED746D /* YBMyQRVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBMyQRVC.m; sourceTree = "<group>"; };
 		1ABA2AFE2029B087009E4E98 /* YBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBUtils.h; sourceTree = "<group>"; };
 		1ABA2AFF2029B087009E4E98 /* YBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBUtils.m; sourceTree = "<group>"; };
 		1ABA2B012029B0C6009E4E98 /* YBInfoLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBInfoLabel.h; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				1AF5A7472074C29700A14940 /* YBAlbumVC.m */,
 				1AE52202201855EB00AD174F /* YBMineVC.h */,
 				1AE52203201855EB00AD174F /* YBMineVC.m */,
+				1A9EEFBC2079118300ED746D /* YBMyQRVC.h */,
+				1A9EEFBD2079118300ED746D /* YBMyQRVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -820,6 +825,7 @@
 				1A9D6FAB2021BBDD00251BD2 /* YBNetRequestManager.m in Sources */,
 				1A3E63392018361B00E683CA /* RootViewController.m in Sources */,
 				1A9D6FA62021B36800251BD2 /* YBButtonView.m in Sources */,
+				1A9EEFBE2079118300ED746D /* YBMyQRVC.m in Sources */,
 				1AF5A7422074C1C900A14940 /* YBMomentsVC.m in Sources */,
 				1A17C307206E29CA009EFFF1 /* YBPublicServiceListVC.m in Sources */,
 				1A3E63112018301D00E683CA /* main.m in Sources */,

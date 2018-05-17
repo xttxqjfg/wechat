@@ -100,6 +100,7 @@ static char IndexTipManagerKey;
     if(self.manager.indexTipLabel.superview != view){
         [view addSubview:self.manager.indexTipLabel];
     }
+    
     //拦截TableView的索引视图UITableViewIndex的touches事件
     [view aspect_hookSelector:@selector(touchesBegan:withEvent:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> info, NSSet *touches,UIEvent *event) {
         self.manager.indexTipLabel.hidden = NO;

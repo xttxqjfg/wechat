@@ -10,4 +10,7 @@
 
 @interface YBConversationVC : RCConversationViewController
 
+
+//- (NSIndexPath *)findDataIndexFromMessageList:(RCMessageModel *)model;
+
 @end

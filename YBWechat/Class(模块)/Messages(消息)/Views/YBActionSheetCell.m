@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
 @property (weak, nonatomic) IBOutlet UILabel *rightTitleLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *rightSubTitleLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelYConstraint;
 
 @end
 
@@ -41,6 +43,18 @@
     {
         self.leftImageView.hidden = YES;
         self.labelConstraint.constant = 0;
+    }
+    
+    if([dataDic objectForKey:@"subTitle"])
+    {
+        self.rightSubTitleLabel.hidden = NO;
+        self.labelYConstraint.constant = -10.0;
+        self.rightSubTitleLabel.text = [dataDic objectForKey:@"subTitle"] ? [NSString stringWithFormat:@"%@",[dataDic objectForKey:@"subTitle"]] : @"";
+    }
+    else
+    {
+        self.rightSubTitleLabel.hidden = YES;
+        self.labelYConstraint.constant = 0;
     }
     
     self.rightTitleLabel.text = [dataDic objectForKey:@"title"] ? [NSString stringWithFormat:@"%@",[dataDic objectForKey:@"title"]] : @"";

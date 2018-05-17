@@ -13,6 +13,8 @@
 
 #import "YBLoginVC.h"
 
+#import "YBMyQRVC.h"
+
 @interface YBMineVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *mineTableview;
@@ -92,7 +94,13 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (3 == indexPath.section) {
+    if (2 == indexPath.section) {
+        YBMyQRVC *qrVC = [[YBMyQRVC alloc]init];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:qrVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    }
+    else if (3 == indexPath.section) {
         [YBUtils showAlert:@"确定注销当前登录?" title:@"提示" showInVC:self showCancleBtn:YES sureAction:^{
             //清理缓存后跳转到登录页面
             [YBUserCache clearUserInfo];

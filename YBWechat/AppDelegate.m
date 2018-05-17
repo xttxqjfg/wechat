@@ -12,6 +12,8 @@
 #import "YBLoginVC.h"
 #import "YBLoginModel.h"
 
+#import "YBMyQRVC.h"
+
 @interface AppDelegate ()<RCIMConnectionStatusDelegate,RCIMReceiveMessageDelegate>
 
 @end
@@ -22,11 +24,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+//    [self redirectNSlogToDocumentFolder];
+    
+    NSLog(@"==========  didFinishLaunchingWithOptions  ==========");
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     [self setupNavigationBar];
-    
+
     //3D Touch
     [self addTouch:application];
     
@@ -39,6 +45,7 @@
             
             //初始化融云
             [YBLoginModel initRongYun];
+            
             //更新用户信息
             [self updateUserCache];
             
@@ -285,13 +292,44 @@
 
 -(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
 {
-//    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
-//    if([shortcutItem.type isEqualToString:@"scan"]){
-//        UIViewController *vc = [[UIViewController alloc] init];
-//        vc.title = @"第一个";
-//        vc.view.backgroundColor = [UIColor redColor];
-//        [nav pushViewController:vc animated:YES];
-//    }
+    NSLog(@"==========  performActionForShortcutItem  ==========");
+    
+    NSLog(@"################:%@",shortcutItem.type);
+    // 创建配置目录
+    
+    [NSFileManager createDir:DIR_PATH_FOR_CONFIG];
+    
+    if ([YBUserCache exists]) {
+        UIViewController *rootVC = self.window.rootViewController;
+        if ([rootVC isKindOfClass:[UITabBarController class]]) {
+            UIViewController *rootNavVC = [(UITabBarController *)rootVC selectedViewController];
+            if ([rootNavVC isKindOfClass:[UINavigationController class]]) {
+                UIViewController *currentVC = [(UINavigationController *)rootNavVC topViewController];
+                
+                if ([shortcutItem.type isEqualToString:@"myqr"]) {
+                    NSInteger vcsCount = [(UINavigationController *)rootNavVC viewControllers].count;
+                    YBMyQRVC *qrVC = [[YBMyQRVC alloc]init];
+                    currentVC.hidesBottomBarWhenPushed = YES;
+                    [currentVC.navigationController pushViewController:qrVC animated:YES];
+                    if (!(vcsCount > 1)) {
+                        currentVC.hidesBottomBarWhenPushed = NO;
+                    }
+                }
+                else if ([shortcutItem.type isEqualToString:@"scan"])
+                {
+                    
+                }
+                else if ([shortcutItem.type isEqualToString:@"pay"])
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+            }
+        }
+    }
 }
 
 #pragma mark 融云红包回调
@@ -309,31 +347,60 @@
     return NO;
 }
 
+#pragma mark 日志本地记录
+-(void)redirectNSlogToDocumentFolder {
+    NSLog(@"Log重定向到本地，如果您需要控制台Log，注释掉重定向逻辑即可。");
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"MMddHHmmss"];
+    NSString *formattedDate = [dateformatter stringFromDate:currentDate];
+    
+    NSString *fileName = [NSString stringWithFormat:@"log%@.log", formattedDate];
+    NSString *logFilePath =
+    [documentDirectory stringByAppendingPathComponent:fileName];
+    
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stdout);
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    
+    NSLog(@"==========  applicationWillResignActive  ==========");
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    NSLog(@"==========  applicationDidEnterBackground  ==========");
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    NSLog(@"==========  applicationWillEnterForeground  ==========");
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    NSLog(@"==========  applicationDidBecomeActive  ==========");
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    NSLog(@"==========  applicationWillTerminate  ==========");
 }
 
 @end

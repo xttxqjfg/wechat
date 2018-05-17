@@ -10,6 +10,8 @@
 
 #import "YBSettingTableViewCell.h"
 
+#import "YBMomentsVC.h"
+
 @interface YBDiscoverVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *discoverTableview;
@@ -70,6 +72,14 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (0 == indexPath.section && 0 == indexPath.row) {
+        //朋友圈
+        YBMomentsVC *momentsVC = [[YBMomentsVC alloc]init];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:momentsVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    }
 }
 
 #pragma mark -- get
