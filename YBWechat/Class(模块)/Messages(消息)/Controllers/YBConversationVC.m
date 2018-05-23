@@ -8,13 +8,12 @@
 
 #import "YBConversationVC.h"
 
+#import "TranslationMsgCell.h"
+#import "TranslationMessage.h"
+
+#import "TranslationDataModel.h"
+
 @interface YBConversationVC ()
-
-@property (nonatomic,strong) RCMessageModel *msgModel;
-
-- (NSIndexPath *)findDataIndexFromMessageList:(RCMessageModel *)model;
-
-- (CGFloat)referenceExtraHeight:(Class)cellClass messageModel:(RCMessageModel *)model;
 
 @end
 
@@ -28,88 +27,58 @@
     
     
 //    [self checkConversationStatus];
+    
+    ///注册自定义测试消息Cell
+    [self registerClass:[TranslationMsgCell class]
+        forMessageClass:[TranslationMessage class]];
 }
 
--(NSArray<UIMenuItem *> *)getLongTouchMessageCellMenuList:(RCMessageModel *)model
+- (void)sendMessage:(RCMessageContent *)messageContent pushContent:(NSString *)pushContent
 {
-    NSMutableArray<UIMenuItem *> *menuList =
-    [[super getLongTouchMessageCellMenuList:model] mutableCopy];
-    
-    if([model.content isKindOfClass:[RCTextMessage class]]){
-        self.msgModel = model;
-        //增加翻译按钮
-        UIMenuItem *translateItem = [[UIMenuItem alloc] initWithTitle:@"翻译" action:@selector(onTranslateBtnTap:)];
-        [menuList addObject:translateItem];
+    if ([messageContent isKindOfClass:[RCTextMessage class]]) {
+        RCTextMessage *textMsgContent = (RCTextMessage *)messageContent;
+        
+        [TranslationDataModel baiduTextTranslationRequest:@{@"content":textMsgContent.content} Block:^(NSString *result, NSString *message) {
+            if(result)
+            {
+                //翻译成功，修改消息内容后发送
+                TranslationMessage *translationMessage = [TranslationMessage messageWithContent:[NSString stringWithFormat:@"原文:%@\n译文:%@",textMsgContent.content,result]];
+                [super sendMessage:translationMessage pushContent:pushContent];
+            }
+            else
+            {
+                //翻译失败，直接发送原文消息
+                [super sendMessage:messageContent pushContent:pushContent];
+            }
+        }];
     }
-    
-    return menuList;
+    else
+    {
+        [super sendMessage:messageContent pushContent:pushContent];
+    }
 }
 
--(void)onTranslateBtnTap:(UIMenuItem *)sender
-{
-    RCTextMessage *textMsgContent = (RCTextMessage *)self.msgModel.content;
-    NSString *textMsgStr = [NSString stringWithFormat:@"原文:%@\n-----------------\n译文:%@",textMsgContent.content,@"djfasdfbjsdbfnasdkjfhiu2  er237yrfsBDKJLADFOASJ012RHEFB"];
-//    model.content = testMsgStr;
-    textMsgContent.content = textMsgStr;
-    
-    CGFloat extraHeight = [self referenceExtraHeight:[RCTextMessageCell class] messageModel:self.msgModel];
-    
-//    CGFloat extraHeight = 45.0;
-    
-    self.msgModel.cellSize = [RCTextMessageCell sizeForMessageModel:self.msgModel withCollectionViewWidth:self.conversationMessageCollectionView.frame.size.width referenceExtraHeight:extraHeight];
-    
-    NSUInteger row = [self.conversationDataRepository indexOfObject:self.msgModel];
-//    NSIndexPath *indexpath = [self findDataIndexFromMessageList:self.msgModel];
-    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:row inSection:0];
-    
-    [self.conversationMessageCollectionView reloadItemsAtIndexPaths:@[indexpath]];
-    
-    if ([[self.conversationDataRepository lastObject] isEqual:self.msgModel]) {
-        
-        [self.conversationMessageCollectionView reloadItemsAtIndexPaths:@[indexpath]];
-        
-        [self scrollToBottomAnimated:YES];
-        
-    }
-    
-//    NSUInteger row = [self.conversationDataRepository indexOfObject:self.msgModel];
-//    [self.conversationDataRepository replaceObjectAtIndex:row withObject:self.msgModel];
-//    
-//    [self.conversationMessageCollectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]]];
-    
-    
-    
-//    [ZTool shareMsgToWechat:[NSString stringWithFormat:@"%@",textMsgContent.content]];
-    
-    /*
-    RCMessage *insertMessage;
-    RCInformationNotificationMessage *warningMessage = [RCInformationNotificationMessage notificationWithMessage:@"提醒消息" extra:nil];
-//    if (YES) {
-        // 如果保存到本地数据库，需要调用insertMessage生成消息实体并插入数据库。
-        insertMessage = [[RCIMClient sharedRCIMClient] insertOutgoingMessage:self.conversationType
-                                                                    targetId:self.targetId
-                                                                  sentStatus:SentStatus_SENT
-                                                                     content:warningMessage];
-//    } else {
-//        // 如果不保存到本地数据库，需要初始化消息实体并将messageId要设置为－1。
-//        insertMessage =[[RCMessage alloc] initWithType:self.conversationType
-//                                              targetId:self.targetId
-//                                             direction:MessageDirection_SEND
-//                                             messageId:-1
-//                                               content:warningMessage];
+//-(NSArray<UIMenuItem *> *)getLongTouchMessageCellMenuList:(RCMessageModel *)model
+//{
+//    NSMutableArray<UIMenuItem *> *menuList =
+//    [[super getLongTouchMessageCellMenuList:model] mutableCopy];
+//
+//    if([model.content isKindOfClass:[RCTextMessage class]]){
+//        self.msgModel = model;
+//        //增加翻译按钮
+//        UIMenuItem *translateItem = [[UIMenuItem alloc] initWithTitle:@"翻译" action:@selector(onTranslateBtnTap:)];
+//        [menuList addObject:translateItem];
 //    }
-    
-    // 在当前聊天界面插入该消息
-    [self appendAndDisplayMessage:insertMessage];
-     */
-}
+//
+//    return menuList;
+//}
 
 //检查对话是否能继续
 -(void)checkConversationStatus
 {
 //    NSInteger *messageCount
     for (RCMessageModel *model in self.conversationDataRepository) {
-        NSLog(@"####################:%@",model.senderUserId);
+        NSLog(@"####################:%@,%lld",model.messageUId,model.sentTime);
     }
 }
 

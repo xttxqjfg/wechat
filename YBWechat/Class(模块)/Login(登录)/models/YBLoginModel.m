@@ -10,6 +10,8 @@
 
 #import "RCDataSource.h"
 
+#import "TranslationMessage.h"
+
 @implementation YBLoginModel
 
 + (void)loginRequest:(NSDictionary *)params Block:(void(^)(NSDictionary *result, NSString *message))block
@@ -61,6 +63,9 @@
     //融云注册
     //appkey cpj2xarljn8on
     [[RCIM sharedRCIM] initWithAppKey:RONGCLOUD_INT_KEY];
+    
+    // 注册自定义测试消息
+    [[RCIM sharedRCIM] registerMessageType:[TranslationMessage class]];
     
     //设置红包扩展的Url Scheme。Scheme自定义，extensionModule不做修改
     [[RCIM sharedRCIM] setScheme:@"ybwechat" forExtensionModule:@"JrmfPacketManager"];

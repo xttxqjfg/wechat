@@ -264,6 +264,14 @@
     }
 }
 
+- (void)didReceiveMessageNotification:(NSNotification *)notification {
+    NSNumber *left = [notification.userInfo objectForKey:@"left"];
+    if ([RCIMClient sharedRCIMClient].sdkRunningMode == RCSDKRunningMode_Background && 0 == left.integerValue) {
+        int unreadMsgCount = [[RCIMClient sharedRCIMClient] getUnreadCount:@[@(ConversationType_PRIVATE),@(ConversationType_DISCUSSION),@(ConversationType_APPSERVICE),@(ConversationType_PUBLICSERVICE),@(ConversationType_GROUP)]];
+        [UIApplication sharedApplication].applicationIconBadgeNumber = unreadMsgCount;
+    }
+}
+
 #pragma mark 3D Touch
 -(void)addTouch:(UIApplication *) application{
     /**

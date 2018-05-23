@@ -83,15 +83,15 @@
 -(void)selectedActionSheetViewAtIndexPath:(NSIndexPath *)indexPath
 {
     if (0 == indexPath.row) {
-        if ([[RCCall sharedRCCall] isVideoCallEnabled:ConversationType_PRIVATE]) {
-            [[RCCall sharedRCCall] startSingleCall:self.userInfo.userId mediaType:RCCallMediaVideo];
-        }
+//        if ([[RCCall sharedRCCall] isVideoCallEnabled:ConversationType_PRIVATE]) {
+//            [[RCCall sharedRCCall] startSingleCall:self.userInfo.userId mediaType:RCCallMediaVideo];
+//        }
     }
     else if (1 == indexPath.row)
     {
-        if ([[RCCall sharedRCCall] isAudioCallEnabled:ConversationType_PRIVATE]) {
-            [[RCCall sharedRCCall] startSingleCall:self.userInfo.userId mediaType:RCCallMediaAudio];
-        }
+//        if ([[RCCall sharedRCCall] isAudioCallEnabled:ConversationType_PRIVATE]) {
+//            [[RCCall sharedRCCall] startSingleCall:self.userInfo.userId mediaType:RCCallMediaAudio];
+//        }
     }
     else
     {

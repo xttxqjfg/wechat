@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedManager;
 
++ (instancetype)initRequestWithUrl:(NSString *)url;
+
 - (void)requestDataWithPath:(NSString *)path
              WithParameters:(NSDictionary *)parameters
             WithRequstStyle:(NSString *)requestStyle

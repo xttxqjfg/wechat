@@ -16,6 +16,7 @@
 		1A0E4C602021A51100745904 /* YBRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0E4C5F2021A51100745904 /* YBRegisterView.xib */; };
 		1A0E4C632021A67E00745904 /* YBInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E4C622021A67E00745904 /* YBInputTextView.m */; };
 		1A0E4C652021A68500745904 /* YBInputTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0E4C642021A68500745904 /* YBInputTextView.xib */; };
+		1A16173120B2564D00B42053 /* TranslationMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A16173020B2564D00B42053 /* TranslationMessage.m */; };
 		1A17C2F2206E027E009EFFF1 /* YBUserDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17C2F1206E027E009EFFF1 /* YBUserDetailVC.m */; };
 		1A17C2FB206E0949009EFFF1 /* YBUserDetailTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17C2F9206E0949009EFFF1 /* YBUserDetailTopCell.m */; };
 		1A17C2FC206E0949009EFFF1 /* YBUserDetailTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A17C2FA206E0949009EFFF1 /* YBUserDetailTopCell.xib */; };
@@ -58,9 +59,11 @@
 		1A9D6FAB2021BBDD00251BD2 /* YBNetRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FAA2021BBDD00251BD2 /* YBNetRequestManager.m */; };
 		1A9D6FAF2021C2B700251BD2 /* YBLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FAE2021C2B700251BD2 /* YBLoginModel.m */; };
 		1A9EEFBE2079118300ED746D /* YBMyQRVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9EEFBD2079118300ED746D /* YBMyQRVC.m */; };
+		1AA6525520AEBA5100AC6B39 /* TranslationMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6525420AEBA5100AC6B39 /* TranslationMsgCell.m */; };
 		1ABA2B002029B087009E4E98 /* YBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA2AFF2029B087009E4E98 /* YBUtils.m */; };
 		1ABA2B032029B0C6009E4E98 /* YBInfoLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA2B022029B0C6009E4E98 /* YBInfoLabel.m */; };
 		1ABA2B052029B0CD009E4E98 /* YBInfoLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA2B042029B0CD009E4E98 /* YBInfoLabel.xib */; };
+		1AD5BB6420B3EB70001AF94A /* TranslationDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5BB6320B3EB70001AF94A /* TranslationDataModel.m */; };
 		1AD67479202AC62400A5BD9D /* RSATool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD67478202AC62400A5BD9D /* RSATool.m */; };
 		1AE521FB2018558C00AD174F /* YBMessageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE521FA2018558C00AD174F /* YBMessageListVC.m */; };
 		1AE521FE201855C500AD174F /* YBContactsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE521FD201855C500AD174F /* YBContactsVC.m */; };
@@ -105,6 +108,8 @@
 		1A0E4C612021A67E00745904 /* YBInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBInputTextView.h; sourceTree = "<group>"; };
 		1A0E4C622021A67E00745904 /* YBInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBInputTextView.m; sourceTree = "<group>"; };
 		1A0E4C642021A68500745904 /* YBInputTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBInputTextView.xib; sourceTree = "<group>"; };
+		1A16172F20B2564D00B42053 /* TranslationMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationMessage.h; sourceTree = "<group>"; };
+		1A16173020B2564D00B42053 /* TranslationMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationMessage.m; sourceTree = "<group>"; };
 		1A17C2F0206E027E009EFFF1 /* YBUserDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBUserDetailVC.h; sourceTree = "<group>"; };
 		1A17C2F1206E027E009EFFF1 /* YBUserDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBUserDetailVC.m; sourceTree = "<group>"; };
 		1A17C2F8206E0949009EFFF1 /* YBUserDetailTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBUserDetailTopCell.h; sourceTree = "<group>"; };
@@ -175,11 +180,15 @@
 		1A9D6FAE2021C2B700251BD2 /* YBLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBLoginModel.m; sourceTree = "<group>"; };
 		1A9EEFBC2079118300ED746D /* YBMyQRVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBMyQRVC.h; sourceTree = "<group>"; };
 		1A9EEFBD2079118300ED746D /* YBMyQRVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBMyQRVC.m; sourceTree = "<group>"; };
+		1AA6525320AEBA5100AC6B39 /* TranslationMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationMsgCell.h; sourceTree = "<group>"; };
+		1AA6525420AEBA5100AC6B39 /* TranslationMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationMsgCell.m; sourceTree = "<group>"; };
 		1ABA2AFE2029B087009E4E98 /* YBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBUtils.h; sourceTree = "<group>"; };
 		1ABA2AFF2029B087009E4E98 /* YBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBUtils.m; sourceTree = "<group>"; };
 		1ABA2B012029B0C6009E4E98 /* YBInfoLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBInfoLabel.h; sourceTree = "<group>"; };
 		1ABA2B022029B0C6009E4E98 /* YBInfoLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBInfoLabel.m; sourceTree = "<group>"; };
 		1ABA2B042029B0CD009E4E98 /* YBInfoLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBInfoLabel.xib; sourceTree = "<group>"; };
+		1AD5BB6220B3EB70001AF94A /* TranslationDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslationDataModel.h; sourceTree = "<group>"; };
+		1AD5BB6320B3EB70001AF94A /* TranslationDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslationDataModel.m; sourceTree = "<group>"; };
 		1AD67476202A8CD600A5BD9D /* UserDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefine.h; sourceTree = "<group>"; };
 		1AD67477202AC62400A5BD9D /* RSATool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSATool.h; sourceTree = "<group>"; };
 		1AD67478202AC62400A5BD9D /* RSATool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSATool.m; sourceTree = "<group>"; };
@@ -503,6 +512,10 @@
 				1AF8B6DE202D73EE003C34C2 /* RCDataSource.h */,
 				1AF8B6DF202D73EE003C34C2 /* RCDataSource.m */,
 				1A45B2DC2044F51800F5A48F /* DropDownMenuData.plist */,
+				1A16172F20B2564D00B42053 /* TranslationMessage.h */,
+				1A16173020B2564D00B42053 /* TranslationMessage.m */,
+				1AD5BB6220B3EB70001AF94A /* TranslationDataModel.h */,
+				1AD5BB6320B3EB70001AF94A /* TranslationDataModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -537,6 +550,8 @@
 				1AF5A74C2074CB5200A14940 /* YBActionSheetCell.h */,
 				1AF5A74D2074CB5200A14940 /* YBActionSheetCell.m */,
 				1AF5A74E2074CB5200A14940 /* YBActionSheetCell.xib */,
+				1AA6525320AEBA5100AC6B39 /* TranslationMsgCell.h */,
+				1AA6525420AEBA5100AC6B39 /* TranslationMsgCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -784,12 +799,14 @@
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCColor.plist",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/JResource.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/en.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/zh-Hans.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/jrmf.cer",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/AlipaySDK/AlipaySDK.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/WalletResource.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/BQMM.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -841,6 +858,7 @@
 				1AE52201201855DB00AD174F /* YBDiscoverVC.m in Sources */,
 				1A17C300206E0976009EFFF1 /* YBUserDetailAlbumCell.m in Sources */,
 				1AD67479202AC62400A5BD9D /* RSATool.m in Sources */,
+				1AA6525520AEBA5100AC6B39 /* TranslationMsgCell.m in Sources */,
 				1A17C2FB206E0949009EFFF1 /* YBUserDetailTopCell.m in Sources */,
 				1A0E4C4F20219E6A00745904 /* YBLoginVC.m in Sources */,
 				1AF8B6E0202D73EE003C34C2 /* RCDataSource.m in Sources */,
@@ -850,9 +868,11 @@
 				1A9D6FAF2021C2B700251BD2 /* YBLoginModel.m in Sources */,
 				1AF5A73F2074A69200A14940 /* YBPubSerConversationVC.m in Sources */,
 				1AF8B6E6202D88C2003C34C2 /* YBContactsModel.m in Sources */,
+				1AD5BB6420B3EB70001AF94A /* TranslationDataModel.m in Sources */,
 				1A5D6F2E206CDD4400E15AF1 /* YBSearchVC.m in Sources */,
 				1A0E4C5620219F7500745904 /* YBUserCache.m in Sources */,
 				1AF8B6D4202D6ED3003C34C2 /* pinyin.c in Sources */,
+				1A16173120B2564D00B42053 /* TranslationMessage.m in Sources */,
 				1A5D6F27206CD46000E15AF1 /* UITableViewIndex+YB.m in Sources */,
 				1A0E4C5E2021A50A00745904 /* YBRegisterView.m in Sources */,
 				1A1A36C920197ADD000B93EE /* YBMineHeadTableViewCell.m in Sources */,
@@ -987,10 +1007,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C874CYA6U4;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YBWechat/PrefixHeader.pch";
 				INFOPLIST_FILE = YBWechat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yb.YBWechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1009,10 +1030,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C874CYA6U4;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YBWechat/PrefixHeader.pch";
 				INFOPLIST_FILE = YBWechat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yb.YBWechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

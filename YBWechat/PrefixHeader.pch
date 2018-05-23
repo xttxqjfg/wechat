@@ -22,7 +22,7 @@
     #import <UIImageView+WebCache.h>
     #import <MBProgressHUD/MBProgressHUD.h>
     #import <RongIMKit/RongIMKit.h>
-    #import <RongCallKit/RongCallKit.h>
+//    #import <RongCallKit/RongCallKit.h>
     #import <WebKit/WebKit.h>
     #import <MJRefresh/MJRefresh.h>
     #import "YBUserCache.h"

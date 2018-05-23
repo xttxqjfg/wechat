@@ -22,6 +22,12 @@ static YBNetRequestManager *_sharedManager;
     return _sharedManager;
 }
 
++ (instancetype)initRequestWithUrl:(NSString *)url
+{
+    YBNetRequestManager *newRequest = [[YBNetRequestManager manager] initWithBaseURL:[NSURL URLWithString:url]];
+    return newRequest;
+}
+
 - (instancetype)initWithBaseURL:(NSURL *)url
 {
     self = [super initWithBaseURL:url];
