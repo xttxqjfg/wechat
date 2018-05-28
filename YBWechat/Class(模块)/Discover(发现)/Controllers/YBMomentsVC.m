@@ -10,6 +10,8 @@
 
 #import "YBActionSheetView.h"
 
+#import "YBMomentsAddVC.h"
+
 @interface YBMomentsVC ()<YBActionSheetViewDelegate>
 
 @property (nonatomic,strong) YBActionSheetView *actionSheetView;
@@ -58,6 +60,10 @@
     if (sender.state == UIGestureRecognizerStateBegan)
     {
         NSLog(@"cammeraBtnLongPressed");
+        YBMomentsAddVC *addVC = [[YBMomentsAddVC alloc]init];
+        [self presentViewController:addVC animated:YES completion:^{
+            //
+        }];
     }
 }
 

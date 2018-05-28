@@ -11,6 +11,11 @@
 #import "TranslationMsgCell.h"
 #import "TranslationMessage.h"
 
+#import "BusinessCardSendCell.h"
+#import "BusinessCardSendMessage.h"
+#import "BusinessCardRequestCell.h"
+#import "BusinessCardRequestMessage.h"
+
 #import "TranslationDataModel.h"
 
 @interface YBConversationVC ()
@@ -28,11 +33,80 @@
     
 //    [self checkConversationStatus];
     
-    ///注册自定义测试消息Cell
-    [self registerClass:[TranslationMsgCell class]
-        forMessageClass:[TranslationMessage class]];
+    
+    [self customMessageInit];
+    [self setPluginBoardView];
 }
 
+//自定义消息类型注册
+-(void)customMessageInit
+{
+    ///注册翻译消息Cell
+    [self registerClass:[TranslationMsgCell class] forMessageClass:[TranslationMessage class]];
+    
+    ///注册名片请求消息Cell
+    [self registerClass:[BusinessCardRequestCell class] forMessageClass:[BusinessCardRequestMessage class]];
+    
+    ///注册名片发送消息Cell
+    [self registerClass:[BusinessCardSendCell class] forMessageClass:[BusinessCardSendMessage class]];
+}
+
+//设置输入栏加号里面的内容
+-(void)setPluginBoardView
+{
+    //增加请求名片和发送名片
+    [self.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"default_user_image"] title:@"请求名片" tag:2000];
+    
+    [self.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"default_user_image"] title:@"发送名片" tag:3000];
+}
+
+#pragma mark pluginBoardView点击处理
+-(void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag
+{
+    if (2000 == tag) {
+        BusinessCardRequestMessage *cardRequestMsg = [BusinessCardRequestMessage messageWithContent:@"您发起了名片请求,请等待对方的处理。"];
+        //发送提示消息
+        [[RCIM sharedRCIM] sendMessage:self.conversationType targetId:self.targetId content:cardRequestMsg pushContent:nil pushData:nil success:^(long messageId) {
+            NSLog(@"名片请求发送成功...");
+        } error:^(RCErrorCode nErrorCode, long messageId) {
+            NSLog(@"名片请求发送失败...");
+        }];
+    }
+    else if(3000 == tag)
+    {
+        YBUserInfo *user = [[YBUserInfo alloc]init];
+        user.userId = @"yibo3513";
+        user.name = @"/yb相知、相惜/mg";
+        user.portraitUri = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527511078203&di=fd70ef609b71e2e019db2aa00d748ec9&imgtype=0&src=http%3A%2F%2Ftx.haiqq.com%2Fuploads%2Fallimg%2Fc161210%2F14Q2c392S330-1cL3.jpg";
+        
+        BusinessCardSendMessage *cardSendMsg = [BusinessCardSendMessage messageWithContent:[user yy_modelToJSONString]];
+        //发送提示消息
+        [[RCIM sharedRCIM] sendMessage:self.conversationType targetId:self.targetId content:cardSendMsg pushContent:nil pushData:nil success:^(long messageId) {
+            NSLog(@"个人名片发送成功...");
+        } error:^(RCErrorCode nErrorCode, long messageId) {
+            NSLog(@"个人名片发送失败...");
+        }];
+    }
+    else
+    {
+        [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
+    }
+}
+
+-(void)didTapMessageCell:(RCMessageModel *)model
+{
+    if ([model.content isKindOfClass:[BusinessCardSendMessage class]])
+    {
+        BusinessCardSendMessage *msgContent = (BusinessCardSendMessage *)model.content;
+        NSLog(@"个人名片消息:%@",msgContent.content);
+    }
+    else
+    {
+        [super didTapMessageCell:model];
+    }
+}
+
+#pragma mark 拦截消息发送
 - (void)sendMessage:(RCMessageContent *)messageContent pushContent:(NSString *)pushContent
 {
     if ([messageContent isKindOfClass:[RCTextMessage class]]) {

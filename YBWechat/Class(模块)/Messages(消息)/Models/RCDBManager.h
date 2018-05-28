@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MsgOperateModel.h"
+
 @interface RCDBManager : NSObject
 
 + (RCDBManager*)shareInstance;
@@ -64,5 +66,16 @@
 -(void)clearGroupMembersData;
 
 #pragma mark 群组相关的数据库操作 ---结束---
+
+#pragma mark 消息记录相关的数据库操作 ---开始---
+//存储用户信息
+-(void)insertOperateToDB:(MsgOperateModel *)model;
+
+//从表中获取用户信息
+-(MsgOperateModel *)getOperateModelById:(NSString *)msgId;
+
+//删除用户
+-(void)deleteOperateFromDB:(NSString *)msgId;
+#pragma mark 消息记录相关的数据库操作 ---结束---
 
 @end

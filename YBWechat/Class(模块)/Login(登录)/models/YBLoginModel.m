@@ -11,6 +11,8 @@
 #import "RCDataSource.h"
 
 #import "TranslationMessage.h"
+#import "BusinessCardSendMessage.h"
+#import "BusinessCardRequestMessage.h"
 
 @implementation YBLoginModel
 
@@ -64,8 +66,10 @@
     //appkey cpj2xarljn8on
     [[RCIM sharedRCIM] initWithAppKey:RONGCLOUD_INT_KEY];
     
-    // 注册自定义测试消息
+    // 注册自定义消息
     [[RCIM sharedRCIM] registerMessageType:[TranslationMessage class]];
+    [[RCIM sharedRCIM] registerMessageType:[BusinessCardRequestMessage class]];
+    [[RCIM sharedRCIM] registerMessageType:[BusinessCardSendMessage class]];
     
     //设置红包扩展的Url Scheme。Scheme自定义，extensionModule不做修改
     [[RCIM sharedRCIM] setScheme:@"ybwechat" forExtensionModule:@"JrmfPacketManager"];

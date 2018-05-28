@@ -15,6 +15,8 @@
 static NSString * const userTableName = @"USERTABLE";
 static NSString * const groupTableName = @"GROUPTABLE";
 static NSString * const groupMemberTableName = @"GROUPMEMBERTABLE";
+//记录名片和好友请求操作记录
+static NSString * const messageOperateTableName = @"MESSAGEOPERATETABLE";
 
 + (RCDBManager*)shareInstance
 {
@@ -55,6 +57,14 @@ static NSString * const groupMemberTableName = @"GROUPMEMBERTABLE";
             NSString *createTableSQL = @"CREATE TABLE GROUPMEMBERTABLE (id integer PRIMARY KEY autoincrement, groupid text, userid text,name text, portraitUri text)";
             [db executeUpdate:createTableSQL];
             NSString *createIndexSQL=@"CREATE unique INDEX idx_groupmemberId ON GROUPMEMBERTABLE(groupid,userid);";
+            [db executeUpdate:createIndexSQL];
+        }
+        
+        //id 自增id, messageId 消息的唯一id, operateType 操作类型：1，名片请求、2，好友请求 ,operateValue 操作值 0或者1
+        if (![RCDBHelper isTableOK: messageOperateTableName withDB:db]) {
+            NSString *createTableSQL = @"CREATE TABLE MESSAGEOPERATETABLE (id integer PRIMARY KEY autoincrement, messageId text, operateType text,operateValue text)";
+            [db executeUpdate:createTableSQL];
+            NSString *createIndexSQL=@"CREATE unique INDEX idx_messageId ON MESSAGEOPERATETABLE(messageId);";
             [db executeUpdate:createIndexSQL];
         }
     }];
@@ -369,5 +379,54 @@ static NSString * const groupMemberTableName = @"GROUPMEMBERTABLE";
 }
 
 #pragma mark 群组相关的数据库操作 ---结束---
+
+#pragma mark 消息记录相关的数据库操作 ---开始---
+//存储用户信息
+-(void)insertOperateToDB:(MsgOperateModel *)model
+{
+    NSString *insertSql = @"REPLACE INTO MESSAGEOPERATETABLE (messageId, operateType, operateValue) VALUES (?, ?, ?)";
+    FMDatabaseQueue *queue = [RCDBHelper getDatabaseQueue];
+    
+    [queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:insertSql,model.msgId,model.operateType,model.operateValue];
+    }];
+}
+
+//从表中获取用户信息
+-(MsgOperateModel *)getOperateModelById:(NSString *)msgId
+{
+    __block MsgOperateModel *model = nil;
+    FMDatabaseQueue *queue = [RCDBHelper getDatabaseQueue];
+    if (queue==nil) {
+        return nil;
+    }
+    [queue inDatabase:^(FMDatabase *db) {
+        FMResultSet *rs = [db executeQuery:@"SELECT * FROM MESSAGEOPERATETABLE where messageId = ?",msgId];
+        while ([rs next]) {
+            model = [[MsgOperateModel alloc] init];
+            model.msgId = [rs stringForColumn:@"messageId"];
+            model.operateType = [rs stringForColumn:@"operateType"];
+            model.operateValue = [rs stringForColumn:@"operateValue"];
+        }
+        [rs close];
+    }];
+    return model;
+}
+
+//删除用户
+-(void)deleteOperateFromDB:(NSString *)msgId
+{
+    if([msgId length] < 1)
+        return;
+    NSString *deleteSql = [NSString stringWithFormat:@"delete from %@ where %@ = '%@'",@"MESSAGEOPERATETABLE", @"messageId", msgId];
+    FMDatabaseQueue *queue = [RCDBHelper getDatabaseQueue];
+    if (queue==nil) {
+        return;
+    }
+    [queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:deleteSql];
+    }];
+}
+#pragma mark 消息记录相关的数据库操作 ---结束---
 
 @end

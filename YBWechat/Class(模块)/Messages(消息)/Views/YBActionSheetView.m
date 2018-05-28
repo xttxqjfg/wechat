@@ -127,6 +127,15 @@
     return 0.1;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc]init];
+}
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [[UIView alloc]init];
+}
+
 -(UITableView *)sheetTable
 {
     if (!_sheetTable) {

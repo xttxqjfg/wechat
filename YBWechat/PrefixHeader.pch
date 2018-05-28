@@ -36,6 +36,7 @@
     #import "RCDBManager.h"
     #import "YYModel.h"
     #import "YBConversationVC.h"
+    #import "MsgOperateModel.h"
 
     #import <objc/runtime.h>
 
