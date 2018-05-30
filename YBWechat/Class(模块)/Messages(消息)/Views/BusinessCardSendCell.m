@@ -96,7 +96,14 @@
         YBUserInfo *cardUserInfo = [YBUserInfo yy_modelWithJSON:cardSendMessage.content];
         if (cardUserInfo) {
             self.userNameLabel.text = cardUserInfo.name;
-            [self.userPortraitImageView sd_setImageWithURL:[NSURL URLWithString:cardUserInfo.portraitUri] placeholderImage:[UIImage imageNamed:@"default_user_image"]];
+            if([cardUserInfo.portraitUri hasPrefix:@"http"])
+            {
+                [self.userPortraitImageView sd_setImageWithURL:[NSURL URLWithString:cardUserInfo.portraitUri] placeholderImage:[UIImage imageNamed:@"default_user_image"]];
+            }
+            else
+            {
+                self.userPortraitImageView.image = [UIImage imageNamed:@"default_user_image"];
+            }
         }
         else
         {

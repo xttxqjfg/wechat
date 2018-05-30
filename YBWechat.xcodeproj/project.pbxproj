@@ -16,6 +16,10 @@
 		1A0E4C602021A51100745904 /* YBRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0E4C5F2021A51100745904 /* YBRegisterView.xib */; };
 		1A0E4C632021A67E00745904 /* YBInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E4C622021A67E00745904 /* YBInputTextView.m */; };
 		1A0E4C652021A68500745904 /* YBInputTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0E4C642021A68500745904 /* YBInputTextView.xib */; };
+		1A0FF61720BD299900ECD044 /* MomentsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FF61620BD299900ECD044 /* MomentsDataModel.m */; };
+		1A0FF61A20BD2DDA00ECD044 /* YBPraiseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FF61920BD2DDA00ECD044 /* YBPraiseModel.m */; };
+		1A0FF61D20BD2E1300ECD044 /* YBCommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FF61C20BD2E1300ECD044 /* YBCommendModel.m */; };
+		1A12609920BD3A7200FAE0F0 /* YBMomentsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A12609820BD3A7200FAE0F0 /* YBMomentsHeaderView.m */; };
 		1A16173120B2564D00B42053 /* TranslationMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A16173020B2564D00B42053 /* TranslationMessage.m */; };
 		1A168C7D20B5124200C0FC45 /* YBMomentsAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A168C7C20B5124200C0FC45 /* YBMomentsAddVC.m */; };
 		1A17C2F2206E027E009EFFF1 /* YBUserDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17C2F1206E027E009EFFF1 /* YBUserDetailVC.m */; };
@@ -75,6 +79,7 @@
 		1ABA2B052029B0CD009E4E98 /* YBInfoLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA2B042029B0CD009E4E98 /* YBInfoLabel.xib */; };
 		1AD5BB6420B3EB70001AF94A /* TranslationDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5BB6320B3EB70001AF94A /* TranslationDataModel.m */; };
 		1AD67479202AC62400A5BD9D /* RSATool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD67478202AC62400A5BD9D /* RSATool.m */; };
+		1AE1BE0E20BCF236006AFA95 /* momentsDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AE1BE0D20BCF236006AFA95 /* momentsDataList.plist */; };
 		1AE521FB2018558C00AD174F /* YBMessageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE521FA2018558C00AD174F /* YBMessageListVC.m */; };
 		1AE521FE201855C500AD174F /* YBContactsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE521FD201855C500AD174F /* YBContactsVC.m */; };
 		1AE52201201855DB00AD174F /* YBDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE52200201855DB00AD174F /* YBDiscoverVC.m */; };
@@ -118,6 +123,14 @@
 		1A0E4C612021A67E00745904 /* YBInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBInputTextView.h; sourceTree = "<group>"; };
 		1A0E4C622021A67E00745904 /* YBInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBInputTextView.m; sourceTree = "<group>"; };
 		1A0E4C642021A68500745904 /* YBInputTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBInputTextView.xib; sourceTree = "<group>"; };
+		1A0FF61520BD299900ECD044 /* MomentsDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomentsDataModel.h; sourceTree = "<group>"; };
+		1A0FF61620BD299900ECD044 /* MomentsDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MomentsDataModel.m; sourceTree = "<group>"; };
+		1A0FF61820BD2DDA00ECD044 /* YBPraiseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBPraiseModel.h; sourceTree = "<group>"; };
+		1A0FF61920BD2DDA00ECD044 /* YBPraiseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBPraiseModel.m; sourceTree = "<group>"; };
+		1A0FF61B20BD2E1300ECD044 /* YBCommendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBCommendModel.h; sourceTree = "<group>"; };
+		1A0FF61C20BD2E1300ECD044 /* YBCommendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBCommendModel.m; sourceTree = "<group>"; };
+		1A12609720BD3A7200FAE0F0 /* YBMomentsHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBMomentsHeaderView.h; sourceTree = "<group>"; };
+		1A12609820BD3A7200FAE0F0 /* YBMomentsHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBMomentsHeaderView.m; sourceTree = "<group>"; };
 		1A16172F20B2564D00B42053 /* TranslationMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationMessage.h; sourceTree = "<group>"; };
 		1A16173020B2564D00B42053 /* TranslationMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationMessage.m; sourceTree = "<group>"; };
 		1A168C7B20B5124200C0FC45 /* YBMomentsAddVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBMomentsAddVC.h; sourceTree = "<group>"; };
@@ -220,6 +233,7 @@
 		1AD67476202A8CD600A5BD9D /* UserDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefine.h; sourceTree = "<group>"; };
 		1AD67477202AC62400A5BD9D /* RSATool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSATool.h; sourceTree = "<group>"; };
 		1AD67478202AC62400A5BD9D /* RSATool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSATool.m; sourceTree = "<group>"; };
+		1AE1BE0D20BCF236006AFA95 /* momentsDataList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = momentsDataList.plist; sourceTree = "<group>"; };
 		1AE521F92018558C00AD174F /* YBMessageListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBMessageListVC.h; sourceTree = "<group>"; };
 		1AE521FA2018558C00AD174F /* YBMessageListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBMessageListVC.m; sourceTree = "<group>"; };
 		1AE521FC201855C500AD174F /* YBContactsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBContactsVC.h; sourceTree = "<group>"; };
@@ -608,6 +622,13 @@
 			isa = PBXGroup;
 			children = (
 				1AE5220A2018846C00AD174F /* discoverDataList.plist */,
+				1AE1BE0D20BCF236006AFA95 /* momentsDataList.plist */,
+				1A0FF61520BD299900ECD044 /* MomentsDataModel.h */,
+				1A0FF61620BD299900ECD044 /* MomentsDataModel.m */,
+				1A0FF61820BD2DDA00ECD044 /* YBPraiseModel.h */,
+				1A0FF61920BD2DDA00ECD044 /* YBPraiseModel.m */,
+				1A0FF61B20BD2E1300ECD044 /* YBCommendModel.h */,
+				1A0FF61C20BD2E1300ECD044 /* YBCommendModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -637,6 +658,8 @@
 				1A76257D20B7B8030016DE25 /* YBMomentCellPicView.h */,
 				1A76257E20B7B8030016DE25 /* YBMomentCellPicView.m */,
 				1A76258020B7B80D0016DE25 /* YBMomentCellPicView.xib */,
+				1A12609720BD3A7200FAE0F0 /* YBMomentsHeaderView.h */,
+				1A12609820BD3A7200FAE0F0 /* YBMomentsHeaderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -786,6 +809,7 @@
 				1AF8B6EB202D8BAD003C34C2 /* YBContactCell.xib in Resources */,
 				1A2DC90F206DCDDE003D02A2 /* YBSearchEmptyView.xib in Resources */,
 				1A17C301206E0976009EFFF1 /* YBUserDetailAlbumCell.xib in Resources */,
+				1AE1BE0E20BCF236006AFA95 /* momentsDataList.plist in Resources */,
 				1A76258120B7B80D0016DE25 /* YBMomentCellPicView.xib in Resources */,
 				1ABA2B052029B0CD009E4E98 /* YBInfoLabel.xib in Resources */,
 				1A73549F2071C21F0011443A /* YBMyQRView.xib in Resources */,
@@ -898,6 +922,7 @@
 				1AF5A7422074C1C900A14940 /* YBMomentsVC.m in Sources */,
 				1A17C307206E29CA009EFFF1 /* YBPublicServiceListVC.m in Sources */,
 				1A3E63112018301D00E683CA /* main.m in Sources */,
+				1A0FF61720BD299900ECD044 /* MomentsDataModel.m in Sources */,
 				1A45B2DA2044EF4C00F5A48F /* YBDropDownMenuCell.m in Sources */,
 				1A168C7D20B5124200C0FC45 /* YBMomentsAddVC.m in Sources */,
 				1AE52204201855EB00AD174F /* YBMineVC.m in Sources */,
@@ -926,7 +951,9 @@
 				1A5D6F2E206CDD4400E15AF1 /* YBSearchVC.m in Sources */,
 				1A0E4C5620219F7500745904 /* YBUserCache.m in Sources */,
 				1AF8B6D4202D6ED3003C34C2 /* pinyin.c in Sources */,
+				1A12609920BD3A7200FAE0F0 /* YBMomentsHeaderView.m in Sources */,
 				1A3269E320B54A89005B2883 /* YBMomentsAddCell.m in Sources */,
+				1A0FF61A20BD2DDA00ECD044 /* YBPraiseModel.m in Sources */,
 				1A16173120B2564D00B42053 /* TranslationMessage.m in Sources */,
 				1A5D6F27206CD46000E15AF1 /* UITableViewIndex+YB.m in Sources */,
 				1A0E4C5E2021A50A00745904 /* YBRegisterView.m in Sources */,
@@ -936,6 +963,7 @@
 				1A1A36CD2019B4AF000B93EE /* YBAddFriendsVC.m in Sources */,
 				1A76258720B7F9D00016DE25 /* BusinessCardSendMessage.m in Sources */,
 				1AF8B6E3202D77BC003C34C2 /* DefaultPortraitView.m in Sources */,
+				1A0FF61D20BD2E1300ECD044 /* YBCommendModel.m in Sources */,
 				1A2DC913206DD376003D02A2 /* YBAddFriensCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,5 +10,6 @@ pod 'MJRefresh', '~> 3.1.12'
 pod 'RongCloudIM', '2.9.0'
 pod 'YYModel', '~> 1.0.4'
 pod 'Aspects', '~> 1.4.1'
+pod 'YYText', '~> 1.0.7'
 
 end

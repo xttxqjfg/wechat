@@ -42,6 +42,7 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - YYModel (1.0.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.3)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - RongCloudIM (= 2.9.0)
   - SDWebImage (~> 3.8.1)
   - YYModel (~> 1.0.4)
+  - YYText (~> 1.0.7)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -62,7 +64,8 @@ SPEC CHECKSUMS:
   RongCloudIM: 7b4f347758640d5cda8e0ac722110f8cfb8a6480
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 75e12a5b21180914edf8b6b603188e98c8527aa5
+PODFILE CHECKSUM: 5a7a720ff7e1f49facf275d26500975ffd520d0e
 
 COCOAPODS: 1.3.1
