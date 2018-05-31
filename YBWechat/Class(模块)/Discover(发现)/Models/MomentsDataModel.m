@@ -18,6 +18,8 @@
     self = [super init];
     if (self)
     {
+        self.momentsId = [dict objectForKey:@"momentsId"] ? [NSString stringWithFormat:@"%@",[dict objectForKey:@"momentsId"]] : @"";
+        
         self.userId = [dict objectForKey:@"userId"] ? [NSString stringWithFormat:@"%@",[dict objectForKey:@"userId"]] : @"";
         
         self.userName = [dict objectForKey:@"userName"] ? [NSString stringWithFormat:@"%@",[dict objectForKey:@"userName"]] : @"匿名";
@@ -99,18 +101,17 @@
 
 - (CGSize)getContentLabelSize {
     if ([self.content length] > 0) {
-        float maxWidth = YB_SCREEN_WIDTH - 80 - 20;
         
-        CGRect textRect = [self.content
-                           boundingRectWithSize:CGSizeMake(maxWidth, 8000)
-                           options:(NSStringDrawingTruncatesLastVisibleLine |
-                                    NSStringDrawingUsesLineFragmentOrigin |
-                                    NSStringDrawingUsesFontLeading)
-                           attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16.0]}
-                           context:nil];
-        textRect.size.height = ceilf(textRect.size.height);
-        textRect.size.width = ceilf(textRect.size.width);
-        return CGSizeMake(textRect.size.width + 5, textRect.size.height + 5);
+        float maxWidth = YB_SCREEN_WIDTH - 80 - 20;
+        CGSize contentSize = CGSizeMake(maxWidth, 8000);
+        
+        NSMutableAttributedString *contentText = [[NSMutableAttributedString alloc] initWithString:self.content];
+        contentText.yy_font = [UIFont systemFontOfSize:16];
+        contentText.yy_lineSpacing = 5;
+        
+        YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:contentSize text:contentText];
+        CGFloat introHeight = layout.textBoundingSize.height;
+        return CGSizeMake(maxWidth + 5, introHeight + 5);
     } else {
         return CGSizeZero;
     }

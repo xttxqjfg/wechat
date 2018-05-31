@@ -16,6 +16,8 @@
 #import "YBMomentsHeaderView.h"
 #import "YBUserDetailVC.h"
 
+#import "YBPicsBrowser.h"
+
 @interface YBMomentsVC ()<YBActionSheetViewDelegate,UITableViewDelegate,UITableViewDataSource,YBMomentsHeaderViewDelegate>
 
 @property (nonatomic,strong) YBActionSheetView *actionSheetView;
@@ -23,6 +25,8 @@
 @property (nonatomic,strong) UITableView *momentsTableView;
 
 @property (nonatomic,strong) NSMutableArray *momentsDataArr;
+
+@property (nonatomic,strong) YBPicsBrowser *picsBrowser;
 
 @end
 
@@ -85,6 +89,12 @@
     detailVC.userInfo = userInfo;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVC animated:YES];
+}
+
+-(void)jumpToPicBrowserOnHeaderView:(NSArray *)picArr index:(NSInteger)index
+{
+    self.picsBrowser.picArr = picArr;
+    [self.picsBrowser showAtPage:index];
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
@@ -189,6 +199,14 @@
         }
     }
     return _momentsDataArr;
+}
+
+-(YBPicsBrowser *)picsBrowser
+{
+    if (!_picsBrowser) {
+        _picsBrowser = [[YBPicsBrowser alloc]initWithFrame:CGRectMake(0, 0, YB_SCREEN_WIDTH, YB_SCREEN_HEIGHT)];
+    }
+    return _picsBrowser;
 }
 
 - (void)didReceiveMemoryWarning {

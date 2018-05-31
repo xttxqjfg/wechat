@@ -23,6 +23,8 @@
 @property (strong, nonatomic) NSMutableArray *picImageViewArr;
 //存放图片的view
 @property (strong, nonatomic) UIView *picImagesBackGroundView;
+//点赞和评论按钮弹出视图
+@property (strong, nonatomic) UIView *operatePopView;
 @end
 
 @implementation YBMomentsHeaderView
@@ -59,7 +61,6 @@
     self.mulContentLabel = [[YYLabel alloc]init];
     self.mulContentLabel.numberOfLines = 0;
     self.mulContentLabel.textAlignment = NSTextAlignmentLeft;
-//    self.mulContentLabel.font = [UIFont systemFontOfSize:16.0];
     self.mulContentLabel.displaysAsynchronously = YES;
     [self addSubview:self.mulContentLabel];
     
@@ -89,10 +90,15 @@
     
     for (int i = 0;i < self.headerViewData.picArr.count;i++) {
         UIImageView *picImageView = [[UIImageView alloc]init];
+        picImageView.userInteractionEnabled = YES;
         //tag值用于浏览图片时跳转
         picImageView.tag = 2000 + i;
         [picImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.headerViewData.picArr[i]]] placeholderImage:[UIImage imageNamed:@"mine_album"]];
         [self.picImageViewArr addObject:picImageView];
+        
+        //添加点击事件
+        UITapGestureRecognizer *picTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(picTapped:)];
+        [picImageView addGestureRecognizer:picTap];
     }
     
     [self setAutoLayout];
@@ -155,24 +161,12 @@
     
     self.userNameLabel.text = self.headerViewData.userName;
     [self.userPicImageView sd_setImageWithURL:[NSURL URLWithString:self.headerViewData.userPic] placeholderImage:[UIImage imageNamed:@"default_user_image"]];
-//    self.mulContentLabel.text = self.headerViewData.content;
     self.timeAndSourceLabel.text = self.headerViewData.time;
 }
 
 - (CGSize)getContentLabelSize {
     if ([self.headerViewData.content length] > 0) {
         float maxWidth = YB_SCREEN_WIDTH - 80 - 20;
-        /*
-        CGRect textRect = [self.headerViewData.content
-                           boundingRectWithSize:CGSizeMake(maxWidth, 8000)
-                           options:(NSStringDrawingTruncatesLastVisibleLine |
-                                    NSStringDrawingUsesLineFragmentOrigin |
-                                    NSStringDrawingUsesFontLeading)
-                           attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16.0]}
-                           context:nil];
-         textRect.size.height = ceilf(textRect.size.height);
-         textRect.size.width = ceilf(textRect.size.width);
-         */
         CGSize contentSize = CGSizeMake(maxWidth, 8000);
         YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:contentSize text:self.mulContentLabel.attributedText];
         self.mulContentLabel.textLayout = layout;
@@ -187,6 +181,16 @@
 -(void)operateMore:(UITapGestureRecognizer *)sender
 {
     NSLog(@"-(void)operateMore:(UITapGestureRecognizer *)sender");
+}
+
+//朋友圈图片资源点击
+-(void)picTapped:(UITapGestureRecognizer *)sender
+{
+    NSInteger index = sender.view.tag - 2000;
+    NSLog(@"-(void)picTapped:(UITapGestureRecognizer *)sender");
+    if ([self.delegate respondsToSelector:@selector(jumpToPicBrowserOnHeaderView:index:)]) {
+        [self.delegate jumpToPicBrowserOnHeaderView:self.headerViewData.picArr index:index];
+    }
 }
 
 //用户图片的点击事件、用户名称的点击事件

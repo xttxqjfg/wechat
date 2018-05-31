@@ -15,6 +15,9 @@
 //跳转到用户详情
 -(void)jumpToUserDetailOnHeaderView:(NSString *)userId;
 
+//跳转到图片浏览控制器
+-(void)jumpToPicBrowserOnHeaderView:(NSArray *)picArr index:(NSInteger)index;
+
 @end
 
 @interface YBMomentsHeaderView : UIView

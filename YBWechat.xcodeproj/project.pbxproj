@@ -54,6 +54,7 @@
 		1A45B2DD2044F51800F5A48F /* DropDownMenuData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A45B2DC2044F51800F5A48F /* DropDownMenuData.plist */; };
 		1A4D401B2031396E002627A5 /* YBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D401A2031396E002627A5 /* YBSearchView.m */; };
 		1A4D401D2031397B002627A5 /* YBSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4D401C2031397B002627A5 /* YBSearchView.xib */; };
+		1A5A5E9A20BF9CF400616266 /* YBPicsBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5A5E9920BF9CF400616266 /* YBPicsBrowser.m */; };
 		1A5D6F27206CD46000E15AF1 /* UITableViewIndex+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D6F26206CD46000E15AF1 /* UITableViewIndex+YB.m */; };
 		1A5D6F2E206CDD4400E15AF1 /* YBSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D6F2D206CDD4400E15AF1 /* YBSearchVC.m */; };
 		1A5D6F31206CDEAC00E15AF1 /* YBSearchToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D6F30206CDEAC00E15AF1 /* YBSearchToolView.m */; };
@@ -186,6 +187,8 @@
 		1A4D40192031396E002627A5 /* YBSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSearchView.h; sourceTree = "<group>"; };
 		1A4D401A2031396E002627A5 /* YBSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSearchView.m; sourceTree = "<group>"; };
 		1A4D401C2031397B002627A5 /* YBSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBSearchView.xib; sourceTree = "<group>"; };
+		1A5A5E9820BF9CF400616266 /* YBPicsBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBPicsBrowser.h; sourceTree = "<group>"; };
+		1A5A5E9920BF9CF400616266 /* YBPicsBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBPicsBrowser.m; sourceTree = "<group>"; };
 		1A5D6F25206CD46000E15AF1 /* UITableViewIndex+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewIndex+YB.h"; sourceTree = "<group>"; };
 		1A5D6F26206CD46000E15AF1 /* UITableViewIndex+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewIndex+YB.m"; sourceTree = "<group>"; };
 		1A5D6F2C206CDD4400E15AF1 /* YBSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSearchVC.h; sourceTree = "<group>"; };
@@ -660,6 +663,8 @@
 				1A76258020B7B80D0016DE25 /* YBMomentCellPicView.xib */,
 				1A12609720BD3A7200FAE0F0 /* YBMomentsHeaderView.h */,
 				1A12609820BD3A7200FAE0F0 /* YBMomentsHeaderView.m */,
+				1A5A5E9820BF9CF400616266 /* YBPicsBrowser.h */,
+				1A5A5E9920BF9CF400616266 /* YBPicsBrowser.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -928,6 +933,7 @@
 				1AE52204201855EB00AD174F /* YBMineVC.m in Sources */,
 				1AE5220820186F5200AD174F /* YBSettingTableViewCell.m in Sources */,
 				1A0E4C632021A67E00745904 /* YBInputTextView.m in Sources */,
+				1A5A5E9A20BF9CF400616266 /* YBPicsBrowser.m in Sources */,
 				1A6CAD522044EC9500752671 /* YBDropDownMenu.m in Sources */,
 				1A76258A20B7FA240016DE25 /* BusinessCardRequestCell.m in Sources */,
 				1AF8B6DD202D700B003C34C2 /* RCDBManager.m in Sources */,

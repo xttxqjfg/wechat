@@ -13,6 +13,7 @@
 #define YB_SCREEN_FRAME ([UIScreen mainScreen].applicationFrame)
 #define YB_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define YB_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define YB_SCREEN_RATIO ([UIScreen mainScreen].bounds.size.height / [UIScreen mainScreen].bounds.size.width)
 
 #define YB_HEIGHT_PRO [UIScreen mainScreen].bounds.size.height/568
 #define YB_WIDTH_PRO [UIScreen mainScreen].bounds.size.width/320

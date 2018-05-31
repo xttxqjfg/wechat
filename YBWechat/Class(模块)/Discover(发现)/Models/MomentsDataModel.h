@@ -11,6 +11,8 @@
 @interface MomentsDataModel : NSObject
 //用户id
 @property (nonatomic,copy) NSString *userId;
+//朋友圈id
+@property (nonatomic,copy) NSString *momentsId;
 //用户名称
 @property (nonatomic,copy) NSString *userName;
 //用户头像
