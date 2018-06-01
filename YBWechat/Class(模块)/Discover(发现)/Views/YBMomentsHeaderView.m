@@ -94,6 +94,8 @@
         //tag值用于浏览图片时跳转
         picImageView.tag = 2000 + i;
         [picImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.headerViewData.picArr[i]]] placeholderImage:[UIImage imageNamed:@"mine_album"]];
+        picImageView.contentMode = UIViewContentModeScaleAspectFill;
+        picImageView.clipsToBounds = YES;
         [self.picImageViewArr addObject:picImageView];
         
         //添加点击事件

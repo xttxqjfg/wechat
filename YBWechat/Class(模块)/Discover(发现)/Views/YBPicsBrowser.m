@@ -18,6 +18,7 @@
 @property (nonatomic,strong) NSMutableArray *picImageViewArr;
 //页控制器
 @property (nonatomic,strong) UIPageControl *picPageControl;
+
 @end
 
 @implementation YBPicsBrowser
@@ -73,7 +74,6 @@
     }
     
     //picScrollView的可滚动范围
-//    CGFloat contentWidth = self.picArr.count < 2 ? YB_SCREEN_WIDTH : YB_SCREEN_WIDTH * self.picArr.count + PicsGap * (self.picArr.count - 1);
     CGFloat contentWidth = (YB_SCREEN_WIDTH + 2 * PicsGap) * self.picArr.count;
     self.picScrollView.contentSize = CGSizeMake(contentWidth, 0);
     
@@ -135,16 +135,11 @@
     [self removeFromSuperview];
 }
 
--(void)show
-{
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
-}
-
 -(void)showAtPage:(NSInteger)page
 {
     self.picPageControl.currentPage = page;
     [self.picScrollView setContentOffset:CGPointMake(page * (YB_SCREEN_WIDTH + 2 * PicsGap), 0) animated:NO];
-    [self show];
+    [[UIApplication sharedApplication].keyWindow addSubview:self];
 }
 
 @end

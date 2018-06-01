@@ -11,8 +11,6 @@
 @interface YBPicsBrowser : UIView
 
 @property (nonatomic,copy) NSArray *picArr;
-//默认从0开始显示
--(void)show;
 
 //从指定页开始显示
 -(void)showAtPage:(NSInteger)page;
