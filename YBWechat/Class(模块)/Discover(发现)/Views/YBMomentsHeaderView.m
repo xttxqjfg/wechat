@@ -10,7 +10,7 @@
 
 #import "YBPraisesListView.h"
 
-@interface YBMomentsHeaderView()
+@interface YBMomentsHeaderView()<YBPraisesListViewDelegate>
 //用户名
 @property (strong, nonatomic) UILabel *userNameLabel;
 //用户头像
@@ -44,12 +44,11 @@
 - (void)initialize
 {
     self.backgroundColor = [UIColor clearColor];
-    self.userInteractionEnabled = YES;
     
     self.userNameLabel = [[UILabel alloc]init];
     self.userNameLabel.textAlignment = NSTextAlignmentLeft;
     self.userNameLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    self.userNameLabel.textColor = [UIColor colorWithRed:84.0/255.0 green:100.0/255.0 blue:145.0/255.0 alpha:1.0];
+    self.userNameLabel.textColor = YB_Global_LinkTextColor;
     self.userNameLabel.userInteractionEnabled = YES;
     [self addSubview:self.userNameLabel];
     UITapGestureRecognizer *userNameTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(userDetailTapped:)];
@@ -86,6 +85,8 @@
     
     self.picImageViewArr = [[NSMutableArray alloc]init];
     self.praiseListView = [[YBPraisesListView alloc]initWithFrame:CGRectZero];
+    self.praiseListView.userInteractionEnabled = YES;
+    self.praiseListView.delegate = self;
     [self addSubview:self.praiseListView];
 }
 
@@ -163,9 +164,6 @@
         }
     }
     
-//    self.timeAndSourceLabel.frame = CGRectMake(80, self.bounds.size.height - 30, YB_SCREEN_WIDTH - 80 - 80, 25);
-//    self.operateMoreImageView.frame = CGRectMake(YB_SCREEN_WIDTH - 30 - 20, self.bounds.size.height - 30, 25, 25);
-    
     self.timeAndSourceLabel.frame = CGRectMake(80, CGRectGetMaxY(self.picImagesBackGroundView.frame) + 5, YB_SCREEN_WIDTH - 80 - 80, 25);
     self.operateMoreImageView.frame = CGRectMake(YB_SCREEN_WIDTH - 30 - 20, 0, 25, 25);
     CGPoint center = self.operateMoreImageView.center;
@@ -177,7 +175,16 @@
     self.userNameLabel.text = self.headerViewData.userName;
     [self.userPicImageView sd_setImageWithURL:[NSURL URLWithString:self.headerViewData.userPic] placeholderImage:[UIImage imageNamed:@"default_user_image"]];
     self.timeAndSourceLabel.text = self.headerViewData.time;
-    self.praiseListView.dataList = @[];
+    
+    self.praiseListView.modelList = self.headerViewData.praiseArr;
+    //判断是不是显示分割线
+    if (self.headerViewData.commendArr.count > 0) {
+        self.praiseListView.showBottomLine = YES;
+    }
+    else
+    {
+        self.praiseListView.showBottomLine = NO;
+    }
 }
 
 - (CGSize)getContentLabelSize {
@@ -220,6 +227,15 @@
     NSLog(@"-(void)userDetailTapped:(UITapGestureRecognizer *)sender");
     if ([self.delegate respondsToSelector:@selector(jumpToUserDetailOnHeaderView:)]) {
         [self.delegate jumpToUserDetailOnHeaderView:self.headerViewData.userId];
+    }
+}
+
+#pragma mark YBPraisesListViewDelegate
+-(void)selectedUserWithId:(NSString *)userId
+{
+    NSLog(@"selectedUserWithId:%@",userId);
+    if ([self.delegate respondsToSelector:@selector(jumpToUserDetailOnHeaderView:)]) {
+        [self.delegate jumpToUserDetailOnHeaderView:userId];
     }
 }
 

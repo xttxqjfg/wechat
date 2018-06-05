@@ -20,5 +20,7 @@
 @property (nonatomic,copy) NSString *secondUserName;
 //评论内容
 @property (nonatomic,copy) NSString *content;
+//高度
+@property (nonatomic,assign) CGFloat cellHeight;
 
 @end

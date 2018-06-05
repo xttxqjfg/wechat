@@ -22,6 +22,7 @@
 #define YB_Global_TintColor [UIColor lightGrayColor]
 #define YB_Tabbar_TintColorSel [UIColor colorWithRed:27.0/255.0 green:163.0/255.0 blue:25.0/255.0 alpha:1.0]
 #define YB_Global_NavBackColor [UIColor colorWithRed:36.0/255.0 green:38.0/255.0 blue:47.0/255.0 alpha:1.0]
+#define YB_Global_LinkTextColor [UIColor colorWithRed:76.0/255.0 green:93.0/255.0 blue:140.0/255.0 alpha:1.0]
 
 // 详细日志打印
 #ifdef DEBUG

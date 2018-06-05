@@ -31,8 +31,6 @@
 @property (nonatomic,strong) NSMutableArray *commendArr;
 //组头高，包括内容、图片、点赞等
 @property (nonatomic,assign) CGFloat cellHeaderHeight;
-//评论列表cell高
-@property (nonatomic,assign) CGFloat cellHeight;
 //图片区域的高度
 @property (nonatomic,assign) CGFloat picViewHeight;
 //点赞列表区域的高度

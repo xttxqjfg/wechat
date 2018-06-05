@@ -8,15 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+#import "YBPraiseModel.h"
+
 @protocol YBPraisesListViewDelegate <NSObject>
 
--(void)selectedUserAtIndex:(NSInteger)index;
+-(void)selectedUserWithId:(NSString *)userId;
 
 @end
 
 @interface YBPraisesListView : UIView
 
-@property (nonatomic,strong) NSArray *dataList;
+@property (nonatomic,strong) NSArray *modelList;
+
+//点赞区和评论区之间的分割线
+@property (nonatomic,assign) BOOL showBottomLine;
 
 @property (nonatomic,assign) id<YBPraisesListViewDelegate> delegate;
 

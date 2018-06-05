@@ -38,6 +38,7 @@
     #import "YBConversationVC.h"
     #import "MsgOperateModel.h"
     #import <YYText/YYText.h>
+    #import <YYImage/YYImage.h>
 
     #import <objc/runtime.h>
 

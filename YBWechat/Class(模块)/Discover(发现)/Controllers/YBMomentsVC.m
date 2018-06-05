@@ -19,7 +19,10 @@
 #import "YBPicsBrowser.h"
 #import "YBOperatePopView.h"
 
-@interface YBMomentsVC ()<YBActionSheetViewDelegate,UITableViewDelegate,UITableViewDataSource,YBMomentsHeaderViewDelegate,UIScrollViewDelegate>
+#import "YBCommendModel.h"
+#import "YBMomentsCommendCell.h"
+
+@interface YBMomentsVC ()<YBActionSheetViewDelegate,UITableViewDelegate,UITableViewDataSource,YBMomentsHeaderViewDelegate,UIScrollViewDelegate,UIGestureRecognizerDelegate,YBMomentsCommendCellDelegate>
 
 @property (nonatomic,strong) YBActionSheetView *actionSheetView;
 
@@ -48,6 +51,7 @@
     [self.view addSubview:self.momentsTableView];
     
     UITapGestureRecognizer *viewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewBackGroundTapped:)];
+    viewTap.delegate = self;
     [self.view addGestureRecognizer:viewTap];
 }
 
@@ -90,6 +94,24 @@
             //
         }];
     }
+}
+
+#pragma mark--UIGestureRecognizerDelegate
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    //解决点赞区点击事件被拦截的问题
+    if([touch.view isKindOfClass:[YYLabel class]])
+    {
+        return NO;
+    }
+    return YES;
+}
+
+#pragma mark YBMomentsCommendCellDelegate
+-(void)selectedUserWithIdOnCommendCell:(NSString *)userId
+{
+    NSLog(@"selectedUserWithIdOnCommendCell:%@",userId);
+    [self jumpToUserDetailOnHeaderView:userId];
 }
 
 #pragma mark YBMomentsHeaderViewDelegate
@@ -161,11 +183,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"momentCell"];
+    YBMomentsCommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YBMomentsCommendCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"momentCell"];
+        cell = [[YBMomentsCommendCell alloc]initWithFrame:CGRectZero];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",indexPath.row];
+    cell.delegate = self;
+    MomentsDataModel *model = (MomentsDataModel *)[self.momentsDataArr objectAtIndex:indexPath.section];
+    YBCommendModel *commendModel = (YBCommendModel *)[model.commendArr objectAtIndex:indexPath.row];
+    cell.commendModel = commendModel;
     return cell;
 }
 
@@ -183,7 +208,8 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MomentsDataModel *model = (MomentsDataModel *)[self.momentsDataArr objectAtIndex:indexPath.section];
-    return model.cellHeight;
+    YBCommendModel *commendModel = (YBCommendModel *)[model.commendArr objectAtIndex:indexPath.row];
+    return commendModel.cellHeight;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -204,12 +230,28 @@
     headView.backgroundColor = [UIColor whiteColor];
     headView.headerViewData = model;
     headView.delegate = self;
+    headView.userInteractionEnabled = YES;
     return headView;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    return [[UIView alloc]initWithFrame:CGRectZero];
+    UIView *footView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, YB_SCREEN_WIDTH, 10)];
+    footView.backgroundColor = [UIColor whiteColor];
+    UILabel *lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 9, YB_SCREEN_WIDTH, 1)];
+    lineLabel.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:241.0/255.0 blue:241.0/255.0 alpha:1.0];
+    [footView addSubview:lineLabel];
+    return footView;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"didSelectRowAtIndexPath:%ld",(long)indexPath.row);
+    
+    YBMomentsCommendCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell) {
+        [cell setCommendSelectedAnimation];
+    }
 }
 
 #pragma mark YBActionSheetViewDelegate
@@ -245,6 +287,7 @@
         _momentsTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, YB_SCREEN_WIDTH, YB_SCREEN_HEIGHT - 64) style:(UITableViewStyleGrouped)];
         _momentsTableView.delegate = self;
         _momentsTableView.dataSource = self;
+        _momentsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _momentsTableView;
 }
