@@ -35,6 +35,8 @@
 @property (nonatomic,assign) CGFloat cellHeight;
 //图片区域的高度
 @property (nonatomic,assign) CGFloat picViewHeight;
+//点赞列表区域的高度
+@property (nonatomic,assign) CGFloat praiseViewHeight;
 
 //根据字典初始化模型
 -(instancetype)initModelWithDict:(NSDictionary *)dict;

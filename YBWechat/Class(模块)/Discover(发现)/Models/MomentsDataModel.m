@@ -65,6 +65,7 @@
         
         //设置组高度和cell高度
         self.cellHeight = 30.0;
+        //顶部间距+名称高度+时间标识高度+间距
         self.cellHeaderHeight = 15 + 30 + 10 + 30 + [self getContentLabelSize].height;
         
         //根据图片数组调整headview高度
@@ -95,6 +96,10 @@
             self.picViewHeight = 0;
         }
         self.cellHeaderHeight = self.cellHeaderHeight + self.picViewHeight;
+        
+        //计算点赞区高度
+        self.praiseViewHeight = 50.0;
+        self.cellHeaderHeight = self.cellHeaderHeight + self.praiseViewHeight;
     }
     return self;
 }

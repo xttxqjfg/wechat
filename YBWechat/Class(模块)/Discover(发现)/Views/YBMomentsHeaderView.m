@@ -8,6 +8,8 @@
 
 #import "YBMomentsHeaderView.h"
 
+#import "YBPraisesListView.h"
+
 @interface YBMomentsHeaderView()
 //用户名
 @property (strong, nonatomic) UILabel *userNameLabel;
@@ -23,8 +25,9 @@
 @property (strong, nonatomic) NSMutableArray *picImageViewArr;
 //存放图片的view
 @property (strong, nonatomic) UIView *picImagesBackGroundView;
-//点赞和评论按钮弹出视图
-@property (strong, nonatomic) UIView *operatePopView;
+//点赞区view
+@property (strong, nonatomic) YBPraisesListView *praiseListView;
+
 @end
 
 @implementation YBMomentsHeaderView
@@ -82,6 +85,8 @@
     [self addSubview:self.operateMoreImageView];
     
     self.picImageViewArr = [[NSMutableArray alloc]init];
+    self.praiseListView = [[YBPraisesListView alloc]initWithFrame:CGRectZero];
+    [self addSubview:self.praiseListView];
 }
 
 -(void)setHeaderViewData:(MomentsDataModel *)headerViewData
@@ -158,12 +163,21 @@
         }
     }
     
-    self.timeAndSourceLabel.frame = CGRectMake(80, self.bounds.size.height - 30, YB_SCREEN_WIDTH - 80 - 80, 25);
-    self.operateMoreImageView.frame = CGRectMake(YB_SCREEN_WIDTH - 30 - 20, self.bounds.size.height - 30, 25, 25);
+//    self.timeAndSourceLabel.frame = CGRectMake(80, self.bounds.size.height - 30, YB_SCREEN_WIDTH - 80 - 80, 25);
+//    self.operateMoreImageView.frame = CGRectMake(YB_SCREEN_WIDTH - 30 - 20, self.bounds.size.height - 30, 25, 25);
+    
+    self.timeAndSourceLabel.frame = CGRectMake(80, CGRectGetMaxY(self.picImagesBackGroundView.frame) + 5, YB_SCREEN_WIDTH - 80 - 80, 25);
+    self.operateMoreImageView.frame = CGRectMake(YB_SCREEN_WIDTH - 30 - 20, 0, 25, 25);
+    CGPoint center = self.operateMoreImageView.center;
+    center.y = self.timeAndSourceLabel.center.y;
+    self.operateMoreImageView.center = center;
+    
+    self.praiseListView.frame = CGRectMake(80, CGRectGetMaxY(self.timeAndSourceLabel.frame), YB_SCREEN_WIDTH - 80 - 20, self.headerViewData.praiseViewHeight - 5);
     
     self.userNameLabel.text = self.headerViewData.userName;
     [self.userPicImageView sd_setImageWithURL:[NSURL URLWithString:self.headerViewData.userPic] placeholderImage:[UIImage imageNamed:@"default_user_image"]];
     self.timeAndSourceLabel.text = self.headerViewData.time;
+    self.praiseListView.dataList = @[];
 }
 
 - (CGSize)getContentLabelSize {
@@ -183,6 +197,11 @@
 -(void)operateMore:(UITapGestureRecognizer *)sender
 {
     NSLog(@"-(void)operateMore:(UITapGestureRecognizer *)sender");
+    //取得点击按钮在屏幕中的坐标
+    CGRect rect = [sender.view convertRect: sender.view.bounds toView:[UIApplication sharedApplication].keyWindow];
+    if ([self.delegate respondsToSelector:@selector(operateMoreTappedOnHeaderView:point:)]) {
+        [self.delegate operateMoreTappedOnHeaderView:self.headerViewData point:rect.origin];
+    }
 }
 
 //朋友圈图片资源点击

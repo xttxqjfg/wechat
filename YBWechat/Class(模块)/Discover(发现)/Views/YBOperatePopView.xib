@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YBOperatePopView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="30001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bta-Ja-H1j">
+                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="83"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="  赞" image="moment_praise"/>
+                    <state key="highlighted" title="  赞" image="moment_praise_HL"/>
+                    <connections>
+                        <action selector="operateBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="8TW-A2-tep"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="30002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOq-Cd-WlZ">
+                    <rect key="frame" x="187.5" y="0.0" width="187.5" height="83"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title=" 评论" image="moment_comment">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="highlighted" title=" 评论" image="moment_comment_HL"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wM9-Wx-hup">
+                    <rect key="frame" x="186.5" y="5" width="1" height="73"/>
+                    <color key="backgroundColor" red="0.2196078431372549" green="0.24313725490196078" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="awu-Oo-XDU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vOq-Cd-WlZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="7Ph-s3-OQE"/>
+                <constraint firstItem="wM9-Wx-hup" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="BVW-W4-rj2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wM9-Wx-hup" secondAttribute="bottom" constant="5" id="QEJ-R8-vZi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vOq-Cd-WlZ" secondAttribute="bottom" id="TMm-dh-lpq"/>
+                <constraint firstItem="bta-Ja-H1j" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YEL-4x-eZw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vOq-Cd-WlZ" secondAttribute="trailing" id="dj2-D1-dG3"/>
+                <constraint firstItem="vOq-Cd-WlZ" firstAttribute="leading" secondItem="wM9-Wx-hup" secondAttribute="trailing" id="eDk-Ix-Qa8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bta-Ja-H1j" secondAttribute="bottom" id="la9-sI-NPm"/>
+                <constraint firstItem="bta-Ja-H1j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mms-87-l6u"/>
+                <constraint firstItem="wM9-Wx-hup" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="o4a-ze-HrL"/>
+                <constraint firstItem="wM9-Wx-hup" firstAttribute="leading" secondItem="bta-Ja-H1j" secondAttribute="trailing" id="p8f-Mx-NKM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="commentBtn" destination="vOq-Cd-WlZ" id="RRn-FH-rgC"/>
+                <outlet property="praiseBtn" destination="bta-Ja-H1j" id="iux-RW-kAN"/>
+            </connections>
+            <point key="canvasLocation" x="31.5" y="-222.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="moment_comment" width="20" height="20"/>
+        <image name="moment_comment_HL" width="20" height="20"/>
+        <image name="moment_praise" width="20" height="20"/>
+        <image name="moment_praise_HL" width="20" height="20"/>
+    </resources>
+</document>

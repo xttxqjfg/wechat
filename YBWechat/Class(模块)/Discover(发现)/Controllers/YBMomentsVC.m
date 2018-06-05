@@ -17,8 +17,9 @@
 #import "YBUserDetailVC.h"
 
 #import "YBPicsBrowser.h"
+#import "YBOperatePopView.h"
 
-@interface YBMomentsVC ()<YBActionSheetViewDelegate,UITableViewDelegate,UITableViewDataSource,YBMomentsHeaderViewDelegate>
+@interface YBMomentsVC ()<YBActionSheetViewDelegate,UITableViewDelegate,UITableViewDataSource,YBMomentsHeaderViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic,strong) YBActionSheetView *actionSheetView;
 
@@ -27,6 +28,8 @@
 @property (nonatomic,strong) NSMutableArray *momentsDataArr;
 
 @property (nonatomic,strong) YBPicsBrowser *picsBrowser;
+//点赞和评论的弹出视图
+@property (nonatomic,strong) YBOperatePopView *operatePopView;
 
 @end
 
@@ -43,6 +46,9 @@
     [self setNaviBarBtns];
     
     [self.view addSubview:self.momentsTableView];
+    
+    UITapGestureRecognizer *viewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewBackGroundTapped:)];
+    [self.view addGestureRecognizer:viewTap];
 }
 
 -(void)setNaviBarBtns
@@ -61,6 +67,11 @@
     [caremaView addGestureRecognizer:imageLongTap];
     
     self.navigationItem.rightBarButtonItem = rightBtn;
+}
+
+-(void)viewBackGroundTapped:(UITapGestureRecognizer *)sender
+{
+    [self hideOperatePopViewAnimate];
 }
 
 -(void)cammeraBtnPressed:(UITapGestureRecognizer *)sender
@@ -84,6 +95,8 @@
 #pragma mark YBMomentsHeaderViewDelegate
 -(void)jumpToUserDetailOnHeaderView:(NSString *)userId
 {
+    [self hideOperatePopViewAnimate];
+    
     YBUserInfo *userInfo = [[YBUserInfo alloc]initWithUserId:userId name:@"" portrait:@""];
     YBUserDetailVC *detailVC = [[YBUserDetailVC alloc]init];
     detailVC.userInfo = userInfo;
@@ -93,11 +106,59 @@
 
 -(void)jumpToPicBrowserOnHeaderView:(NSArray *)picArr index:(NSInteger)index
 {
+    [self hideOperatePopViewAnimate];
+    
     self.picsBrowser.picArr = picArr;
     [self.picsBrowser showAtPage:index];
 }
 
+//点赞或者评论按钮点击事件
+-(void)operateMoreTappedOnHeaderView:(MomentsDataModel *)model point:(CGPoint)point
+{
+    NSLog(@"触发点坐标->:x->%f,y->%f",point.x,point.y);
+    if (self.operatePopView.hidden) {
+        self.operatePopView.frame = CGRectMake(point.x - 5, point.y - 5, 0, 35);
+        [self showOperatePopViewAnimate];
+    }
+    else
+    {
+        [self hideOperatePopViewAnimate];
+    }
+}
+
+//动画展示
+-(void)showOperatePopViewAnimate
+{
+    self.operatePopView.hidden = NO;
+    CGRect frame = self.operatePopView.frame;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.operatePopView.frame = CGRectMake(frame.origin.x - 200, frame.origin.y, 200, frame.size.height);
+    } completion:^(BOOL finished) {
+        //
+    }];
+}
+
+//动画关闭
+-(void)hideOperatePopViewAnimate
+{
+    if (self.operatePopView.hidden) {
+        return;
+    }
+    
+    CGRect frame = self.operatePopView.frame;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.operatePopView.frame = CGRectMake(frame.origin.x + 200, frame.origin.y, 0, frame.size.height);
+    } completion:^(BOOL finished) {
+        self.operatePopView.hidden = YES;
+    }];
+}
+
 #pragma mark UITableViewDelegate,UITableViewDataSource
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self hideOperatePopViewAnimate];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"momentCell"];
@@ -207,6 +268,16 @@
         _picsBrowser = [[YBPicsBrowser alloc]initWithFrame:CGRectMake(0, 0, YB_SCREEN_WIDTH, YB_SCREEN_HEIGHT)];
     }
     return _picsBrowser;
+}
+
+-(YBOperatePopView *)operatePopView
+{
+    if (!_operatePopView) {
+        _operatePopView = [[YBOperatePopView alloc]initWithFrame:CGRectZero];
+        [self.view addSubview:_operatePopView];
+        _operatePopView.hidden = YES;
+    }
+    return _operatePopView;
 }
 
 - (void)didReceiveMemoryWarning {

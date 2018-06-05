@@ -18,9 +18,14 @@
 //跳转到图片浏览控制器
 -(void)jumpToPicBrowserOnHeaderView:(NSArray *)picArr index:(NSInteger)index;
 
+//点赞或者评论按钮点击事件
+-(void)operateMoreTappedOnHeaderView:(MomentsDataModel *)model point:(CGPoint)point;
+
 @end
 
 @interface YBMomentsHeaderView : UIView
+
+@property (nonatomic,strong) NSIndexPath *indexPath;
 
 @property (nonatomic,strong) MomentsDataModel *headerViewData;
 
