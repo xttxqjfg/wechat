@@ -3,6 +3,7 @@
 
 ![](http://www.xttxqjfg.cn/img/201803/28/wechat.gif)
 
+![](http://www.xttxqjfg.cn/img/201803/28/wechat1.gif)
 
 功能逐步完善中
 
