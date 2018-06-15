@@ -77,6 +77,11 @@
 		1A9D6FAF2021C2B700251BD2 /* YBLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D6FAE2021C2B700251BD2 /* YBLoginModel.m */; };
 		1A9EEFBE2079118300ED746D /* YBMyQRVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9EEFBD2079118300ED746D /* YBMyQRVC.m */; };
 		1AA6525520AEBA5100AC6B39 /* TranslationMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6525420AEBA5100AC6B39 /* TranslationMsgCell.m */; };
+		1AA8A71E20D252FA00470DE6 /* YBMomentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8A71D20D252FA00470DE6 /* YBMomentHeaderView.m */; };
+		1AA8A72020D2530100470DE6 /* YBMomentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA8A71F20D2530100470DE6 /* YBMomentHeaderView.xib */; };
+		1AA8A72320D25AD800470DE6 /* YBAlbumListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8A72220D25AD800470DE6 /* YBAlbumListVC.m */; };
+		1AA8A72520D25F3B00470DE6 /* albumDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AA8A72420D25F3B00470DE6 /* albumDataList.plist */; };
+		1AA8A72820D2618F00470DE6 /* AlbumCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8A72720D2618F00470DE6 /* AlbumCellModel.m */; };
 		1ABA2B002029B087009E4E98 /* YBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA2AFF2029B087009E4E98 /* YBUtils.m */; };
 		1ABA2B032029B0C6009E4E98 /* YBInfoLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA2B022029B0C6009E4E98 /* YBInfoLabel.m */; };
 		1ABA2B052029B0CD009E4E98 /* YBInfoLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA2B042029B0CD009E4E98 /* YBInfoLabel.xib */; };
@@ -92,7 +97,6 @@
 		1AE5220B2018846C00AD174F /* discoverDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AE5220A2018846C00AD174F /* discoverDataList.plist */; };
 		1AF5A73F2074A69200A14940 /* YBPubSerConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A73E2074A69200A14940 /* YBPubSerConversationVC.m */; };
 		1AF5A7422074C1C900A14940 /* YBMomentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A7412074C1C900A14940 /* YBMomentsVC.m */; };
-		1AF5A7482074C29700A14940 /* YBAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A7472074C29700A14940 /* YBAlbumVC.m */; };
 		1AF5A74B2074C46600A14940 /* YBActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A74A2074C46600A14940 /* YBActionSheetView.m */; };
 		1AF5A74F2074CB5200A14940 /* YBActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5A74D2074CB5200A14940 /* YBActionSheetCell.m */; };
 		1AF5A7502074CB5200A14940 /* YBActionSheetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF5A74E2074CB5200A14940 /* YBActionSheetCell.xib */; };
@@ -232,6 +236,14 @@
 		1A9EEFBD2079118300ED746D /* YBMyQRVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBMyQRVC.m; sourceTree = "<group>"; };
 		1AA6525320AEBA5100AC6B39 /* TranslationMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationMsgCell.h; sourceTree = "<group>"; };
 		1AA6525420AEBA5100AC6B39 /* TranslationMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationMsgCell.m; sourceTree = "<group>"; };
+		1AA8A71C20D252FA00470DE6 /* YBMomentHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBMomentHeaderView.h; sourceTree = "<group>"; };
+		1AA8A71D20D252FA00470DE6 /* YBMomentHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBMomentHeaderView.m; sourceTree = "<group>"; };
+		1AA8A71F20D2530100470DE6 /* YBMomentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YBMomentHeaderView.xib; sourceTree = "<group>"; };
+		1AA8A72120D25AD800470DE6 /* YBAlbumListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBAlbumListVC.h; sourceTree = "<group>"; };
+		1AA8A72220D25AD800470DE6 /* YBAlbumListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBAlbumListVC.m; sourceTree = "<group>"; };
+		1AA8A72420D25F3B00470DE6 /* albumDataList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = albumDataList.plist; sourceTree = "<group>"; };
+		1AA8A72620D2618F00470DE6 /* AlbumCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbumCellModel.h; sourceTree = "<group>"; };
+		1AA8A72720D2618F00470DE6 /* AlbumCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlbumCellModel.m; sourceTree = "<group>"; };
 		1ABA2AFE2029B087009E4E98 /* YBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBUtils.h; sourceTree = "<group>"; };
 		1ABA2AFF2029B087009E4E98 /* YBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBUtils.m; sourceTree = "<group>"; };
 		1ABA2B012029B0C6009E4E98 /* YBInfoLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBInfoLabel.h; sourceTree = "<group>"; };
@@ -259,8 +271,6 @@
 		1AF5A73E2074A69200A14940 /* YBPubSerConversationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPubSerConversationVC.m; sourceTree = "<group>"; };
 		1AF5A7402074C1C900A14940 /* YBMomentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBMomentsVC.h; sourceTree = "<group>"; };
 		1AF5A7412074C1C900A14940 /* YBMomentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBMomentsVC.m; sourceTree = "<group>"; };
-		1AF5A7462074C29700A14940 /* YBAlbumVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAlbumVC.h; sourceTree = "<group>"; };
-		1AF5A7472074C29700A14940 /* YBAlbumVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAlbumVC.m; sourceTree = "<group>"; };
 		1AF5A7492074C46600A14940 /* YBActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBActionSheetView.h; sourceTree = "<group>"; };
 		1AF5A74A2074C46600A14940 /* YBActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBActionSheetView.m; sourceTree = "<group>"; };
 		1AF5A74C2074CB5200A14940 /* YBActionSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBActionSheetCell.h; sourceTree = "<group>"; };
@@ -455,8 +465,6 @@
 		1A3E6329201835E000E683CA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1AF5A7462074C29700A14940 /* YBAlbumVC.h */,
-				1AF5A7472074C29700A14940 /* YBAlbumVC.m */,
 				1AE52202201855EB00AD174F /* YBMineVC.h */,
 				1AE52203201855EB00AD174F /* YBMineVC.m */,
 				1A9EEFBC2079118300ED746D /* YBMyQRVC.h */,
@@ -638,6 +646,9 @@
 				1A0FF61920BD2DDA00ECD044 /* YBPraiseModel.m */,
 				1A0FF61B20BD2E1300ECD044 /* YBCommendModel.h */,
 				1A0FF61C20BD2E1300ECD044 /* YBCommendModel.m */,
+				1AA8A72420D25F3B00470DE6 /* albumDataList.plist */,
+				1AA8A72620D2618F00470DE6 /* AlbumCellModel.h */,
+				1AA8A72720D2618F00470DE6 /* AlbumCellModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -651,6 +662,8 @@
 				1AF5A7412074C1C900A14940 /* YBMomentsVC.m */,
 				1A168C7B20B5124200C0FC45 /* YBMomentsAddVC.h */,
 				1A168C7C20B5124200C0FC45 /* YBMomentsAddVC.m */,
+				1AA8A72120D25AD800470DE6 /* YBAlbumListVC.h */,
+				1AA8A72220D25AD800470DE6 /* YBAlbumListVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -675,6 +688,9 @@
 				1A957A4D20C50E4600A9594F /* YBPraisesListView.m */,
 				1A3CF2CD20C669EE0034FE09 /* YBMomentsCommendCell.h */,
 				1A3CF2CE20C669EE0034FE09 /* YBMomentsCommendCell.m */,
+				1AA8A71C20D252FA00470DE6 /* YBMomentHeaderView.h */,
+				1AA8A71D20D252FA00470DE6 /* YBMomentHeaderView.m */,
+				1AA8A71F20D2530100470DE6 /* YBMomentHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -754,7 +770,6 @@
 				1A3E63082018301D00E683CA /* Sources */,
 				1A3E63092018301D00E683CA /* Frameworks */,
 				1A3E630A2018301D00E683CA /* Resources */,
-				591803875B7EEDD393DB57BD /* [CP] Embed Pods Frameworks */,
 				FD9A32143C036938ACE463CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -818,6 +833,7 @@
 				1A2DC919206DD3A4003D02A2 /* YBAddFriendsTopView.xib in Resources */,
 				1A45B2DB2044EF4C00F5A48F /* YBDropDownMenuCell.xib in Resources */,
 				1A0E4C602021A51100745904 /* YBRegisterView.xib in Resources */,
+				1AA8A72020D2530100470DE6 /* YBMomentHeaderView.xib in Resources */,
 				1AF8B6ED202D8EDF003C34C2 /* contactDefaultList.plist in Resources */,
 				1A1A36CA20197ADD000B93EE /* YBMineHeadTableViewCell.xib in Resources */,
 				1AE5220B2018846C00AD174F /* discoverDataList.plist in Resources */,
@@ -828,6 +844,7 @@
 				1AE1BE0E20BCF236006AFA95 /* momentsDataList.plist in Resources */,
 				1ABA2B052029B0CD009E4E98 /* YBInfoLabel.xib in Resources */,
 				1A73549F2071C21F0011443A /* YBMyQRView.xib in Resources */,
+				1AA8A72520D25F3B00470DE6 /* albumDataList.plist in Resources */,
 				1AE5220920186F5200AD174F /* YBSettingTableViewCell.xib in Resources */,
 				1AF5A7502074CB5200A14940 /* YBActionSheetCell.xib in Resources */,
 				1A3E631C2018301D00E683CA /* Assets.xcassets in Resources */,
@@ -859,21 +876,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		591803875B7EEDD393DB57BD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YBWechat/Pods-YBWechat-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FD9A32143C036938ACE463CF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -898,7 +900,18 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCColor.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jrmf.cer",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WalletResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BQMM.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -939,10 +952,12 @@
 				1A3E63112018301D00E683CA /* main.m in Sources */,
 				1A0FF61720BD299900ECD044 /* MomentsDataModel.m in Sources */,
 				1A45B2DA2044EF4C00F5A48F /* YBDropDownMenuCell.m in Sources */,
+				1AA8A72820D2618F00470DE6 /* AlbumCellModel.m in Sources */,
 				1A168C7D20B5124200C0FC45 /* YBMomentsAddVC.m in Sources */,
 				1AE52204201855EB00AD174F /* YBMineVC.m in Sources */,
 				1AE5220820186F5200AD174F /* YBSettingTableViewCell.m in Sources */,
 				1A0E4C632021A67E00745904 /* YBInputTextView.m in Sources */,
+				1AA8A72320D25AD800470DE6 /* YBAlbumListVC.m in Sources */,
 				1A5A5E9A20BF9CF400616266 /* YBPicsBrowser.m in Sources */,
 				1A6CAD522044EC9500752671 /* YBDropDownMenu.m in Sources */,
 				1A76258A20B7FA240016DE25 /* BusinessCardRequestCell.m in Sources */,
@@ -957,7 +972,6 @@
 				1A17C2FB206E0949009EFFF1 /* YBUserDetailTopCell.m in Sources */,
 				1A0E4C4F20219E6A00745904 /* YBLoginVC.m in Sources */,
 				1AF8B6E0202D73EE003C34C2 /* RCDataSource.m in Sources */,
-				1AF5A7482074C29700A14940 /* YBAlbumVC.m in Sources */,
 				1A5D6F31206CDEAC00E15AF1 /* YBSearchToolView.m in Sources */,
 				1AE521FE201855C500AD174F /* YBContactsVC.m in Sources */,
 				1A9D6FAF2021C2B700251BD2 /* YBLoginModel.m in Sources */,
@@ -966,6 +980,7 @@
 				1AD5BB6420B3EB70001AF94A /* TranslationDataModel.m in Sources */,
 				1A5D6F2E206CDD4400E15AF1 /* YBSearchVC.m in Sources */,
 				1A957A4E20C50E4600A9594F /* YBPraisesListView.m in Sources */,
+				1AA8A71E20D252FA00470DE6 /* YBMomentHeaderView.m in Sources */,
 				1A0E4C5620219F7500745904 /* YBUserCache.m in Sources */,
 				1AF8B6D4202D6ED3003C34C2 /* pinyin.c in Sources */,
 				1A12609920BD3A7200FAE0F0 /* YBMomentsHeaderView.m in Sources */,

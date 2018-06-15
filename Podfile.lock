@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
+  - Cordova (4.5.4)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -50,6 +51,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.6.3)
   - Aspects (~> 1.4.1)
+  - Cordova (~> 4.5.4)
   - FMDB (~> 2.6.2)
   - MBProgressHUD (~> 1.1.0)
   - MJRefresh (~> 3.1.12)
@@ -59,9 +61,24 @@ DEPENDENCIES:
   - YYModel (~> 1.0.4)
   - YYText (~> 1.0.7)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Aspects
+    - Cordova
+    - FMDB
+    - MBProgressHUD
+    - MJRefresh
+    - RongCloudIM
+    - SDWebImage
+    - YYImage
+    - YYModel
+    - YYText
+
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  Cordova: 90a337977b8667a80483f559268c82062b1183da
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
@@ -71,6 +88,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 32bdb501da7e650c63d841efb2ebdc37c5ccc403
+PODFILE CHECKSUM: caa8803c396d7a7b093ccb5808fdd24414d53043
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

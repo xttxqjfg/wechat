@@ -14,6 +14,7 @@
 #import "YBLoginVC.h"
 
 #import "YBMyQRVC.h"
+#import "YBAlbumListVC.h"
 
 @interface YBMineVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -104,10 +105,19 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (2 == indexPath.section) {
-        YBMyQRVC *qrVC = [[YBMyQRVC alloc]init];
-        self.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:qrVC animated:YES];
-        self.hidesBottomBarWhenPushed = NO;
+        if (1 == indexPath.row) {
+            YBAlbumListVC *albumListVC = [[YBAlbumListVC alloc]init];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:albumListVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        }
+        else
+        {
+            YBMyQRVC *qrVC = [[YBMyQRVC alloc]init];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:qrVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        }
     }
     else if (3 == indexPath.section) {
         [YBUtils showAlert:@"确定注销当前登录?" title:@"提示" showInVC:self showCancleBtn:YES sureAction:^{

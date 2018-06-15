@@ -22,7 +22,9 @@
 #import "YBCommendModel.h"
 #import "YBMomentsCommendCell.h"
 
-@interface YBMomentsVC ()<YBActionSheetViewDelegate,UITableViewDelegate,UITableViewDataSource,YBMomentsHeaderViewDelegate,UIScrollViewDelegate,UIGestureRecognizerDelegate,YBMomentsCommendCellDelegate>
+#import "YBMomentHeaderView.h"
+
+@interface YBMomentsVC ()<YBActionSheetViewDelegate,UITableViewDelegate,UITableViewDataSource,YBMomentsHeaderViewDelegate,UIScrollViewDelegate,UIGestureRecognizerDelegate,YBMomentsCommendCellDelegate,YBMomentHeaderViewDelegate>
 
 @property (nonatomic,strong) YBActionSheetView *actionSheetView;
 
@@ -31,8 +33,12 @@
 @property (nonatomic,strong) NSMutableArray *momentsDataArr;
 
 @property (nonatomic,strong) YBPicsBrowser *picsBrowser;
+
 //点赞和评论的弹出视图
 @property (nonatomic,strong) YBOperatePopView *operatePopView;
+
+//顶部视图
+@property (nonatomic,strong) YBMomentHeaderView *momentHeaderView;
 
 @end
 
@@ -49,6 +55,7 @@
     [self setNaviBarBtns];
     
     [self.view addSubview:self.momentsTableView];
+    [self.momentsTableView addSubview:self.momentHeaderView];
     
     UITapGestureRecognizer *viewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewBackGroundTapped:)];
     viewTap.delegate = self;
@@ -94,6 +101,17 @@
             //
         }];
     }
+}
+
+#pragma mark--YBMomentHeaderViewDelegate
+-(void)userPicClickedOnYBMomentHeaderView:(NSString *)userId
+{
+    
+}
+
+- (void)topImageClickedOnYBMomentHeaderView
+{
+    
 }
 
 #pragma mark--UIGestureRecognizerDelegate
@@ -284,10 +302,11 @@
 -(UITableView *)momentsTableView
 {
     if (!_momentsTableView) {
-        _momentsTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, YB_SCREEN_WIDTH, YB_SCREEN_HEIGHT - 64) style:(UITableViewStyleGrouped)];
+        _momentsTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -64, YB_SCREEN_WIDTH, YB_SCREEN_HEIGHT + 64) style:(UITableViewStyleGrouped)];
         _momentsTableView.delegate = self;
         _momentsTableView.dataSource = self;
         _momentsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _momentsTableView.contentInset = UIEdgeInsetsMake(YB_SCREEN_WIDTH * 0.8, 0, 0, 0);
     }
     return _momentsTableView;
 }
@@ -321,6 +340,15 @@
         _operatePopView.hidden = YES;
     }
     return _operatePopView;
+}
+
+-(YBMomentHeaderView *)momentHeaderView
+{
+    if (!_momentHeaderView) {
+        _momentHeaderView = [[YBMomentHeaderView alloc]initWithFrame:CGRectMake(0, -YB_SCREEN_WIDTH * 0.8, YB_SCREEN_WIDTH, YB_SCREEN_WIDTH * 0.8)];
+        _momentHeaderView.delegate = self;
+    }
+    return _momentHeaderView;
 }
 
 - (void)didReceiveMemoryWarning {
