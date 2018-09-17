@@ -16,7 +16,7 @@
 //文字内容
 @property (nonatomic,copy) NSString *content;
 
-//类型，包括纯文本0、纯图片1、链接2等
+//类型，包括纯文本0、纯图片1、链接2、视频3等
 @property (nonatomic,copy) NSString *type;
 
 //月份
